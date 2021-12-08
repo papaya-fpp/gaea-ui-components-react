@@ -6,7 +6,7 @@
     "outDir": "lib",
     "module": "commonjs",
     "jsx": "react",
-    "declaration": true,
+    // "declaration": true,
     "moduleResolution": "node",
     "noUnusedLocals": false,
     "noUnusedParameters": false,
@@ -27,6 +27,7 @@
   "exclude": [
     "node_modules",
     "lib",
+    "dist",
     "components/**/*.stories.tsx",
   ],
 }

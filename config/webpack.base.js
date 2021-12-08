@@ -3,14 +3,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const {entryPath} = require('./entryPath');
 
 module.exports = {
-  entry: {
-    index: './components/index.tsx',
-    // ...entryPath('./components')
-  },
+  entry: './components/index.ts',
   output: {
-    // filename: (pathData) => {
-    //   return pathData.chunk.name === 'index' ? '[name].js' : '[name]/index.js';
-    // },
     filename: 'index.js',
     path: path.resolve(__dirname,'../dist'),
     libraryTarget: "umd"
@@ -35,18 +29,24 @@ module.exports = {
         exclude: /(node_modules)/
       },
       {
-        test: /.s?css$/,
+        test: /.css$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              esModule: false
+            }
+          },
+          // "style-loader",
           "css-loader",
-          "sass-loader"
+          // "sass-loader"
         ]
       }
     ]
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: "index.css",
       chunkFilename: "[id].css"
     }),
   ],
