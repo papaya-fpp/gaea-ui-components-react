@@ -27,3 +27,47 @@ npm run link
 ```
 npm link gaea-ui-components-react
 ```
+
+### 说明：
+dist 目录为全量包文件
+lib 目录 各个组件分开打包后的文件
+
+#### 使用方式一
+```
+# ui 组件使用时， 在app 中引入样式文件import './App.css';
+import React from 'react'
+import 'gaea-ui-components-react/dist/index.css'
+import { Button, Header } from 'gaea-ui-components-react'
+
+function App() {
+  return (
+    <div className="App">
+      <Header />
+      <Button />
+    </div>
+  );
+}
+
+export default App;
+
+```
+#### 使用方式二
+
+```
+# ui 组件使用时， 在app 中引入样式文件import './App.css';
+import React from 'react'
+import 'gaea-ui-components-react/dist/index.css'
+import Button from 'gaea-ui-components-react/lib/Button'
+
+function App() {
+  return (
+    <div className="App">
+      <Header />
+      <Button />
+    </div>
+  );
+}
+
+export default App;
+
+```

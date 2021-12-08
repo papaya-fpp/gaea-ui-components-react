@@ -4,12 +4,14 @@
   "description": "fpp-ui",
   "main": "lib/index.js",
   "scripts": {
-    "clear": "rm -rf ./lib && mkdir lib",
-    "link": "npm run clear && npm run build && npm link",
+    "clear": "fpp-ui-tool clear",
+    "link": "npm run build && npm link",
     "start": "start-storybook -p 6006",
-    "build": "fpp-ui-tool build",
-    "build2": "webpack --config ./config/webpack.dev.js",
-    "build-storybook": "build-storybook"
+    "build": "npm run clear && fpp-ui-tool build",
+    "dist": "webpack --config ./webpack.config.js",
+    "build-storybook": "build-storybook",
+    "build:sass": "sass /Users/renhang/Stie/gaea-ui-components-react/components/Button/style/index.scss:/Users/renhang/Stie/gaea-ui-components-react/lib/Button/style/index.css --no-source-map"
+
   },
   "author": "",
   "license": "MIT",

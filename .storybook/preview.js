@@ -1,4 +1,4 @@
-import '../styles/global.scss';
+import './style';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
