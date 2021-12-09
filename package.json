@@ -9,9 +9,7 @@
     "start": "start-storybook -p 6006",
     "build": "npm run clear && fpp-ui-tool build",
     "dist": "webpack --config ./webpack.config.js",
-    "build-storybook": "build-storybook",
-    "build:sass": "sass /Users/renhang/Stie/gaea-ui-components-react/components/Button/style/index.scss:/Users/renhang/Stie/gaea-ui-components-react/lib/Button/style/index.css --no-source-map"
-
+    "build-storybook": "build-storybook"
   },
   "author": "",
   "license": "MIT",
@@ -28,6 +26,7 @@
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
     "babel-loader": "^8.0.6",
+    "classnames": "^2.3.1",
     "css-loader": "^5.0.1",
     "fpp-ui-tool": "^1.0.4",
     "mini-css-extract-plugin": "^1.4.0",

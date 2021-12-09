@@ -6,7 +6,7 @@
     "outDir": "lib",
     "module": "commonjs",
     "jsx": "react",
-    // "declaration": true,
+    "declaration": true,
     "moduleResolution": "node",
     "noUnusedLocals": false,
     "noUnusedParameters": false,

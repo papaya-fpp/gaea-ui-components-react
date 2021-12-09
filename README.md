@@ -12,6 +12,8 @@ $ npm install
 # 启动storybook 开发组件
 $ npm run storybook
 
+# 使用 storybook 开发新组件时，组件内样式需要 手动引入 .storybook/style.js 中
+
 ```
 ####  本地项目开发，其他本地项目引入方式，使用 npm 安装
 ```
