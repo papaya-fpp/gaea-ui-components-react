@@ -8,6 +8,7 @@
     "link": "npm run build && npm link",
     "start": "start-storybook -p 6006",
     "build": "npm run clear && fpp-ui-tool build",
+    "build:watch": "npm run clear && fpp-ui-tool build --watch",
     "dist": "webpack --config ./webpack.config.js",
     "build-storybook": "build-storybook"
   },
@@ -28,7 +29,7 @@
     "babel-loader": "^8.0.6",
     "classnames": "^2.3.1",
     "css-loader": "^5.0.1",
-    "fpp-ui-tool": "^1.0.4",
+    "fpp-ui-tool": "^1.0.5",
     "mini-css-extract-plugin": "^1.4.0",
     "postcss-loader": "^6.2.1",
     "react": "^17.0.2",
