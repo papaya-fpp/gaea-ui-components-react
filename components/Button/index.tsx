@@ -6,6 +6,10 @@ interface ButtonProps {
    */
   primary?: boolean;
   /**
+   * 是否禁用
+   */
+  disabled?: boolean;
+  /**
    * What background color to use
    */
   backgroundColor?: string;
@@ -18,6 +22,10 @@ interface ButtonProps {
    */
   label: string;
   /**
+   * icon 图标
+   */
+  icon: React.ReactNode;
+  /**
    * Optional click handler
    */
   onClick?: () => void;
@@ -28,20 +36,30 @@ interface ButtonProps {
  */
 const Button = ({
   primary = false,
+  disabled = false,
   size = 'medium',
   backgroundColor,
   label,
+  icon,
   ...props
 }: ButtonProps) => {
   const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  const disabledState = disabled ? 'storybook-button--disabled' : '';
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      className={['storybook-button', `storybook-button--${size}`, mode,disabledState].join(' ')}
       style={{ backgroundColor }}
       {...props}
     >
-      {label}
+      <div className={['storybook-button-text'].join(' ')}>
+        <div className={['storybook-button--icon'].join(' ')}>{icon}</div>
+        {
+          label&&(
+              <div className={['storybook-button--label'].join(' ')}>{label}</div>
+          )
+        }
+      </div>
     </button>
   );
 };
