@@ -1,5 +1,6 @@
-import "../assets/fonts/iconfont.css";
-import "../assets/fonts/iconfont.js";
+// import "../assets/fonts/iconfont.js";
+
+// export { default as Input } from './Input';
 
 export { default as Button } from './Button';
 
