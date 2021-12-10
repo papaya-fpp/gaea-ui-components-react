@@ -1,1 +1,20 @@
 @import './color.scss';
+
+$font-size-base: 14px;
+$border-radius-base: 2px;
+// Layout
+$layout-body-background: $bg-1;
+$layout-header-height: 64px;
+$layout-header-padding: 0 50px;
+$layout-header-color: $fontColor-1;
+$layout-header-background: #FEFFFF;
+$layout-footer-padding: 24px 50px;
+$layout-footer-color: $fontColor-1;
+$layout-footer-background: $bg-1;
+
+$layout-sider-background: $layout-header-background;
+$layout-trigger-height: 48px;
+$layout-trigger-color: #fff;
+$layout-trigger-background: #002140;
+$layout-zero-trigger-width: 36px;
+$layout-zero-trigger-height: 42px;

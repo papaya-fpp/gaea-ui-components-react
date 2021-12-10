@@ -12,6 +12,13 @@ $ npm install
 # 启动storybook 开发组件
 $ npm run storybook
 
+# 利用工具创建组件 需要全局安装 fpp-ui-tool 
+npm install -g fpp-ui-tool
+
+fpp-ui-tool create 
+# 或
+fpp-ui-tool create componentName
+
 # 使用 storybook 开发新组件时，组件内样式需要 手动引入 .storybook/style.js 中
 
 ```

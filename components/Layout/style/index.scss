@@ -1,0 +1,62 @@
+@import '../../styles/theme/theme.scss';
+
+.fpp-layout{
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+
+  min-height: 0;
+  background: $layout-body-background;
+
+  &.fpp-layout-has-sider {
+    flex-direction: row;
+
+    >.fpp-layout,
+    >.fpp-layout-content {
+      width: 0; 
+    }
+  }
+
+  .fpp-layout-header,
+  .fpp-layout-footer {
+    flex: 0 0 auto;
+  }
+  .fpp-layout-header {
+    height: $layout-header-height;
+    padding: $layout-header-padding;
+    color: $layout-header-color;
+    line-height: $layout-header-height;
+    background: $layout-header-background;
+    box-shadow: 0px 25px 50px 0px rgba(0, 0, 0, 0.04);
+    position: relative;
+    z-index: 9;
+  }
+
+  .fpp-layout-footer {
+    padding: $layout-footer-padding;
+    color: $layout-footer-color;
+    font-size: $font-size-base;
+    background: $layout-footer-background;
+  }
+
+  .fpp-layout-content {
+    flex: auto;
+    min-height: 0;
+  }
+
+  .fpp-layout-sider {
+    position: relative;
+    min-width: 0;
+    transition: all 0.2s;
+    box-shadow: 1px 0px 25px 0px rgba(0, 0, 0, 0.04);
+    &.fpp-layout-sider-dark {
+      background: $layout-sider-background;
+    }
+    &.fpp-layout-sider-light {
+      background: $layout-sider-background;
+    }
+    .fpp-layout-sider-children {
+      height: 100%;
+    }
+  }
+}
