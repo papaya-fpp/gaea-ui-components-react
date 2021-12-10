@@ -34,44 +34,7 @@
   //    line-height: 40px;
   //  }
   //}
-  // 错误提示
-  &.error {
-    .py-input-affix-wrapper {
-      background: $input-hover-bg-err;
-      border: 1px solid $red-1;
-      &:hover {
-        background: $input-hover-bg-err;
-        border: 1px solid $red-1;
-      }
-      //&:focus-within {
-      //  border-color: #f44e4e;
-      //  box-shadow: 0 0 0 2px #f44e4e !important;
-      //  border-right-width: 1px !important;
-      //  outline: 0;
-      //  box-shadow: 0 0 0 2px rgba(244, 78, 78, 0.2);
-      //}
-    }
-  }
-  // 禁用 只读样式
-  &.readonly {
-    .py-input-affix-wrapper{
-      background: $input-label;
-      color:$fontColor-1;
-      opacity: 0.09;
-      cursor: not-allowed;
-      border-color: transparent;
-      &:hover{
-        opacity: 0.09;
-        border-color: transparent;
-        background: $input-label !important;
-        color:$fontColor-1 !important;
-      }
-      input,textarea{
-        cursor: not-allowed;
-      }
-    }
 
-  }
   input,textarea {
     color: $fontColor-1;
     box-sizing: border-box;
@@ -109,6 +72,10 @@
     box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.04);
     border-radius: 6px;
     border: 1px solid $input-border;
+    &:hover {
+      background: $input-hover-bg;
+      border-color: $purple-1;
+    }
   }
   .py-input-affix-wrapper{
     width: 100%;
@@ -175,6 +142,41 @@
         box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.04);
         border-radius: 0px 6px 6px 0px;
         border: 1px solid $purple-1;
+      }
+    }
+  }
+  // 错误提示
+  &.error {
+    .py-input-affix-wrapper {
+      background: $input-hover-bg-err;
+      border: 1px solid $red-1;
+      &:hover {
+        background: $input-hover-bg-err;
+        border: 1px solid $red-1;
+      }
+      //&:focus-within {
+      //  border-color: #f44e4e;
+      //  box-shadow: 0 0 0 2px #f44e4e !important;
+      //  border-right-width: 1px !important;
+      //  outline: 0;
+      //  box-shadow: 0 0 0 2px rgba(244, 78, 78, 0.2);
+      //}
+    }
+  }
+  // 禁用 只读样式
+  &.readonly {
+    .py-input-affix-wrapper{
+      background: rgba(134, 145, 163, 0.09);
+      color:$fontColor-1;
+      cursor: not-allowed;
+      border-color: transparent;
+      &:hover{
+        border-color: transparent;
+        bbackground: rgba(134, 145, 163, 0.09) !important;
+        color:$fontColor-1 !important;
+      }
+      input,textarea{
+        cursor: not-allowed;
       }
     }
   }
