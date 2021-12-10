@@ -1,12 +1,12 @@
-$purple-1: #6554C0;
+$purple-1: #6554C0; // 主题色
 
-$green-1: #64C8BC;
+$green-1: #64C8BC; // 辅助色
 
-$red-1: #FF8A8A;
+$red-1: #FF8A8A; // 警告色
 
-$blue-1: #429CFF;
+$blue-1: #429CFF; // 文字链接色
 
-$white: #fff;
+$white: #fff; // 低色
 
 $fontColor-1: #344563; // 主文字颜色
 $fontColor-2: #5E6C84; // 辅文字颜色
@@ -16,7 +16,12 @@ $bg-1: #5E6C84; // 背景色
 
 $bg-1: rgba(23, 23, 37, .6); // 蒙版颜色
 
-
+$input-label: #8691A3;//input label颜色
+$input-placeholder: rgba(52, 69, 99, .5);//input placeholder颜色
+$input-border: #E9EDF0;//input 边框颜色
+$input-bg: #FBFDFF; //input 背景颜色
+$input-hover-bg: #FAF9FF; //input 背景颜色
+$input-hover-bg-err: #FFFBFB; //input 错误背景颜色
 
 
 
