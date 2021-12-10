@@ -18,7 +18,6 @@ export interface RowProps extends React.HTMLAttributes<HTMLDivElement> {
   gutter?: Gutter | [Gutter, Gutter];
   align?: typeof RowAligns[number];
   justify?: typeof RowJustify[number];
-  prefixCls?: string;
   wrap?: boolean;
 }
 
@@ -34,8 +33,6 @@ const Row = React.forwardRef<HTMLDivElement, RowProps>((props, ref) => {
     ...others
   } = props;
 
-  const gutterRef = React.useRef<Gutter | [Gutter, Gutter]>(gutter);
-  
   const screens = useBreakpoint();
 
   const getGutter = (): [number, number] => {
@@ -73,7 +70,6 @@ const Row = React.forwardRef<HTMLDivElement, RowProps>((props, ref) => {
   // Add gutter related style
   const rowStyle: React.CSSProperties = {};
   const horizontalGutter = gutters[0] > 0 ? gutters[0] / -2 : undefined;
-  const verticalGutter = gutters[1] > 0 ? gutters[1] / -2 : undefined;
 
   if (horizontalGutter) {
     rowStyle.marginLeft = horizontalGutter;
