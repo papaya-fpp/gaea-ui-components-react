@@ -2,6 +2,10 @@
 
 $font-size-base: 14px;
 $border-radius-base: 2px;
+
+// vertical paddings
+$padding-xs: 8px;
+
 // Layout
 $layout-body-background: $bg-1;
 $layout-header-height: 64px;
@@ -18,3 +22,14 @@ $layout-trigger-color: #fff;
 $layout-trigger-background: #002140;
 $layout-zero-trigger-width: 36px;
 $layout-zero-trigger-height: 42px;
+
+// Breadcrumb
+// ---
+$breadcrumb-base-color: $fontColor-2;
+$breadcrumb-last-item-color: $fontColor-1;
+$breadcrumb-font-size: $font-size-base;
+$breadcrumb-icon-font-size: $font-size-base;
+$breadcrumb-link-color: $fontColor-2;
+$breadcrumb-link-color-hover: $purple-1;
+$breadcrumb-separator-color: $fontColor-2;
+$breadcrumb-separator-margin: 0 $padding-xs;

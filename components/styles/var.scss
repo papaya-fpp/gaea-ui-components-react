@@ -1,1 +1,5 @@
+@import './theme/color.scss';
 
+html {
+  --primary-color: $purple-1;
+}

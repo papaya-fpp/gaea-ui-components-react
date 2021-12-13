@@ -1,0 +1,39 @@
+@import '../../styles/theme/theme.scss';
+
+.fpp-breadcrumb{
+  color: $breadcrumb-base-color;
+  font-size: $breadcrumb-font-size;
+
+  a {
+    color: $breadcrumb-link-color;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $breadcrumb-link-color-hover;
+    }
+  }
+
+  & > span:last-child {
+    color: $breadcrumb-last-item-color;
+
+    a {
+      color: $breadcrumb-last-item-color;
+    }
+  }
+
+  & > span:last-child .fpp-breadcrumb-separator {
+    display: none;
+  }
+
+  .fpp-breadcrumb-separator {
+    margin: $breadcrumb-separator-margin;
+    color: $breadcrumb-separator-color;
+  }
+
+  .fpp-breadcrumb-link {
+    a {
+      margin-left: 4px;
+    }
+  }
+
+}

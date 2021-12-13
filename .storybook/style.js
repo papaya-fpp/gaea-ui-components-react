@@ -4,3 +4,4 @@ import '../components/Header/style';
 import '../components/Grid/style';
 import '../components/Layout/style';
 import '../components/Input/style';
+import '../components/Breadcrumb/style';

@@ -1,3 +1,13 @@
 *, *:before, *:after {
   box-sizing: border-box;
 }
+
+a{
+  color: var(--primary-color);
+  text-decoration: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: color .3s;
+  -webkit-text-decoration-skip: objects;
+}
