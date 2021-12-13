@@ -53,7 +53,8 @@
   "files": [
     "/lib",
     "package.json",
-    "README.md"
+    "README.md",
+    "assets"
   ],
   "dependencies": {}
 }
