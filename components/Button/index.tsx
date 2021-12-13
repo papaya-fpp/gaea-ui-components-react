@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Icon from '../Icon';
 interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
@@ -24,7 +24,7 @@ interface ButtonProps {
   /**
    * icon 图标
    */
-  icon: React.ReactNode;
+  icon: string;
   /**
    * Optional click handler
    */
@@ -54,9 +54,7 @@ const Button = ({
     >
       <div className={['storybook-button-text'].join(' ')}>
           {
-              icon&&(
-                  <div className={['storybook-button--icon'].join(' ')}>{icon}</div>
-              )
+              icon && <Icon name={icon} />
           }
         {
           label&&(

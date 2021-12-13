@@ -15,13 +15,14 @@ const Icon: React.FC<IconProps> = ({
 }) => {
   return (
     <svg 
-    className={`icon  ${className}`}
+      className={`icon  ${className}`}
       style={{
         color: color,
         fontSize: size + "px"
       }}
-     aria-hidden="true">
-      <use xlinkHref={`#${name}`}></use>
+      aria-hidden="true"
+    >
+      <use xlinkHref={`#icon-${name}`}></use>
     </svg >
   );
 };

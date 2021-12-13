@@ -43,7 +43,7 @@ Secondarydisabled.args = {
 export const icon = Template.bind({});
 icon.args = {
   label: '图标',
-  icon:<div>#</div>
+  icon: 'Settings'
 };
 
 export const Large = Template.bind({});
