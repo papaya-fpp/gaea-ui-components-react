@@ -1,3 +1,4 @@
+import '../assets/fonts/iconfont.js';
 import '../components/styles/index.scss';
 import '../components/Button/style';
 import '../components/Header/style';
@@ -5,3 +6,5 @@ import '../components/Grid/style';
 import '../components/Layout/style';
 import '../components/Input/style';
 import '../components/Breadcrumb/style';
+import '../components/Icon/style';
+import '../components/Menu/style';

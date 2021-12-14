@@ -53,9 +53,9 @@ const Button = ({
       {...props}
     >
       <div className={['storybook-button-text'].join(' ')}>
-          {
-              icon && <Icon name={icon} />
-          }
+        {
+            icon && <Icon name={icon} />
+        }
         {
           label&&(
               <div className={['storybook-button--label'].join(' ')}>{label}</div>

@@ -4,7 +4,10 @@ import { getPrefixCls} from '../_util/responsiveObserve';
 import isNumeric from '../_util/isNumber';
 
 export type SiderTheme = 'light' | 'dark';
-
+export interface SiderContextProps {
+  siderCollapsed?: boolean;
+}
+export const SiderContext: React.Context<SiderContextProps> = React.createContext({});
 export interface SiderProps extends React.HTMLAttributes<HTMLDivElement> {
   collapsed?: boolean;
   defaultCollapsed?: boolean;
@@ -52,11 +55,19 @@ const Sider: React.FC<SiderProps> = props => {
     minWidth: siderWidth,
     width: siderWidth,
   };
+  const contextValue = React.useMemo(
+    () => ({
+      siderCollapsed: collapsed,
+    }),
+    [collapsed],
+  );
   
   return (
-    <aside {...others} className={classes} style={silderStyle}>
-      <div className={`${prefixCls}-children`}>{children}</div>
-    </aside>
+    <SiderContext.Provider value={contextValue}>
+      <aside {...others} className={classes} style={silderStyle}>
+        <div className={`${prefixCls}-children`}>{children}</div>
+      </aside>
+    </SiderContext.Provider>
   )
 }
 
