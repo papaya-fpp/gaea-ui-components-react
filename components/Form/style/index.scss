@@ -1,0 +1,35 @@
+.form-wrapper {
+  .form-item {
+    line-height: 48px;
+    margin-bottom: 12px;
+    position: relative;
+  }
+  .valid-item {
+    .from-placeholder {
+      &:before {
+        content: '*';
+        color: red;
+      }
+    }
+  }
+  .item-error {
+    margin-bottom: 12px;
+    .error-text {
+      line-height: 1.5;
+      color: red;
+    }
+    .fpp-new-input {
+      border-color: red !important;
+      margin-bottom: 0;
+    }
+  }
+}
+@media screen and (min-width: 0) and (max-width: 800px) {
+  .form-wrapper {
+    .item-error {
+      .error-text {
+        line-height: 0.4rem;
+      }
+    }
+  }
+}
