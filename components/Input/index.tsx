@@ -6,12 +6,14 @@ interface InputProps {
     prefix?: React.ReactNode | string; // 前置图标
     suffix?: React.ReactNode | string; // 后置图标
     groupAddon?: React.ReactNode | string;// 操作的按钮（例：复制）
+    passwordIcon?: boolean;// 密码的眼睛图标
     type?: string;
     id?: string;
     name?: string;
     value?: string;
     size?: string;
     onAddon?: any; //右侧操作按钮 点击事件（例：复制）
+    onChangeType?: any; //修改输入框类型
     onChange?: any;
     onBlur?: any;
     onFocus?: any;
@@ -33,6 +35,7 @@ export const Input = ({
                           placeholder = '',
                           prefix,
                           suffix,
+                          passwordIcon,
                           groupAddon,
                           type = 'text',
                           name = '',
@@ -40,6 +43,7 @@ export const Input = ({
                           size = '',
                           error = false,
                           onAddon,
+                          onChangeType,
                           onChange,
                           onBlur,
                           onFocus,
@@ -138,8 +142,34 @@ export const Input = ({
                                     }}
                                 />
                                 {
-                                    suffix&&(
+                                    !passwordIcon&&suffix&&(
                                         <Icon className="py-input-suffix" name={suffix} />
+                                    )
+                                }
+                                {
+                                    type==='password'&&passwordIcon&&(
+                                        <span>
+                                            {
+                                                type==='password'&&(
+                                                    <Icon
+                                                    onClick={() => {
+                                                        if (onChangeType) {
+                                                            onChangeType('zhengyan');
+                                                        }
+                                                    }}
+                                                    className="py-input-suffix" name="zhengyan" />)
+                                            }
+                                            {
+                                                type!=='password'&&(<Icon
+                                                    onClick={() => {
+                                                        if (onChangeType) {
+                                                            onChangeType('biyan');
+                                                        }
+                                                    }}
+                                                    className="py-input-suffix"
+                                                    name="biyan" />)
+                                            }
+                                        </span>
                                     )
                                 }
                             </div>

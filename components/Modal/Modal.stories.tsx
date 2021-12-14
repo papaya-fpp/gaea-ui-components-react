@@ -8,19 +8,20 @@ export default {
   title: 'Example/Modal',
   component: Modal,
 } as ComponentMeta<typeof Modal>;
-
-const Template: ComponentStory<typeof Modal> = (args) => (
-    <Modal {...args} />
-);
+let visible = true
+const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
 export const ModalExample = Template.bind({});
 ModalExample.args = {
-  visible: true,
-  title:'测试Modal 标题',
-  width: 100,
+  visible: visible,
+  wrapClassName: 'self-modal',
+  // width: 500,
+  title: <div>标题d</div>,
   cancelText: '取消',
   okText: '确定',
-  children: <div>弹窗</div>,
+  children: <div>弹窗内容</div>,
+  onCancel: visible = false,
+  onOK: visible = false,
   closable: true,
-  footer: <div>弹窗</div>,
+  // footer: '底部',
   maskClosable: true,
-};
+}

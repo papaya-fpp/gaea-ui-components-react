@@ -23,13 +23,20 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
-// const [value,setValue] = useState('')
 let value = ''
+let type = 'password'
 const handleChange = (val)=>{
   value = val
 }
 const handleOnAddon = ()=>{
 
+}
+const handleChangeType = (val)=>{
+  if(val==='zhengyan'){
+    type = 'text'
+  }else{
+    type = 'password'
+  }
 }
 export const error = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
@@ -50,10 +57,12 @@ readonly.args = {
 export const password = Template.bind({});
 password.args = {
   placeholder:'login_Password',
-  type:"password",
+  type:type,
   name:"password",
+  passwordIcon:true,
   value:value,
-  onChange:handleChange(value)
+  onChange:handleChange(value),
+  onChangeType:handleChangeType(value)
 };
 
 export const textarea = Template.bind({});

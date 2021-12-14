@@ -20,29 +20,36 @@
   }
   > .py-modal-content {
     width: 750px;
-    padding: 32px 56px;
     background: #fff;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
     margin: 100px auto;
-    .py-modal-title {
-      line-height: 1;
-    }
-    .close-wrapper {
-      position: absolute;
-      top: 6px;
-      right: 6px;
+    box-shadow: 0px 25px 50px 0px rgba(0, 0, 0, 0.04);
+    border-radius: 12px;
+    .py-modal-header{
       display: flex;
-      cursor: pointer;
-      z-index: 9999;
-      .close-svg {
-        transform: rotate(45deg);
-        color: #7c7c7c;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 25px 20px 30px;
+      border-bottom: 1px solid #E9EDF0;
+      .py-modal-title {
+        font-size: 16px;
+        font-weight: bold;
+        color: #344563;
+        line-height: 20px;
+      }
+      .close-wrapper {
+        cursor: pointer;
       }
     }
+    .py-modal-body{
+      padding: 20px;
+    }
+
     > .py-modal-footer {
+      padding: 20px;
       display: flex;
       justify-content: flex-end;
       .button {
@@ -72,6 +79,8 @@
       width: 6.88rem !important;
       min-height: 4.24rem;
       padding: 0.4rem 0.4rem;
+      box-shadow: 0px 25px 50px 0px rgba(0, 0, 0, 0.04);
+      border-radius: 12px;
       .close-wrapper {
         top: 0.3rem;
         right: 0.3rem;
