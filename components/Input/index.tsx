@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
-
+import Icon from '../Icon';
 interface InputProps {
     label?: string;
     placeholder?: any;
-    prefix?: React.ReactNode; // 前置图标
-    suffix?: React.ReactNode; // 后置图标
-    groupAddon?: React.ReactNode;// 操作的按钮（例：复制）
+    prefix?: React.ReactNode | string; // 前置图标
+    suffix?: React.ReactNode | string; // 后置图标
+    groupAddon?: React.ReactNode | string;// 操作的按钮（例：复制）
+    passwordIcon?: boolean;// 密码的眼睛图标
     type?: string;
     id?: string;
     name?: string;
     value?: string;
     size?: string;
     onAddon?: any; //右侧操作按钮 点击事件（例：复制）
+    onChangeType?: any; //修改输入框类型
     onChange?: any;
     onBlur?: any;
     onFocus?: any;
@@ -33,6 +35,7 @@ export const Input = ({
                           placeholder = '',
                           prefix,
                           suffix,
+                          passwordIcon,
                           groupAddon,
                           type = 'text',
                           name = '',
@@ -40,6 +43,7 @@ export const Input = ({
                           size = '',
                           error = false,
                           onAddon,
+                          onChangeType,
                           onChange,
                           onBlur,
                           onFocus,
@@ -55,7 +59,7 @@ export const Input = ({
                       }: InputProps) => {
     const [val, setVal] = useState(value || '');
     const numberReg = /^[0-9]+\.?[0-9]*/;
-    const setValueHandle = (value) => {
+    const setValueHandle = (value:any) => {
         let val = value.toString();
         if (value === '') return setVal(val);
         if (type === 'number') {
@@ -112,9 +116,7 @@ export const Input = ({
                         <div className={'py-input-wrapper' + (groupAddon ? ' py-input-group' : '')}>
                             <div className="py-input-affix-wrapper">
                                 {
-                                    prefix&&(
-                                        <span className="py-input-prefix">{prefix}</span>
-                                    )
+                                    prefix && <Icon className="py-input-prefix" name={prefix} />
                                 }
                                 <input
                                     ref={ref}
@@ -140,8 +142,34 @@ export const Input = ({
                                     }}
                                 />
                                 {
-                                    suffix&&(
-                                        <span className="py-input-suffix">{suffix}</span>
+                                    !passwordIcon&&suffix&&(
+                                        <Icon className="py-input-suffix" name={suffix} />
+                                    )
+                                }
+                                {
+                                    type==='password'&&passwordIcon&&(
+                                        <span>
+                                            {
+                                                type==='password'&&(
+                                                    <Icon
+                                                    onClick={() => {
+                                                        if (onChangeType) {
+                                                            onChangeType('zhengyan');
+                                                        }
+                                                    }}
+                                                    className="py-input-suffix" name="zhengyan" />)
+                                            }
+                                            {
+                                                type!=='password'&&(<Icon
+                                                    onClick={() => {
+                                                        if (onChangeType) {
+                                                            onChangeType('biyan');
+                                                        }
+                                                    }}
+                                                    className="py-input-suffix"
+                                                    name="biyan" />)
+                                            }
+                                        </span>
                                     )
                                 }
                             </div>
@@ -149,7 +177,7 @@ export const Input = ({
                             {
                                 groupAddon&&(
                                     <div onClick={onAddon} className="py-input-group-addon">
-                                        复
+                                        <Icon name={groupAddon} />
                                     </div>
                                 )
                             }

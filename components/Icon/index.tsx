@@ -5,15 +5,18 @@ interface IconProps {
   className?: string;
   color?: string;
   size?: string | number;
+  onClick?: any;
 }
 const Icon: React.FC<IconProps> = ({
   name,
+  onClick,
   className = "",
   color = "",
   size = ""
 }) => {
   return (
-    <svg 
+    <svg
+      onClick={onClick}
       className={`icon  ${className}`}
       style={{
         color: color,

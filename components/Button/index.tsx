@@ -21,6 +21,8 @@ interface ButtonProps {
    * Button contents
    */
   label: string;
+
+  children: string | React.ReactNode;
   /**
    * icon 图标
    */
@@ -40,6 +42,7 @@ const Button = ({
   size = 'medium',
   backgroundColor,
   label,
+  children,
   icon,
   ...props
 }: ButtonProps) => {
@@ -54,11 +57,16 @@ const Button = ({
     >
       <div className={['storybook-button-text'].join(' ')}>
         {
-            icon && <Icon name={icon} />
+            icon && <Icon className={['storybook-button--icon'].join(' ')} name={icon} />
         }
         {
-          label&&(
+          !children&&label&&(
               <div className={['storybook-button--label'].join(' ')}>{label}</div>
+          )
+        }
+        {
+          children&&(
+              <div className={['storybook-button--label'].join(' ')}>{children}</div>
           )
         }
       </div>
