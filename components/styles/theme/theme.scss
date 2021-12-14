@@ -6,6 +6,13 @@ $border-radius-base: 2px;
 // vertical paddings
 $padding-xs: 8px;
 
+// background color
+$white-background: #fff;
+
+// Shadow
+$layout-header-shadow: 0px 25px 50px 0px rgba(0, 0, 0, 0.04);
+$layout-sider-shadow: 1px 0px 25px 0px rgba(0, 0, 0, 0.04);
+
 // Layout
 $layout-body-background: $bg-1;
 $layout-header-height: 64px;
@@ -18,7 +25,7 @@ $layout-footer-background: $bg-1;
 
 $layout-sider-background: $layout-header-background;
 $layout-trigger-height: 48px;
-$layout-trigger-color: #fff;
+$layout-trigger-color: $white-background;
 $layout-trigger-background: #002140;
 $layout-zero-trigger-width: 36px;
 $layout-zero-trigger-height: 42px;
@@ -33,3 +40,10 @@ $breadcrumb-link-color: $fontColor-2;
 $breadcrumb-link-color-hover: $purple-1;
 $breadcrumb-separator-color: $fontColor-2;
 $breadcrumb-separator-margin: 0 $padding-xs;
+
+// Menu
+// ---
+$menu-item-color: $fontColor-1;
+$menu-item-font-size: $font-size-base;
+$menu-bg: $white-background;
+$menu-popup-bg: $white-background;

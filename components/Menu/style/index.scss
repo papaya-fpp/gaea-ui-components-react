@@ -1,0 +1,18 @@
+@import '../../styles/theme/theme.scss';
+
+.fpp-menu{
+  width: 100%;
+  margin-bottom: 0;
+  padding-left: 0; // Override default ul/ol
+  color: $menu-item-color;
+  font-size: $menu-item-font-size;
+  line-height: 0; // Fix display inline-block gap
+  text-align: left;
+  list-style: none;
+  background: $menu-bg;
+  outline: none;
+  transition: background 0.3s, width 0.3s cubic-bezier(0.2, 0, 0, 1) 0s;
+  &.fpp-menu-collapsed {
+    width: 80px;
+  }
+}

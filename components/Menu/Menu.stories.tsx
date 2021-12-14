@@ -14,5 +14,6 @@ const Template: ComponentStory<typeof Menu> = (args) => <Menu {...args} />;
 export const layout = Template.bind({});
 layout.args = {
   collapsed: false,
-  theme: 'dark'
+  theme: 'dark',
+  style: { width: '256px'}
 };
