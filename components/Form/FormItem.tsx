@@ -5,7 +5,7 @@ const FormItem: React.FC<any> = (props) => {
   const { children, valueschangehandle, name, rules, validateStatus, help, className, ...restProps } = props;
   const formContextValue = useContext<any>(formContext);
   const { setFieldsValue, getFieldsValue, getInternalHooks } = formContextValue;
-  const { setValidateSubList, unValidateSubList } = getInternalHooks();
+  // const { setValidateSubList, unValidateSubList } = getInternalHooks();
   const [error, setError] = useState(false);
   const [errorText, setErrorText] = useState('');
   const isValid = rules && rules.length > 0;
@@ -36,14 +36,14 @@ const FormItem: React.FC<any> = (props) => {
   };
 
   const getControlled = (childProps = {}) => {
-    const values = getFieldsValue();
+    // const values = getFieldsValue();
     let control: any = {
       ...childProps,
       onChange
     };
-    if (values[name]) {
-      control.value = values[name];
-    }
+    // if (values[name]) {
+    //   control.value = values[name];
+    // }
     return control;
   };
 
@@ -68,14 +68,14 @@ const FormItem: React.FC<any> = (props) => {
     return error ? c_name + ' item-error' : c_name;
   };
 
-  useEffect(() => {
-    if (isValid) {
-      setValidateSubList(name, validateRules);
-    }
-    return () => {
-      unValidateSubList(name);
-    };
-  }, [rules]);
+  // useEffect(() => {
+  //   if (isValid) {
+  //     setValidateSubList(name, validateRules);
+  //   }
+  //   return () => {
+  //     unValidateSubList(name);
+  //   };
+  // }, [rules]);
 
   useEffect(() => {
     if (validateStatus) {
