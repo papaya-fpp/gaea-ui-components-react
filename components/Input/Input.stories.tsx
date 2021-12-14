@@ -71,13 +71,9 @@ search.args = {
   type:"search",
   name:"search",
   value:value,
-  prefix:<Icon
-      size={16}
-      className="margin-right10"
-      name="iconkeyidong"
-  />,
-  suffix:<i className="iconfont icon-Search" />,
-  groupAddon:<span>@</span>,
+  prefix:'Search',
+  suffix:'a-Crosssign',
+  groupAddon:'copy',
   onAddon:handleOnAddon(),
   onChange:handleChange(value)
 };

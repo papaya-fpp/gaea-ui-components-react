@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-
+import Icon from '../Icon';
 interface InputProps {
     label?: string;
     placeholder?: any;
-    prefix?: React.ReactNode; // 前置图标
-    suffix?: React.ReactNode; // 后置图标
-    groupAddon?: React.ReactNode;// 操作的按钮（例：复制）
+    prefix?: React.ReactNode | string; // 前置图标
+    suffix?: React.ReactNode | string; // 后置图标
+    groupAddon?: React.ReactNode | string;// 操作的按钮（例：复制）
     type?: string;
     id?: string;
     name?: string;
@@ -55,7 +55,7 @@ export const Input = ({
                       }: InputProps) => {
     const [val, setVal] = useState(value || '');
     const numberReg = /^[0-9]+\.?[0-9]*/;
-    const setValueHandle = (value) => {
+    const setValueHandle = (value:any) => {
         let val = value.toString();
         if (value === '') return setVal(val);
         if (type === 'number') {
@@ -112,9 +112,7 @@ export const Input = ({
                         <div className={'py-input-wrapper' + (groupAddon ? ' py-input-group' : '')}>
                             <div className="py-input-affix-wrapper">
                                 {
-                                    prefix&&(
-                                        <span className="py-input-prefix">{prefix}</span>
-                                    )
+                                    prefix && <Icon className="py-input-prefix" name={prefix} />
                                 }
                                 <input
                                     ref={ref}
@@ -141,7 +139,7 @@ export const Input = ({
                                 />
                                 {
                                     suffix&&(
-                                        <span className="py-input-suffix">{suffix}</span>
+                                        <Icon className="py-input-suffix" name={suffix} />
                                     )
                                 }
                             </div>
@@ -149,7 +147,7 @@ export const Input = ({
                             {
                                 groupAddon&&(
                                     <div onClick={onAddon} className="py-input-group-addon">
-                                        复
+                                        <Icon name={groupAddon} />
                                     </div>
                                 )
                             }

@@ -92,6 +92,7 @@
     font-size: 14px;
     transition: all .3s;
     display: inline-flex;
+    align-items: center;
     &:hover {
       background: $input-hover-bg;
       border-color: $purple-1;

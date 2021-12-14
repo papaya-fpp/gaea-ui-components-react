@@ -54,7 +54,7 @@ const Button = ({
     >
       <div className={['storybook-button-text'].join(' ')}>
         {
-            icon && <Icon name={icon} />
+            icon && <Icon className={['storybook-button--icon'].join(' ')} name={icon} />
         }
         {
           label&&(
