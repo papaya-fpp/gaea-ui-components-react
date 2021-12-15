@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Option from './Option';
 // import { IconFont } from '@fppcomponents';
-import './index.scss';
-
+import Icon from '../Icon';
 const defaultFilter = (inputValue, option) => {
   return option.value.indexOf(inputValue) > -1;
 };
@@ -55,6 +54,7 @@ const Select: SelectPropsComponents = ({
 
   const inputFocus = (e) => {
     e.stopPropagation();
+    setInputval('');
     set_pc_shrink_(true);
     setShowList(true);
     onFocus && onFocus();
@@ -70,7 +70,7 @@ const Select: SelectPropsComponents = ({
 
   const changeItem = (val, text) => {
     setVal(val);
-    setInputval('');
+    setInputval(text);
     setChildText(text);
     setShowList(false);
     onChange && onChange(val);
@@ -89,8 +89,7 @@ const Select: SelectPropsComponents = ({
           })
         ) : (
           <div className="kong_wrapper">
-           {/* <IconFont icon="#pyf-kong" className="kong" />*/}
-           ^
+           空！
           </div>
         )}
       </div>
@@ -129,29 +128,34 @@ const Select: SelectPropsComponents = ({
   }, [filterList]);
 
   return (
-    <div className="fpp-new-select-container">
-      <div className={`fpp-new-select-wrapper ${className ? className : ''}`}>
-        <span className={`from-placeholder ${pc_shrink || val ? 'pc_shrink' : ''}`} onClick={clickFocus}>
+      <div className="py-select-container">
+        <div className={`py-select-wrapper ${className ? className : ''}`}>
+        <span className={`from-placeholder ${pc_shrink || val ? 'pc_shrink' : ''}` + (inputval?' hide_placeholder':'')} onClick={clickFocus}>
           {placeholder}
         </span>
-        <span onClick={clickFocus} className={`active_text ${pc_shrink ? 'shade' : ''}`}>
+          <span onClick={clickFocus} className={`active_text ${pc_shrink ? 'shade' : ''}` + (inputval?' hide_placeholder':'')}>
           {childText}
         </span>
-        <input
-          ref={inputRef}
-          className={`fpp-new-input ${!showSearch ? 'nosearch' : ''}`}
-          value={inputval}
-          onChange={inputChange}
-          onFocus={inputFocus}
-          onBlur={inputBlur}
-        />
-        <div className="jiantou" onClick={clickFocus}>
-          {/*<IconFont icon="#pyf-xialajiantou" className="zhankaishouqi" />*/}
-          #
+          <input
+              ref={inputRef}
+              className={`py-input ${!showSearch ? 'nosearch' : ''}`}
+              value={inputval}
+              onChange={inputChange}
+              onFocus={inputFocus}
+              onBlur={inputBlur}
+          />
+          <div className="jiantou" onClick={clickFocus}>
+            {
+              showList?(
+                  <Icon className="zhankaishouqi" name="Retract" />
+              ):(
+                  <Icon className="zhankaishouqi" name="Drop-down" />
+              )
+            }
+          </div>
         </div>
+        {getListNode()}
       </div>
-      {getListNode()}
-    </div>
   );
 };
 Select.Option = Option;

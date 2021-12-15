@@ -45,9 +45,9 @@ const Form: FormComponentProps = (props) => {
   };
   const formContextValue = React.useMemo(() => ({ ...formInstance }), [formInstance]);
   return (
-
-        <form className="form-wrapper">xx{getItems(children)}</form>
-
+      <FormProvider value={formContextValue}>
+        <form className="form-wrapper">{getItems(children)}</form>
+      </FormProvider>
   );
 };
 Form.Item = Item;
