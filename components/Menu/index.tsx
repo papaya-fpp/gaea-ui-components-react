@@ -4,30 +4,53 @@ import classNames from 'classnames';
 import MenuContext, { MenuTheme } from './MenuContext';
 import { SiderContext, SiderContextProps } from '../Layout/Sider';
 import { getPrefixCls } from '../_util/responsiveObserve';
-
-export interface MenuProps {
+import SubMenu from './SubMenu';
+import Item from './MenuItem';
+interface PublicProps {
   theme?: MenuTheme;
-  inlineIndent?: number;
   inlineCollapsed?: boolean;
+	className?: string;
+	defaultOpenKeys?: Array<string>;
+	openKeys?: Array<string>;
+	defaultSelectedKeys?: string;
+	selectedKeys?: string,
+	onSelect?: (key: string | string[]) => {};
+	onOpenChange?: (openKeys: string | string[]) => {};
 }
 
-interface InternalMenuProps extends MenuProps, React.HTMLAttributes<HTMLDivElement> {
-  siderCollapsed?: boolean
+interface InternalMenuProps extends PublicProps {
+  collapsed?: boolean
 }
 
-const InternalMenu = (props: InternalMenuProps) => {
+interface MenuProps extends React.FC<PublicProps> {
+	Item: typeof Item;
+	SubMenu: typeof SubMenu;
+}
+
+
+const InternalMenu: React.FC<InternalMenuProps> = (props) => {
   const {
-    inlineCollapsed,
-    siderCollapsed,
+    collapsed,
     theme = 'dark',
     className,
-    style,
+		children,
+		defaultOpenKeys,
+		openKeys,
+		defaultSelectedKeys,
+		onSelect,
+		onOpenChange,
     ...others
-  } = props;
+	} = props;
+	
+	let initKeys = props.selectedKeys || defaultOpenKeys;
+	if (!initKeys) {
+		initKeys = (children && children[0].key) || ''
+	}
+
+	const [ selectedKeys, set_selectedKeys ] = React.useState(initKeys)
+
   const prefixCls = getPrefixCls('menu');
   
-  const collapsed = siderCollapsed !== undefined ? siderCollapsed : inlineCollapsed;
-
   const classes = classNames(
     prefixCls,
     `${prefixCls}-${theme}`,
@@ -36,42 +59,52 @@ const InternalMenu = (props: InternalMenuProps) => {
     },
     className,
   );
+  
+  const selectHandle = (type: string, key: string | string[]) => {
+		if (type === 'item') {
+			set_selectedKeys(key)
+			onSelect && onSelect(key)
+		} else {
+			onOpenChange && onOpenChange(key)
+		}
+	}
 
-
-  const contextValue = React.useMemo(() => ({
+  const renderItem = () => {
+    return React.Children.map(children, (child: any) => {
+      if (!child) return null;
+      let childrenProps: any = {
+				...child.props,
+				value: child.key,
+				onChange: selectHandle
+      };
+      return React.cloneElement(child, childrenProps);
+    })
+	}
+	
+	const contextValue = React.useMemo(() => ({
     inlineCollapsed: collapsed || false,
-    firstLevel: true,
-  }), [ collapsed ]);
-
+		firstLevel: true,
+		selectedKeys,
+	}), [ collapsed, selectedKeys ]);
+	
   return (
-    <MenuContext.Provider value={contextValue}>
-      <div className={classes} style={style} {...others}>
-        
-      </div>
-    </MenuContext.Provider>
+		<MenuContext.Provider value={contextValue}>
+			<ul className={classes} {...others}>
+				{renderItem()}
+			</ul>
+		</MenuContext.Provider>
   )
 }
 
 
+const Menu: MenuProps = (props) => {
+  const { inlineCollapsed, ...other } = props;
+  const { siderCollapsed } = React.useContext(SiderContext)
+  const collapsed = siderCollapsed !== undefined ? siderCollapsed : inlineCollapsed;
 
-class Menu extends React.Component<MenuProps, {}> {
-  // static Divider = MenuDivider;
-
-  // static Item = Item;
-
-  // static SubMenu = SubMenu;
-
-  // static ItemGroup = ItemGroup;
-
-  render() {
-    return (
-      <SiderContext.Consumer>
-        {(context: SiderContextProps) => <InternalMenu {...this.props} {...context} />}
-      </SiderContext.Consumer>
-    );
-  }
+  return  <InternalMenu {...other} collapsed={collapsed} />;
 }
 
-// export { MenuTheme, SubMenuProps, MenuItemProps };
-
+Menu.Item = Item;
+Menu.SubMenu = SubMenu;
 export default Menu;

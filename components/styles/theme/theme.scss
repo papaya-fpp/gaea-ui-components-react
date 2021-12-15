@@ -12,6 +12,10 @@ $white-background: #fff;
 // Shadow
 $layout-header-shadow: 0px 25px 50px 0px rgba(0, 0, 0, 0.04);
 $layout-sider-shadow: 1px 0px 25px 0px rgba(0, 0, 0, 0.04);
+$menu-hover-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+
+// border radius
+$radius-1: 6px;
 
 // Layout
 $layout-body-background: $bg-1;
@@ -47,3 +51,9 @@ $menu-item-color: $fontColor-1;
 $menu-item-font-size: $font-size-base;
 $menu-bg: $white-background;
 $menu-popup-bg: $white-background;
+$menu-item-height: 50px;
+$menu-item-no-first-height: 36px;
+$menu-item-color-hover: $purple-1;
+$menu-item-bg-hover: #F6F7F9;
+$menu-item-radius: $radius-1;
+
