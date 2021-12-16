@@ -1,6 +1,7 @@
 @import './color.scss';
 
 $font-size-base: 14px;
+$font-size-sm: 12px;
 $border-radius-base: 2px;
 
 // vertical paddings
@@ -16,6 +17,13 @@ $menu-hover-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
 
 // border radius
 $radius-1: 6px;
+
+// Animation
+$animation-duration-slow: 0.3s; // Modal
+$animation-duration-base: 0.2s;
+$animation-duration-fast: 0.1s; // Tooltip
+
+$ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
 
 // Layout
 $layout-body-background: $bg-1;
@@ -35,7 +43,6 @@ $layout-zero-trigger-width: 36px;
 $layout-zero-trigger-height: 42px;
 
 // Breadcrumb
-// ---
 $breadcrumb-base-color: $fontColor-2;
 $breadcrumb-last-item-color: $fontColor-1;
 $breadcrumb-font-size: $font-size-base;
@@ -46,7 +53,6 @@ $breadcrumb-separator-color: $fontColor-2;
 $breadcrumb-separator-margin: 0 $padding-xs;
 
 // Menu
-// ---
 $menu-item-color: $fontColor-1;
 $menu-item-font-size: $font-size-base;
 $menu-bg: $white-background;
@@ -57,3 +63,28 @@ $menu-item-color-hover: $purple-1;
 $menu-item-bg-hover: #F6F7F9;
 $menu-item-radius: $radius-1;
 
+// Badge
+$badge-height: 20px;
+$badge-height-sm: 14px;
+$badge-dot-size: 6px;
+$badge-font-size: $font-size-sm;
+$badge-font-size-sm: $font-size-sm;
+$badge-font-weight: normal;
+$badge-status-size: 6px;
+$badge-text-color: $white-background;
+$badge-color: red;
+$badge-zindex: auto;
+
+// Avatar
+$avatar-size-base: 32px;
+$avatar-size-lg: 40px;
+$avatar-size-sm: 24px;
+$avatar-font-size-base: 18px;
+$avatar-font-size-lg: 24px;
+$avatar-font-size-sm: 14px;
+$avatar-bg: #ccc;
+$avatar-color: #fff;
+$avatar-border-radius: $border-radius-base;
+$avatar-group-overlapping: -8px;
+$avatar-group-space: 3px;
+$avatar-group-border-color: #fff;

@@ -1,0 +1,42 @@
+@import '../../styles/theme/theme.scss';
+
+.fpp-badge{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+  .fpp-badge-sup{
+    background: $badge-color;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%,-50%);
+    transform-origin: 100% 0%;
+  }
+  .fpp-badge-count {
+    z-index: $badge-zindex;
+    min-width: $badge-height;
+    height: $badge-height;
+    padding: 0 6px;
+    color: $badge-text-color;
+    font-weight: $badge-font-weight;
+    font-size: $badge-font-size;
+    line-height: $badge-height;
+    white-space: nowrap;
+    text-align: center;
+    background: $badge-color;
+    border-radius: ($badge-height / 2);
+    box-shadow: 0 0 0 1px #fff;
+  }
+  .fpp-badge-dot {
+    z-index: $badge-zindex;
+    width: $badge-dot-size;
+    min-width: $badge-dot-size;
+    height: $badge-dot-size;
+    background: $badge-color;
+    border-radius: 100%;
+    box-shadow: 0 0 0 1px #fff;
+  }
+}

@@ -67,6 +67,17 @@
         @include hoverStyle;
       }
     }
+    .fpp-submenu-list{
+      transition: background $animation-duration-slow $ease-in-out,
+      padding $animation-duration-slow $ease-in-out,
+      height $animation-duration-slow $ease-in-out;
+      overflow: hidden;
+    }
+    .fpp-submenu-hidden {
+      // display: none;
+      height: 0;
+      
+    }
   }
   .fpp-menu-item{
     display: flex;

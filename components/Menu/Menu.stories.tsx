@@ -18,10 +18,13 @@ const Template: ComponentStory<typeof Menu> = (args) => (
       <Item key="3" icon="Settings">Settings</Item>
       <SubMenu key="sub1" icon="Apps" title="Navigation One">
         <Item key="4" icon="Settings">Settings</Item>
-      </SubMenu>
-      <SubMenu key="sub2" icon="Apps" title="Navigation two">
         <Item key="5" icon="Settings">Settings</Item>
         <Item key="6" icon="Settings">Settings</Item>
+      </SubMenu>
+      <SubMenu key="sub2" icon="Apps" title="Navigation two">
+        <Item key="7" icon="Settings">Settings</Item>
+        <Item key="8" icon="Settings">Settings</Item>
+        <Item key="9" icon="Settings">Settings</Item>
       </SubMenu>
     </Menu>
   </div>

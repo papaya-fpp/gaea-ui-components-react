@@ -1,0 +1,26 @@
+@import '../../styles/theme/theme.scss';
+
+.fpp-avatar{
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  color: $avatar-color;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+  background: $avatar-bg;
+  width: $avatar-size-base;
+  height: $avatar-size-base;
+  line-height: $avatar-size-base;
+  border-radius: 50%;
+  &.fpp-avatar-square {
+    border-radius: $avatar-border-radius;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

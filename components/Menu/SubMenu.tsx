@@ -15,10 +15,20 @@ const SubMenu: React.FC<SubMenuProps> = (props) => {
   const context = React.useContext(MenuContext);
   const { firstLevel, inlineCollapsed, openKeys, selectedKeys } = context;
   const { icon, title, children, value, onChange } = props;
-
-  const [ open, setOpen ] = React.useState(openKeys.some(k => k === value))
-  const [ childrenSelect, setChildrenSelect ] = React.useState(false)
-
+  
+  let childrenLength = 0;
+  if (Array.isArray(children)) {
+    childrenLength = children.length;
+  } else {
+    childrenLength = children ? 1 : 0;
+  }
+  let totalHeight = childrenLength * 36;
+  const open = openKeys.some(k => k === value);
+  
+  const [ childrenSelect, setChildrenSelect ] = React.useState(false);
+  
+  const ulRef = React.useRef<HTMLUListElement>(null);
+  
   const prefixCls = getPrefixCls('submenu');
 
   const classes = classNames(
@@ -49,18 +59,6 @@ const SubMenu: React.FC<SubMenuProps> = (props) => {
     })
   }
 
-  React.useEffect(() => {
-    setOpen(openKeys.some(k => k === value))
-  }, [openKeys])
-  
-  React.useEffect(() => {
-    if (Array.isArray(children)) {
-      setChildrenSelect(children.some( item => item.key === selectedKeys))
-    } else {
-      setChildrenSelect((children as any).key === selectedKeys)
-    }
-  }, [selectedKeys])
-
   const contextValue = React.useMemo(
     () => ({
       ...context,
@@ -68,6 +66,31 @@ const SubMenu: React.FC<SubMenuProps> = (props) => {
     }),
     [context],
   );
+
+  const subListclasses = classNames(
+    `${prefixCls}-list`,
+    {
+      [`${prefixCls}-hidden`]: !open,
+    }
+  );
+
+  React.useEffect(()=> {
+    if (ulRef.current) {
+      if (open) {
+        ulRef.current.style.height = totalHeight + 'px';
+      } else {
+        ulRef.current.style.height = 0 + 'px';
+      }
+    }
+  }, [open])
+
+  React.useEffect(() => {
+    if (Array.isArray(children)) {
+      setChildrenSelect(children.some( item => item.key === selectedKeys))
+    } else {
+      setChildrenSelect((children as any).key === selectedKeys)
+    }
+  }, [selectedKeys])
 
   return (
     <MenuContext.Provider value={contextValue}>
@@ -81,7 +104,7 @@ const SubMenu: React.FC<SubMenuProps> = (props) => {
             {!inlineCollapsed && <Icon className="drop-down" name="Drop-down" />}
           </div>
         </div>
-        {open && <ul>{renderItem()}</ul>}
+        <ul ref={ulRef} className={subListclasses}>{renderItem()}</ul>
       </li>
     </MenuContext.Provider>
   )

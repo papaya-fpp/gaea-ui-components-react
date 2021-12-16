@@ -8,6 +8,8 @@ import '../components/Input/style';
 import '../components/Breadcrumb/style';
 import '../components/Icon/style';
 import '../components/Menu/style';
+import '../components/Badge/style';
+import '../components/Avatar/style';
 import '../components/Form/style';
 import '../components/Modal/style';
 import '../components/Select/style';
