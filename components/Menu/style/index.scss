@@ -1,0 +1,58 @@
+@import '../../styles/theme/theme.scss';
+
+.fpp-menu{
+  width: 100%;
+  margin-bottom: 0;
+  padding-left: 0; // Override default ul/ol
+  color: $menu-item-color;
+  font-size: $menu-item-font-size;
+  line-height: 0; // Fix display inline-block gap
+  text-align: left;
+  list-style: none;
+  background: $menu-bg;
+  outline: none;
+  
+  &.fpp-menu-collapsed {
+    width: 80px;
+  }
+  .fpp-menu-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    height: $menu-item-height;
+    cursor: pointer;
+    &.fpp-menu-item-no-first{
+      height: $menu-item-no-first-height;
+    }
+    .fpp-menu-item-container {
+      display: flex;
+      align-items: center;
+      padding-left: 17px;
+      width: 100%;
+      height: $menu-item-no-first-height;
+      border-radius: $menu-item-radius;
+      transition: background 0.3s, width 0.3s cubic-bezier(0.2, 0, 0, 1) 0s;
+      .fpp-menu-item-title-content{
+        display: block;
+        margin-left: 10px;
+        height: $menu-item-height;
+        line-height: $menu-item-height;
+      }
+    }
+    &:hover {
+      .fpp-menu-item-title-content,svg{
+        color: $menu-item-color-hover;
+      }
+    }
+    &.fpp-menu-item-select{
+      .fpp-menu-item-container{
+        background: $menu-item-bg-hover;
+        box-shadow: $menu-hover-shadow;
+      }
+      .fpp-menu-item-title-content,svg{
+        color: $menu-item-color-hover;
+      }
+    }
+  }
+}

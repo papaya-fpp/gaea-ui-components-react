@@ -27,7 +27,7 @@
     color: $layout-header-color;
     line-height: $layout-header-height;
     background: $layout-header-background;
-    box-shadow: 0px 25px 50px 0px rgba(0, 0, 0, 0.04);
+    box-shadow: $layout-header-shadow;
     position: relative;
     z-index: 9;
   }
@@ -48,7 +48,7 @@
     position: relative;
     min-width: 0;
     transition: all 0.2s;
-    box-shadow: 1px 0px 25px 0px rgba(0, 0, 0, 0.04);
+    box-shadow: $layout-sider-shadow;
     &.fpp-layout-sider-dark {
       background: $layout-sider-background;
     }
