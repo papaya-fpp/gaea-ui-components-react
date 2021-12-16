@@ -72,7 +72,8 @@
     box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.04);
     border-radius: 6px;
     border: 1px solid $input-border;
-    &:hover {
+    &:hover,
+    &:focus-within{
       background: $input-hover-bg;
       border-color: $purple-1;
     }
@@ -93,7 +94,8 @@
     transition: all .3s;
     display: inline-flex;
     align-items: center;
-    &:hover {
+    &:hover,
+    &:focus-within{
       background: $input-hover-bg;
       border-color: $purple-1;
     }
@@ -118,7 +120,8 @@
     justify-content: center;
     .py-input-affix-wrapper{
       border-radius: 6px 0 0 6px;
-      &:hover{
+      &:hover,
+      &:focus-within{
         z-index: 9;
       }
     }
@@ -136,7 +139,8 @@
       border-radius: 0px 6px 6px 0px;
       border: 1px solid $input-border;
       cursor: pointer;
-      &:hover{
+      &:hover,
+      &:focus-within{
         z-index: 9;
         color:$purple-1;
         background: $input-hover-bg;
@@ -151,7 +155,8 @@
     .py-input-affix-wrapper {
       background: $input-hover-bg-err;
       border: 1px solid $red-1;
-      &:hover {
+      &:hover,
+      &:focus-within{
         background: $input-hover-bg-err;
         border: 1px solid $red-1;
       }

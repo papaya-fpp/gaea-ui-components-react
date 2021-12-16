@@ -10,3 +10,4 @@ import '../components/Icon/style';
 import '../components/Menu/style';
 import '../components/Form/style';
 import '../components/Modal/style';
+import '../components/Select/style';

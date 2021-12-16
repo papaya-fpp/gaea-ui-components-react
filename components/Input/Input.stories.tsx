@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Input } from './index';
 import Icon from '../Icon'
+import Form from "../Form";
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Example/Input',
@@ -22,7 +23,11 @@ export default {
 } as ComponentMeta<typeof Input>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
+const Template: ComponentStory<typeof Input> = (args) => {
+  return (
+      <Input {...args} />
+  )
+}
 let value = ''
 let type = 'password'
 const handleChange = (val)=>{
