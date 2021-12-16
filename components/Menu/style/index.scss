@@ -12,37 +12,73 @@
   background: $menu-bg;
   outline: none;
   
+  // extend
+  @mixin hoverStyle {
+    color: $menu-item-color-hover;
+  }
+  
   &.fpp-menu-collapsed {
     width: 80px;
   }
-  .fpp-menu-item{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .fpp-menu-item,.fpp-submenu {
     padding: 0 15px;
-    height: $menu-item-height;
     cursor: pointer;
-    &.fpp-menu-item-no-first{
-      height: $menu-item-no-first-height;
-    }
-    .fpp-menu-item-container {
+    .fpp-menu-item-container, .fpp-submenu-container, .fpp-submenu-title-container {
       display: flex;
       align-items: center;
+      position: relative;
+    }
+    .fpp-menu-item-container, .fpp-submenu-title-container {
       padding-left: 17px;
       width: 100%;
       height: $menu-item-no-first-height;
       border-radius: $menu-item-radius;
       transition: background 0.3s, width 0.3s cubic-bezier(0.2, 0, 0, 1) 0s;
-      .fpp-menu-item-title-content{
+      .fpp-menu-item-title-content, .fpp-submenu-title-content{
         display: block;
         margin-left: 10px;
-        height: $menu-item-height;
-        line-height: $menu-item-height;
+        height: $menu-item-no-first-height;
+        line-height: $menu-item-no-first-height;
       }
     }
+  }
+  .fpp-submenu{
+    .fpp-submenu-container {
+      height: $menu-item-height;
+    }
+    &:hover {
+      .fpp-submenu-title-content,svg{
+        @include hoverStyle;
+      }
+    }
+    .drop-down{
+      position: absolute;
+      top: 35%;
+      right: 16px;
+      transition: transform 0.3s;
+    }
+    &.fpp-submenu-open {
+      .drop-down {
+        transform: rotate(180deg);
+      }
+    }
+    &.fpp-submenu-light {
+      .fpp-submenu-title-content,svg{
+        @include hoverStyle;
+      }
+    }
+  }
+  .fpp-menu-item{
+    display: flex;
+    align-items: center;
+    height: $menu-item-height;
+    &.fpp-menu-item-no-first{
+      height: $menu-item-no-first-height;
+    }
+
     &:hover {
       .fpp-menu-item-title-content,svg{
-        color: $menu-item-color-hover;
+        @include hoverStyle;
       }
     }
     &.fpp-menu-item-select{
@@ -51,7 +87,7 @@
         box-shadow: $menu-hover-shadow;
       }
       .fpp-menu-item-title-content,svg{
-        color: $menu-item-color-hover;
+        @include hoverStyle;
       }
     }
   }

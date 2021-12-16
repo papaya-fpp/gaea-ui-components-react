@@ -6,12 +6,14 @@ export interface MenuContextProps {
   inlineCollapsed: boolean;
   firstLevel: boolean;
   selectedKeys: string | string[] | undefined;
+  openKeys: string[]
 }
 
 const MenuContext = createContext<MenuContextProps>({
   firstLevel: true,
   inlineCollapsed: false,
-  selectedKeys: ''
+  selectedKeys: '',
+  openKeys: [],
 });
 
 export default MenuContext;
