@@ -1,6 +1,6 @@
 @import '../../styles/theme/theme.scss';
 
-.fpp-menu{
+.#{$prefix}-menu{
   width: 100%;
   margin-bottom: 0;
   padding-left: 0; // Override default ul/ol
@@ -17,10 +17,10 @@
     color: $menu-item-color-hover;
   }
   
-  &.fpp-menu-collapsed {
+  &.#{$prefix}-menu-collapsed {
     width: 80px;
   }
-  .fpp-menu-item,.fpp-submenu {
+  .#{$prefix}-menu-item,.#{$prefix}-submenu {
     padding: 0 15px;
     cursor: pointer;
     .fpp-menu-item-container, .fpp-submenu-container, .fpp-submenu-title-container {
@@ -42,12 +42,12 @@
       }
     }
   }
-  .fpp-submenu{
-    .fpp-submenu-container {
+  .#{$prefix}-submenu{
+    .#{$prefix}-submenu-container {
       height: $menu-item-height;
     }
     &:hover {
-      .fpp-submenu-title-content,svg{
+      .#{$prefix}-submenu-title-content,svg{
         @include hoverStyle;
       }
     }
@@ -57,47 +57,47 @@
       right: 16px;
       transition: transform 0.3s;
     }
-    &.fpp-submenu-open {
+    &.#{$prefix}-submenu-open {
       .drop-down {
         transform: rotate(180deg);
       }
     }
-    &.fpp-submenu-light {
+    &.#{$prefix}-submenu-light {
       .fpp-submenu-title-content,svg{
         @include hoverStyle;
       }
     }
-    .fpp-submenu-list{
+    .#{$prefix}-submenu-list{
       transition: background $animation-duration-slow $ease-in-out,
       padding $animation-duration-slow $ease-in-out,
       height $animation-duration-slow $ease-in-out;
       overflow: hidden;
     }
-    .fpp-submenu-hidden {
+    .#{$prefix}-submenu-hidden {
       // display: none;
       height: 0;
       
     }
   }
-  .fpp-menu-item{
+  .#{$prefix}-menu-item{
     display: flex;
     align-items: center;
     height: $menu-item-height;
-    &.fpp-menu-item-no-first{
+    &.#{$prefix}-menu-item-no-first{
       height: $menu-item-no-first-height;
     }
 
     &:hover {
-      .fpp-menu-item-title-content,svg{
+      .#{$prefix}-menu-item-title-content,svg{
         @include hoverStyle;
       }
     }
-    &.fpp-menu-item-select{
-      .fpp-menu-item-container{
+    &.#{$prefix}-menu-item-select{
+      .#{$prefix}-menu-item-container{
         background: $menu-item-bg-hover;
         box-shadow: $menu-hover-shadow;
       }
-      .fpp-menu-item-title-content,svg{
+      .#{$prefix}-menu-item-title-content,svg{
         @include hoverStyle;
       }
     }

@@ -1,13 +1,13 @@
 @import '../../styles/theme/theme.scss';
 
-.fpp-badge{
+.#{$prefix}-badge{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   position: relative;
   display: inline-block;
   line-height: 1;
-  .fpp-badge-sup{
+  .#{$prefix}-badge-sup{
     background: $badge-color;
     position: absolute;
     top: 0;
@@ -15,7 +15,7 @@
     transform: translate(50%,-50%);
     transform-origin: 100% 0%;
   }
-  .fpp-badge-count {
+  .#{$prefix}-badge-count {
     z-index: $badge-zindex;
     min-width: $badge-height;
     height: $badge-height;
@@ -30,7 +30,7 @@
     border-radius: ($badge-height / 2);
     box-shadow: 0 0 0 1px #fff;
   }
-  .fpp-badge-dot {
+  .#{$prefix}-badge-dot {
     z-index: $badge-zindex;
     width: $badge-dot-size;
     min-width: $badge-dot-size;

@@ -1,6 +1,6 @@
 @import '../../styles/theme/theme.scss';
 
-.fpp-breadcrumb{
+.#{$prefix}-breadcrumb{
   color: $breadcrumb-base-color;
   font-size: $breadcrumb-font-size;
 
@@ -21,16 +21,16 @@
     }
   }
 
-  & > span:last-child .fpp-breadcrumb-separator {
+  & > span:last-child .#{$prefix}-breadcrumb-separator {
     display: none;
   }
 
-  .fpp-breadcrumb-separator {
+  .#{$prefix}-breadcrumb-separator {
     margin: $breadcrumb-separator-margin;
     color: $breadcrumb-separator-color;
   }
 
-  .fpp-breadcrumb-link {
+  .#{$prefix}-breadcrumb-link {
     a {
       margin-left: 4px;
     }

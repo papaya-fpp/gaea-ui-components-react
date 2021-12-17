@@ -1,6 +1,6 @@
 @import '../../styles/theme/theme.scss';
 
-.fpp-layout{
+.#{$prefix}-layout{
   display: flex;
   flex: auto;
   flex-direction: column;
@@ -8,20 +8,20 @@
   min-height: 0;
   background: $layout-body-background;
 
-  &.fpp-layout-has-sider {
+  &.#{$prefix}-layout-has-sider {
     flex-direction: row;
 
-    >.fpp-layout,
-    >.fpp-layout-content {
+    >.#{$prefix}-layout,
+    >.#{$prefix}-layout-content {
       width: 0; 
     }
   }
 
-  .fpp-layout-header,
-  .fpp-layout-footer {
+  .#{$prefix}-layout-header,
+  .#{$prefix}-layout-footer {
     flex: 0 0 auto;
   }
-  .fpp-layout-header {
+  .#{$prefix}-layout-header {
     height: $layout-header-height;
     padding: $layout-header-padding;
     color: $layout-header-color;
@@ -32,30 +32,30 @@
     z-index: 9;
   }
 
-  .fpp-layout-footer {
+  .#{$prefix}-layout-footer {
     padding: $layout-footer-padding;
     color: $layout-footer-color;
     font-size: $font-size-base;
     background: $layout-footer-background;
   }
 
-  .fpp-layout-content {
+  .#{$prefix}-layout-content {
     flex: auto;
     min-height: 0;
   }
 
-  .fpp-layout-sider {
+  .#{$prefix}-layout-sider {
     position: relative;
     min-width: 0;
     transition: all 0.2s;
     box-shadow: $layout-sider-shadow;
-    &.fpp-layout-sider-dark {
+    &.#{$prefix}-layout-sider-dark {
       background: $layout-sider-background;
     }
-    &.fpp-layout-sider-light {
+    &.#{$prefix}-layout-sider-light {
       background: $layout-sider-background;
     }
-    .fpp-layout-sider-children {
+    .#{$prefix}-layout-sider-children {
       height: 100%;
     }
   }

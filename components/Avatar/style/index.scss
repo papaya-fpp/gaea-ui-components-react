@@ -1,6 +1,6 @@
 @import '../../styles/theme/theme.scss';
 
-.fpp-avatar{
+.#{$prefix}-avatar{
   position: relative;
   display: inline-block;
   overflow: hidden;
@@ -13,7 +13,7 @@
   height: $avatar-size-base;
   line-height: $avatar-size-base;
   border-radius: 50%;
-  &.fpp-avatar-square {
+  &.#{$prefix}-avatar-square {
     border-radius: $avatar-border-radius;
   }
 
