@@ -2,9 +2,9 @@
 import React, {useState} from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Form from './index';
-import Input from './Input/index';
+import Input from '../Input/index';
 // const [form] = Form.useForm();
-import Select from './Select/index';
+import Select from '../Select/index';
 const { Option } = Select;
 export default {
   title: 'Example/Form',
@@ -38,6 +38,56 @@ const Template: ComponentStory<typeof Form> = (args) => {
             value:'5',
             label:'5',
         },
+        {
+            id:'6',
+            value:'6',
+            label:'6',
+        },
+        {
+            id:'7',
+            value:'7',
+            label:'7',
+        },
+        {
+            id:'8',
+            value:'8',
+            label:'8',
+        },
+        {
+            id:'9',
+            value:'9',
+            label:'9',
+        },
+        {
+            id:'10',
+            value:'10',
+            label:'10',
+        },
+        {
+            id:'11',
+            value:'11',
+            label:'11',
+        },
+        {
+            id:'12',
+            value:'12',
+            label:'12',
+        },
+        {
+            id:'13',
+            value:'13',
+            label:'13',
+        },
+        {
+            id:'14',
+            value:'14',
+            label:'14',
+        },
+        {
+            id:'15',
+            value:'15',
+            label:'15',
+        },
     ])
     // 国家省份 select 过滤
     const selectFilter = (inputValue, option) => {
@@ -67,12 +117,16 @@ const Template: ComponentStory<typeof Form> = (args) => {
                     }
                 >
                     <Input
+                        allowClear={true}
+                        label="email"
+                        name="search"
                         className="py-form-input"
                         placeholder="请输入"
                         maxLength={30}
                     />
                 </Form.Item>
             </div>
+
             <div className="py-checkoutFrom-row">
                 <Form.Item
                     className="py-form-item py-form-item-select"
@@ -82,6 +136,7 @@ const Template: ComponentStory<typeof Form> = (args) => {
                     <Select
                         allowClear={true}
                         showSearch
+                        label="国家/地区"
                         placeholder="请输入"
                         className="py-checkoutFrom-select"
                         filterOption={selectFilter}
