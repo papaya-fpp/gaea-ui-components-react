@@ -108,6 +108,7 @@ const Select: SelectPropsComponents = ({
          setInputval('');
          setChildText('')
          setVal('')
+         onChange && onChange('');
      }
     useEffect(() => {
         const list = (children as any).map((child: any) => ({...child.props}));
