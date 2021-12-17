@@ -2,7 +2,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import MenuContext, { MenuTheme } from './MenuContext';
-import { SiderContext, SiderContextProps } from '../Layout/Sider';
+import { SiderContext } from '../Layout/Sider';
 import { getPrefixCls } from '../_util/responsiveObserve';
 import SubMenu from './SubMenu';
 import Item from './MenuItem';

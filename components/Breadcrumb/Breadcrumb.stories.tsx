@@ -5,7 +5,7 @@ import Breadcrumb from './index';
 const { Item } = Breadcrumb;
 
 export default {
-  title: 'Layout/Breadcrumb',
+  title: 'Nav/Breadcrumb',
   component: Breadcrumb,
 } as ComponentMeta<typeof Breadcrumb>;
 

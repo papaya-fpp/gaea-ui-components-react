@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import MenuContext, { MenuTheme } from './MenuContext';
+import MenuContext from './MenuContext';
 import { getPrefixCls } from '../_util/responsiveObserve';
 import Icon from '../Icon';
 export interface SubMenuProps {
@@ -14,7 +14,7 @@ export interface SubMenuProps {
 const SubMenu: React.FC<SubMenuProps> = (props) => {
   const context = React.useContext(MenuContext);
   const { firstLevel, inlineCollapsed, openKeys, selectedKeys } = context;
-  const { icon, title, children, value, onChange } = props;
+  const { icon, title, children, value, disabled, onChange } = props;
   
   let childrenLength = 0;
   if (Array.isArray(children)) {
@@ -23,7 +23,7 @@ const SubMenu: React.FC<SubMenuProps> = (props) => {
     childrenLength = children ? 1 : 0;
   }
   let totalHeight = childrenLength * 36;
-  const open = openKeys.some(k => k === value);
+  const open = openKeys.some(k => k === value) && !disabled;
   
   const [ childrenSelect, setChildrenSelect ] = React.useState(false);
   
@@ -34,7 +34,8 @@ const SubMenu: React.FC<SubMenuProps> = (props) => {
   const classes = classNames(
     prefixCls,
     {
-      [`${prefixCls}-open`]: open,
+      [`${prefixCls}-disabled`]: disabled,
+      [`${prefixCls}-open`]: open && !disabled,
       [`${prefixCls}-light`]: open || childrenSelect,
     }
   );
@@ -44,6 +45,7 @@ const SubMenu: React.FC<SubMenuProps> = (props) => {
   }
   
   const openChangeHandel = () => {
+    if (disabled) return;
     onChange && onChange('sub', value)
   }
 

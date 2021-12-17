@@ -51,6 +51,16 @@
         @include hoverStyle;
       }
     }
+    &.#{$prefix}-submenu-disabled {
+      color: #00000040!important;
+      background: none;
+      cursor: not-allowed;
+      &:hover {
+        .#{$prefix}-submenu-title-content,svg{
+          color: #00000040!important;
+        }
+      }
+    }
     .drop-down{
       position: absolute;
       top: 35%;
@@ -86,12 +96,22 @@
     &.#{$prefix}-menu-item-no-first{
       height: $menu-item-no-first-height;
     }
-
     &:hover {
       .#{$prefix}-menu-item-title-content,svg{
         @include hoverStyle;
       }
     }
+    &.#{$prefix}-menu-item-disabled {
+      color: #00000040!important;
+      background: none;
+      cursor: not-allowed;
+      &:hover {
+        .#{$prefix}-menu-item-title-content,svg{
+          color: #00000040!important;
+        }
+      }
+    }
+    
     &.#{$prefix}-menu-item-select{
       .#{$prefix}-menu-item-container{
         background: $menu-item-bg-hover;
@@ -101,5 +121,6 @@
         @include hoverStyle;
       }
     }
+
   }
 }

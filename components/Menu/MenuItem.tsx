@@ -14,18 +14,20 @@ export interface MenuItemProps {
 
 const MenuItem: React.FC<MenuItemProps> = (props) => {
   const { firstLevel, inlineCollapsed, selectedKeys } = React.useContext(MenuContext);
-  const { icon, children, value, onChange } = props;
+  const { icon, children, value, disabled, onChange } = props;
   const prefixCls = getPrefixCls('menu-item');
 
   const classes = classNames(
     prefixCls,
     {
+      [`${prefixCls}-disabled`]: disabled,
       [`${prefixCls}-no-first`]: !firstLevel,
       [`${prefixCls}-select`]: selectedKeys === value,
     }
   );
 
   const clickHandle = () => {
+    if (disabled) return;
     onChange && onChange('item', value)
   }
 
