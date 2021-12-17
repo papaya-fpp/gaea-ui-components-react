@@ -1,5 +1,48 @@
 @import '../../styles/theme/theme.scss';
 
 .#{$prefix}-dropdown{
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  .#{$prefix}-dropdown-title{
+    position: relative;
+    padding-right: 24px;
 
+    .drop-down{
+      position: absolute;
+      top: 50%;
+      right: 0;
+      margin-top: -6px;
+    }
+  }
+  &.#{$prefix}-dropdown-disabled{
+    color: #00000040!important;
+    background: none;
+    cursor: not-allowed;
+  }
+  .#{$prefix}-dropdown-list{
+    padding: 8px;
+    background: $dropdown-list-bg;
+    box-shadow: $dropdown-list-shadow;
+    border-radius: $dropdown-list-redius;
+    transition: height $animation-duration-slow $ease-in-out;
+    overflow: hidden;
+    position: absolute;
+    z-index: 999;
+
+    .#{$prefix}-dropdown-list-item{
+      height: $dropdown-list-item-height;
+      line-height: $dropdown-list-item-height;
+      padding: 0 10px;
+      border-radius: $dropdown-list-redius;
+
+      &:hover{
+        background: $dropdown-list-item-bg-hover;
+        color: $dropdown-list-item-color-hover;
+      }
+    }
+    &.#{$prefix}-dropdown-list-hidden {
+      display: none;
+    }
+  }
 }

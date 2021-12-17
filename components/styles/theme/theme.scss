@@ -3,23 +3,22 @@
 // prefix
 $prefix: fpp;
 
+// font-size
 $font-size-base: 14px;
 $font-size-sm: 12px;
+
+// border radius
 $border-radius-base: 2px;
+$border-radius-6: 6px;
 
 // vertical paddings
 $padding-xs: 8px;
-
-// background color
-$white-background: #fff;
 
 // Shadow
 $layout-header-shadow: 0px 25px 50px 0px rgba(0, 0, 0, 0.04);
 $layout-sider-shadow: 1px 0px 25px 0px rgba(0, 0, 0, 0.04);
 $menu-hover-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
-
-// border radius
-$radius-1: 6px;
+$dropdown-list-shadow: 0px 10px 24px 0px rgba(0, 0, 0, 0.04);
 
 // Animation
 $animation-duration-slow: 0.3s; // Modal
@@ -33,7 +32,7 @@ $layout-body-background: $bg-1;
 $layout-header-height: 64px;
 $layout-header-padding: 0 50px;
 $layout-header-color: $fontColor-1;
-$layout-header-background: #FEFFFF;
+$layout-header-background: $block-background;
 $layout-footer-padding: 24px 50px;
 $layout-footer-color: $fontColor-1;
 $layout-footer-background: $bg-1;
@@ -63,8 +62,8 @@ $menu-popup-bg: $white-background;
 $menu-item-height: 50px;
 $menu-item-no-first-height: 36px;
 $menu-item-color-hover: $purple-1;
-$menu-item-bg-hover: #F6F7F9;
-$menu-item-radius: $radius-1;
+$menu-item-bg-hover: $hover-bg-1;
+$menu-item-radius: $border-radius-6;
 
 // Badge
 $badge-height: 20px;
@@ -91,3 +90,10 @@ $avatar-border-radius: $border-radius-base;
 $avatar-group-overlapping: -8px;
 $avatar-group-space: 3px;
 $avatar-group-border-color: #fff;
+
+// dropdown
+$dropdown-list-bg: $block-background;
+$dropdown-list-redius: $border-radius-6;
+$dropdown-list-item-height: 36px;
+$dropdown-list-item-color-hover: $purple-1;
+$dropdown-list-item-bg-hover: $hover-bg-1;

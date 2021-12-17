@@ -11,7 +11,21 @@ export default {
 
 const Template: ComponentStory<typeof Dropdown> = (args) => <Dropdown {...args} />;
 
-export const defaultDropdown = Template.bind({});
-defaultDropdown.args = {
-  title: 'click me'
+export const DropdownClick = Template.bind({});
+DropdownClick.args = {
+  title: 'click me',
+  list: [
+    { key: '1', label: 'click 1'},
+    { key: '2', label: 'click 2'}
+  ]
+};
+
+export const DropdownHover = Template.bind({});
+DropdownHover.args = {
+  title: 'click me',
+  trigger: 'hover',
+  list: [
+    { key: '1', label: 'click 1'},
+    { key: '2', label: 'click 2'}
+  ]
 };
