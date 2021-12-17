@@ -14,26 +14,29 @@
     margin-top: 4px;
     color: $red-1;
   }
-.py-input {
+  .py-input{
+    height: 36px;
+    &.mini {
+      height: 46px;
+      input {
+        height: 44px;
+        line-height: 40px;
+      }
+    }
+    &.supermini {
+      height: 40px;
+      input {
+        height: 40px;
+        line-height: 40px;
+      }
+    }
+  }
+.py-input,
+.py-textarea{
   width: 100%;
-  height: 36px;
   box-sizing: border-box;
   border: none;
   display: flex;
-  //&.mini {
-  //  height: 46px;
-  //  input {
-  //    height: 44px;
-  //    line-height: 40px;
-  //  }
-  //}
-  //&.supermini {
-  //  height: 40px;
-  //  input {
-  //    height: 40px;
-  //    line-height: 40px;
-  //  }
-  //}
 
   input,textarea {
     color: $fontColor-1;
@@ -78,42 +81,68 @@
       border-color: $purple-1;
     }
   }
-  .py-input-affix-wrapper{
+  .py-input-wrapper{
     width: 100%;
-    height: 36px;
-    line-height: 17px;
-    background: $input-bg;
-    border: 1px solid $input-border;
-    color: $fontColor-1;
-    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.04);
-    border-radius: 6px;
-    position: relative;
-    min-width: 0;
-    padding: 8px 13px;
-    font-size: 14px;
-    transition: all .3s;
-    display: inline-flex;
-    align-items: center;
-    &:hover,
-    &:focus-within{
-      background: $input-hover-bg;
-      border-color: $purple-1;
+    &:hover{
+      .py-input-clear{
+        display: flex;
+      }
     }
-    .py-input-prefix{
-      cursor: pointer;
-      margin-right: 10px;
-      display: flex;
-      flex: none;
+    .py-input-affix-wrapper{
+      width: 100%;
+      height: 36px;
+      line-height: 17px;
+      background: $input-bg;
+      border: 1px solid $input-border;
+      color: $fontColor-1;
+      box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.04);
+      border-radius: 6px;
+      position: relative;
+      min-width: 0;
+      padding: 8px 13px;
+      font-size: 14px;
+      transition: all .3s;
+      display: inline-flex;
       align-items: center;
+      &:hover,
+      &:focus-within{
+        background: $input-hover-bg;
+        border-color: $purple-1;
+      }
+      .py-input-prefix{
+        cursor: pointer;
+        margin-right: 10px;
+        display: flex;
+        flex: none;
+        align-items: center;
+      }
+      .py-input-suffix{
+        cursor: pointer;
+        margin-left: 10px;
+        display: flex;
+        flex: none;
+        align-items: center;
+      }
     }
-    .py-input-suffix{
-      cursor: pointer;
-      margin-left: 10px;
+    .py-input-clear{
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      margin-top: -9px;
+      width: 18px;
+      height: 18px;
+      overflow: hidden;
       display: flex;
-      flex: none;
       align-items: center;
+      color: $fontColor-1;
+      font-size: 12px;
+      padding: 4px 0px 4px 6px;
+      z-index: 9999;
+      cursor: pointer;
+      display: none;
     }
   }
+
   .py-input-group{
     display: flex;
     align-items: center;

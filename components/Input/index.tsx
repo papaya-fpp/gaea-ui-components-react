@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import Icon from '../Icon';
+
 interface InputProps {
     label?: string;
     placeholder?: any;
@@ -21,6 +22,7 @@ interface InputProps {
     error?: boolean;
     errorText?: string;
     readonly?: boolean;
+    allowClear?: boolean;
     maxLength?: number;
     fixed?: number;
     onlyPpositive?: boolean;
@@ -30,7 +32,7 @@ interface InputProps {
 /**
  * Primary UI component for user interaction
  */
-export const Input = ({
+export const Input: React.FC<InputProps> = ({
                           label = '',
                           placeholder = '',
                           prefix,
@@ -50,6 +52,7 @@ export const Input = ({
                           className = '',
                           errorText = '',
                           readonly = false,
+                          allowClear = false,
                           maxLength,
                           fixed,
                           onlyPpositive,
@@ -59,9 +62,9 @@ export const Input = ({
                       }: InputProps) => {
     const [val, setVal] = useState(value || '');
     const numberReg = /^[0-9]+\.?[0-9]*/;
-    const setValueHandle = (value:any) => {
+    const setValueHandle = (value: any) => {
         let val = value.toString();
-        if (value === '') return setVal(val);
+        // if (value === '') return setVal(val);
         if (type === 'number') {
             const valAry = val.match(numberReg);
             val = valAry ? valAry[0] : 0;
@@ -80,43 +83,53 @@ export const Input = ({
         setVal(val);
         onChange && onChange(val);
     };
+    const handleClear = () => {
+        setValueHandle('')
+    }
     useEffect(() => {
-        setValueHandle(value);
+        setVal(value);
+        // setValueHandle(value);
     }, [value]);
     return (
         <div className={`py-input-body ${className}`}>
-            <div className={'py-input-label' + (label != '' ? '' : ' is-hide')}>{label + ' :'}</div>
-            <div className={'py-input' + ` ${size}` + (error ? ' error' : '')  + (readonly ? ' readonly' : '')}>
-                {
-                    type==='textarea'?(
-                            <textarea
-                                className="py-textarea-affix-wrapper"
-                                ref={ref}
-                                placeholder={placeholder}
-                                id={id}
-                                name={name}
-                                readOnly={readonly}
-                                value={val}
-                                maxLength={maxLength}
-                                onFocus={() => {
-                                    if (onFocus) {
-                                        onFocus();
-                                    }
-                                }}
-                                onBlur={(e) => {
-                                    if (onBlur) {
-                                        onBlur(e.target.value);
-                                    }
-                                }}
-                                onChange={(e) => {
-                                    setValueHandle(e.target.value);
-                                }}
-                            />
-                    ):(
+            {
+                label && (
+                    <div className={'py-input-label' + (label != '' ? '' : ' is-hide')}>{label + ' :'}</div>
+                )
+            }
+            {
+                type === 'textarea' ? (
+                    <div className={'py-textarea' + ` ${size}` + (error ? ' error' : '') + (readonly ? ' readonly' : '')}>
+                         <textarea
+                             className="py-textarea-affix-wrapper"
+                             ref={ref}
+                             placeholder={placeholder}
+                             id={id}
+                             name={name}
+                             readOnly={readonly}
+                             value={val}
+                             maxLength={maxLength}
+                             onFocus={() => {
+                                 if (onFocus) {
+                                     onFocus();
+                                 }
+                             }}
+                             onBlur={(e) => {
+                                 if (onBlur) {
+                                     onBlur(e.target.value);
+                                 }
+                             }}
+                             onChange={(e) => {
+                                 setValueHandle(e.target.value);
+                             }}
+                         />
+                    </div>
+                ) : (
+                    <div className={'py-input' + ` ${size}` + (error ? ' error' : '') + (readonly ? ' readonly' : '')}>
                         <div className={'py-input-wrapper' + (groupAddon ? ' py-input-group' : '')}>
                             <div className="py-input-affix-wrapper">
                                 {
-                                    prefix && <Icon className="py-input-prefix" name={prefix} />
+                                    prefix && <Icon className="py-input-prefix" name={prefix}/>
                                 }
                                 <input
                                     ref={ref}
@@ -142,32 +155,40 @@ export const Input = ({
                                     }}
                                 />
                                 {
-                                    !passwordIcon&&suffix&&(
-                                        <Icon className="py-input-suffix" name={suffix} />
+                                    !passwordIcon && suffix && (
+                                        <Icon className="py-input-suffix" name={suffix}/>
+                                    )
+                                }
+                                {/*清除图标*/}
+                                {
+                                    val&&allowClear&&(
+                                        <div className="py-input-clear" onClick={handleClear}>
+                                            <Icon  name="a-Crosssign"/>
+                                        </div>
                                     )
                                 }
                                 {
-                                    type==='password'&&passwordIcon&&(
+                                    type === 'password' && passwordIcon && (
                                         <span>
                                             {
-                                                type==='password'&&(
+                                                type === 'password' && (
                                                     <Icon
-                                                    onClick={() => {
-                                                        if (onChangeType) {
-                                                            onChangeType('zhengyan');
-                                                        }
-                                                    }}
-                                                    className="py-input-suffix" name="zhengyan" />)
+                                                        onClick={() => {
+                                                            if (onChangeType) {
+                                                                onChangeType('zhengyan');
+                                                            }
+                                                        }}
+                                                        className="py-input-suffix" name="zhengyan"/>)
                                             }
                                             {
-                                                type!=='password'&&(<Icon
+                                                type !== 'password' && (<Icon
                                                     onClick={() => {
                                                         if (onChangeType) {
                                                             onChangeType('biyan');
                                                         }
                                                     }}
                                                     className="py-input-suffix"
-                                                    name="biyan" />)
+                                                    name="biyan"/>)
                                             }
                                         </span>
                                     )
@@ -175,19 +196,20 @@ export const Input = ({
                             </div>
                             {/*操作按钮 例如:复制*/}
                             {
-                                groupAddon&&(
+                                groupAddon && (
                                     <div onClick={onAddon} className="py-input-group-addon">
-                                        <Icon name={groupAddon} />
+                                        <Icon name={groupAddon}/>
                                     </div>
                                 )
                             }
 
                         </div>
-                    )
-                }
-
-            </div>
+                    </div>
+                )
+            }
             <div className={'error-text' + (errorText != '' ? '' : ' is-hide')}>{errorText}</div>
         </div>
     );
 };
+
+export default Input;

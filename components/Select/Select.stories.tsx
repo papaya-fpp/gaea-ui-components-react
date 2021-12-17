@@ -36,6 +36,56 @@ const Template: ComponentStory<typeof Select> = (args) => {
             value:'5',
             label:'5',
         },
+        {
+            id:'6',
+            value:'6',
+            label:'6',
+        },
+        {
+            id:'7',
+            value:'7',
+            label:'7',
+        },
+        {
+            id:'8',
+            value:'8',
+            label:'8',
+        },
+        {
+            id:'9',
+            value:'9',
+            label:'9',
+        },
+        {
+            id:'10',
+            value:'10',
+            label:'10',
+        },
+        {
+            id:'11',
+            value:'11',
+            label:'11',
+        },
+        {
+            id:'12',
+            value:'12',
+            label:'12',
+        },
+        {
+            id:'13',
+            value:'13',
+            label:'13',
+        },
+        {
+            id:'14',
+            value:'14',
+            label:'14',
+        },
+        {
+            id:'15',
+            value:'15',
+            label:'15',
+        },
     ])
     // 国家省份 select 过滤
     const selectFilter = (inputValue, option) => {
@@ -58,6 +108,7 @@ const Template: ComponentStory<typeof Select> = (args) => {
       <Select
           allowClear={true}
           showSearch
+          label="国家/城市"
           placeholder="请输入"
           className="py-checkoutFrom-select"
           filterOption={selectFilter}

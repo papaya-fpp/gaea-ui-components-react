@@ -82,11 +82,11 @@ textarea.args = {
 export const search = Template.bind({});
 search.args = {
   placeholder:'login_Password',
-  type:"search",
   name:"search",
   value:value,
   prefix:'Search',
-  suffix:'a-Crosssign',
+  // suffix:'a-Crosssign',
+  allowClear:true,
   groupAddon:'copy',
   onAddon:handleOnAddon(),
   onChange:handleChange(value)
