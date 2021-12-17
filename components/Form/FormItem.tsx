@@ -21,16 +21,34 @@ const FormItem: React.FC<any> = (props) => {
   const validateRules = () => {
     return new Promise((resolve, reject) => {
       const value = getFieldsValue()[name];
-      rules.map((item) => {
+      let num = 0;
+      rules.map(async (item) => {
         if (item.required) {
           if (!value) {
             setErrorText(item.message);
             setError(true);
             return reject({ errors: [item.message], name });
           }
+          num = num + 1;
+          if (num === rules.length) {
+            setError(false);
+            return resolve(true);
+          }
+          //  新增支持自定义validator函数，参数value
+        } else if (item.validator && typeof item.validator === 'function') {
+          try {
+            await item.validator(value);
+            num = num + 1;
+            if (num === rules.length) {
+              setError(false);
+              return resolve(true);
+            }
+          } catch (err) {
+            setErrorText(err.message);
+            setError(true);
+            return reject({ errors: [err.message], name });
+          }
         }
-        setError(false);
-        return resolve(true);
       });
     });
   };
