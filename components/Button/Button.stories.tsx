@@ -57,6 +57,13 @@ icon.args = {
   icon: 'Settings'
 };
 
+export const loading = Template.bind({});
+loading.args = {
+  label: 'loading',
+  primary: true,
+  loading: true
+};
+
 export const Large = Template.bind({});
 Large.args = {
   size: 'large',

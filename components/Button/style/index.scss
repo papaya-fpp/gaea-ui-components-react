@@ -60,6 +60,7 @@
 }
 .#{$prefix}-button-text{
   display: flex;
+  justify-content: center;
   .#{$prefix}-button--icon{
     margin-right: 10px;
   }

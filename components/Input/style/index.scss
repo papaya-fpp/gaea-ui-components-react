@@ -6,7 +6,7 @@
   display: none !important;
 }
 .#{$prefix}-input-label {
-  font-size: 14px;
+  font-size: $font-size-base;
   font-weight: 500;
   color: $input-label;
   margin-bottom:10px;
@@ -14,6 +14,7 @@
   .error-text {
     margin-top: 4px;
     color: $red-1;
+    font-size: $font-size-sm;
   }
   .#{$prefix}-input{
     height: 36px;
@@ -51,7 +52,7 @@
     width: 100%;
     min-width: 0;
     padding: 4px 11px;
-    font-size: 14px;
+    font-size: $font-size-base;
     line-height: 1.5715;
     background-color: transparent;
     background-image: none;
@@ -101,7 +102,7 @@
       position: relative;
       min-width: 0;
       padding: 8px 13px;
-      font-size: 14px;
+      font-size: $font-size-base;
       transition: all .3s;
       display: inline-flex;
       align-items: center;
@@ -136,7 +137,7 @@
       display: flex;
       align-items: center;
       color: $fontColor-1;
-      font-size: 12px;
+      font-size: $font-size-sm;
       padding: 4px 0px 4px 6px;
       z-index: 9999;
       cursor: pointer;

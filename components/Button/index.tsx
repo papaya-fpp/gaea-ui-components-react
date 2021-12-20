@@ -6,6 +6,7 @@ interface ButtonProps {
    * Is this the principal call to action on the page?
    */
   primary?: boolean;
+
   danger?: boolean;
   /**
    * 是否禁用
@@ -30,9 +31,17 @@ interface ButtonProps {
    */
   icon?: string;
   /**
+   * loading 图标
+   */
+  loading?: boolean;
+  /**
    * Optional click handler
    */
   onClick?: () => void;
+
+  className?:any;
+
+  style?:any;
 }
 
 /**
@@ -47,6 +56,9 @@ const Button = ({
   label,
   children,
   icon,
+  loading,
+  style,
+  className,
   ...props
 }: ButtonProps) => {
   const prefixCls = getPrefixCls('button');
@@ -56,13 +68,16 @@ const Button = ({
   return (
     <button
       type="button"
-      className={[`${prefixCls}`, `${prefixCls}--${size}`, mode,disabledState,dangerState].join(' ')}
-      style={{ backgroundColor }}
+      className={[`${prefixCls}`, `${prefixCls}--${size}`, mode,disabledState,dangerState,className].join(' ')}
+      style={{ backgroundColor,...style }}
       {...props}
     >
       <div className={[`${prefixCls}-text`].join(' ')}>
         {
             icon && <Icon className={[`${prefixCls}--icon`].join(' ')} name={icon} />
+        }
+        {
+          loading && <Icon className={[`${prefixCls}--icon`].join(' ')} name={"Bell"} />
         }
         {
           !children&&label&&(
