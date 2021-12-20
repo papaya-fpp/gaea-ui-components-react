@@ -21,13 +21,13 @@ interface ButtonProps {
   /**
    * Button contents
    */
-  label: string;
+  label?: string;
 
   children: string | React.ReactNode;
   /**
    * icon 图标
    */
-  icon: string;
+  icon?: string;
   /**
    * Optional click handler
    */

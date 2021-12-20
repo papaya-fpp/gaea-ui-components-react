@@ -19,7 +19,7 @@ interface ModalProps {
 }
 
 interface ModalComponentProps extends React.FC<ModalProps> {
-    confirm: typeof confirm;
+    // confirm: typeof confirm;
 }
 
 

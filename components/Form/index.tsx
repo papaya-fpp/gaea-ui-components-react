@@ -22,13 +22,13 @@ const Form: FormComponentProps = (props) => {
   const [formInstance] = useForm(form);
   const { setInitialValues } = formInstance.getInternalHooks();
   // 初始化 initvalues
-  const mountRef = React.useRef(null);
+  const mountRef = React.useRef<any>(null);
   setInitialValues(initialValues, !mountRef.current);
   if (!mountRef.current) {
     mountRef.current = true;
   }
 
-  const getItems = (children) => {
+  const getItems = (children: any) => {
     return React.Children.map(children, (child) => {
       if (!child) return null;
       let childrenProps: any = {

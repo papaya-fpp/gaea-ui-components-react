@@ -12,7 +12,7 @@ const FormItem: React.FC<any> = (props) => {
   const [errorText, setErrorText] = useState('');
   const isValid = rules && rules.length > 0;
 
-  const onChange = (val) => {
+  const onChange = (val: any) => {
     const value = { [name]: val };
     setFieldsValue(value);
     const values = getFieldsValue();
@@ -24,7 +24,7 @@ const FormItem: React.FC<any> = (props) => {
     return new Promise((resolve, reject) => {
       const value = getFieldsValue()[name];
       let num = 0;
-      rules.map(async (item) => {
+      rules.map(async (item: any) => {
         if (item.required) {
           if (!value) {
             setErrorText(item.message);
@@ -55,7 +55,7 @@ const FormItem: React.FC<any> = (props) => {
     });
   };
 
-  const getControlled = (childProps = {}) => {
+  const getControlled = (childProps: any) => {
     const values = getFieldsValue();
     let control: any = {
       ...childProps,
@@ -67,11 +67,11 @@ const FormItem: React.FC<any> = (props) => {
     return control;
   };
 
-  const getItems = (children) => {
+  const getItems = (children: any) => {
     return React.Children.map(children, (child: React.ReactElement, index: number) => {
       let returnChildNode;
       if (React.isValidElement(child)) {
-        returnChildNode = React.cloneElement(child as React.ReactElement, getControlled(child.props));
+        returnChildNode = React.cloneElement(child as React.ReactElement, getControlled(child.props || {}));
       }
       return <>{returnChildNode}</>;
     });

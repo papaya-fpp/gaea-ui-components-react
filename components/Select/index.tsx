@@ -4,7 +4,7 @@ import Option from './Option';
 import Icon from '../Icon';
 import { getPrefixCls } from '../_util/responsiveObserve';
 
-const defaultFilter = (inputValue, option) => {
+const defaultFilter = (inputValue: any, option: any) => {
     return option.value.indexOf(inputValue) > -1;
 };
 
@@ -48,7 +48,7 @@ const Select: SelectPropsComponents = ({
     const [inputval, setInputval] = useState('');
     const inputRef = useRef<any>(null);
 
-    const inputChange = (e) => {
+    const inputChange = (e: any) => {
         if (!showSearch) {
             return;
         }
@@ -58,7 +58,7 @@ const Select: SelectPropsComponents = ({
         setFilterList(list);
     };
 
-    const inputFocus = (e) => {
+    const inputFocus = (e: any) => {
         e.stopPropagation();
         setInputval('');
         set_pc_shrink_(true);
@@ -66,7 +66,7 @@ const Select: SelectPropsComponents = ({
         onFocus && onFocus();
     };
 
-    const inputBlur = (e) => {
+    const inputBlur = () => {
         set_pc_shrink_(false);
         setInputval('');
         onBlur && onBlur();
@@ -74,7 +74,7 @@ const Select: SelectPropsComponents = ({
         setFilterList(listChildren);
     };
 
-    const changeItem = (val, text) => {
+    const changeItem = (val: any, text: any) => {
         setVal(val);
         setInputval(text);
         setChildText(text);
@@ -90,7 +90,7 @@ const Select: SelectPropsComponents = ({
         return (
             <div className={`${prefixCls}-option_list`}>
                 {filterList.length > 0 ? (
-                    filterList.map((item) => {
+                    filterList.map((item: any) => {
                         return <Option key={item.key || item.value} {...item} active={val} onChange={changeItem}/>;
                     })
                 ) : (
@@ -120,7 +120,7 @@ const Select: SelectPropsComponents = ({
 
     useEffect(() => {
         if (value) {
-            const child: any = filterList.filter((item) => item.value === value)[0];
+            const child: any = filterList.filter((item: any) => item.value === value)[0];
             if (child) {
                 setChildText(child.children);
             }
@@ -132,7 +132,7 @@ const Select: SelectPropsComponents = ({
 
     useEffect(() => {
         if (val) {
-            const child: any = filterList.filter((item) => item.value === value)[0];
+            const child: any = filterList.filter((item: any) => item.value === value)[0];
             if (child) {
                 setChildText(child.children);
             }

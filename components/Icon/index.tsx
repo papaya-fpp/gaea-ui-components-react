@@ -2,12 +2,14 @@ import React from "react";
 import classNames from 'classnames';
 import { getPrefixCls } from '../_util/responsiveObserve';
 interface IconProps {
-  name: string;
+  name: any;
   className?: string;
   color?: string;
   size?: string | number;
   onClick?: any;
 }
+
+
 const Icon: React.FC<IconProps> = ({
   name,
   onClick,
@@ -25,6 +27,7 @@ const Icon: React.FC<IconProps> = ({
   );
 
   return (
+    typeof name === 'string' ?
     <svg
       onClick={onClick}
       className={classes}
@@ -36,6 +39,8 @@ const Icon: React.FC<IconProps> = ({
     >
       <use xlinkHref={`#icon-${name}`}></use>
     </svg >
+    :
+    name
   );
 };
 

@@ -13,21 +13,21 @@ export class FormStore {
     this.forceRootUpdate = forceRootUpdate;
   }
 
-  private setInitialValues = (initialValues, init: boolean) => {
+  private setInitialValues = (initialValues: any, init: boolean) => {
     this.initialValues = initialValues || {};
     if (init) {
       this.store = setValues({}, initialValues, this.store);
     }
   };
 
-  private setValidateSubList = (name, valid) => {
+  private setValidateSubList = (name: any, valid: any) => {
     // if (!this.subscribable[name]) {
     //   this.subscribable[name] = valid
     // }
     this.subscribable[name] = valid;
   };
 
-  private unValidateSubList = (name) => {
+  private unValidateSubList = (name: any) => {
     if (this.subscribable[name]) {
       this.subscribable[name] = null;
       delete this.subscribable[name];
@@ -53,7 +53,7 @@ export class FormStore {
     return { ...this.store };
   };
 
-  private setFieldsValue = (store) => {
+  private setFieldsValue = (store: any) => {
     const prevStore = this.store;
     if (store) {
       this.store = setValues(prevStore, store);
@@ -70,20 +70,20 @@ export class FormStore {
     }
   };
 
-  private promiseAll = (promise) => {
+  private promiseAll = (promise: any) => {
     return new Promise((resolve, reject) => {
-      const successlist = [];
-      const errorlist = [];
+      const successlist: any = [];
+      const errorlist: any = [];
       const len = promise.length;
       for (let i = 0; i < promise.length; i++) {
         promise[i]
-          .then((res) => {
+          .then((res: any) => {
             successlist.push(res);
             if (successlist.length === len) {
               resolve(successlist);
             }
           })
-          .catch((err) => {
+          .catch((err: any) => {
             errorlist.push(err);
             if (successlist.length + errorlist.length === len) {
               reject(errorlist);
@@ -95,7 +95,7 @@ export class FormStore {
 
   private validateFields = () => {
     const validate = this.subscribable;
-    const list = [];
+    const list: any = [];
     for (let valid in validate) {
       list.push(validate[valid]());
     }
@@ -113,7 +113,7 @@ export class FormStore {
   };
 }
 
-export default function useForm(form?) {
+export default function useForm(form?: any) {
   const formRef = React.useRef<any>();
   const [, forceUpdate] = React.useState({});
 
