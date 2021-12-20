@@ -1,11 +1,13 @@
 @import '../../styles/theme/color';
-.form-wrapper {
-  .form-item {
+@import '../../styles/theme/theme.scss';
+
+.#{$prefix}-form-wrapper {
+  .#{$prefix}-form-item {
     //line-height: 36px;
     margin-bottom: 12px;
     position: relative;
   }
-  .valid-item {
+  .#{$prefix}-form-valid-item {
     .from-placeholder {
       //&:before {
       //  content: '*';
@@ -13,9 +15,9 @@
       //}
     }
   }
-  .item-error {
+  .#{$prefix}-form-item-error {
     margin-bottom: 12px;
-    .error-text {
+    .#{$prefix}-form-error-text {
       line-height: 1.5;
       margin-top: 4px;
       color: $red-1;
@@ -27,9 +29,9 @@
   }
 }
 @media screen and (min-width: 0) and (max-width: 800px) {
-  .form-wrapper {
-    .item-error {
-      .error-text {
+  .#{$prefix}-form-wrapper {
+    .#{$prefix}-form-item-error {
+      .#{$prefix}-form-error-text {
         line-height: 0.4rem;
       }
     }

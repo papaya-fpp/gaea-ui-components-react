@@ -3,6 +3,8 @@ import React from 'react';
 import useForm from './hooks/useForm';
 import { FormProvider } from './utils/context';
 import Item from './FormItem';
+import { getPrefixCls } from '../_util/responsiveObserve';
+
 interface FormProps {
   form?: any;
   initialValues?: any;
@@ -14,6 +16,8 @@ interface FormComponentProps extends React.FC<FormProps> {
   Item: typeof Item;
 }
 const Form: FormComponentProps = (props) => {
+  const prefixCls = getPrefixCls('form');
+
   const { form, children, initialValues = {}, onValuesChange } = props;
   const [formInstance] = useForm(form);
   const { setInitialValues } = formInstance.getInternalHooks();
@@ -46,7 +50,7 @@ const Form: FormComponentProps = (props) => {
   const formContextValue = React.useMemo(() => ({ ...formInstance }), [formInstance]);
   return (
       <FormProvider value={formContextValue}>
-        <form className="form-wrapper">{getItems(children)}</form>
+        <form className={`${prefixCls}-wrapper`}>{getItems(children)}</form>
       </FormProvider>
   );
 };

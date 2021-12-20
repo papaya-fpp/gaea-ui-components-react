@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from '../Icon';
+import { getPrefixCls } from '../_util/responsiveObserve';
 interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
@@ -46,27 +47,28 @@ const Button = ({
   icon,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-  const disabledState = disabled ? 'storybook-button--disabled' : '';
+  const prefixCls = getPrefixCls('button');
+  const mode = primary ? `${prefixCls}--primary` : `${prefixCls}--secondary`;
+  const disabledState = disabled ? `${prefixCls}--disabled` : '';
   return (
     <button
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode,disabledState].join(' ')}
+      className={[`${prefixCls}`, `${prefixCls}--${size}`, mode,disabledState].join(' ')}
       style={{ backgroundColor }}
       {...props}
     >
-      <div className={['storybook-button-text'].join(' ')}>
+      <div className={[`${prefixCls}-text`].join(' ')}>
         {
-            icon && <Icon className={['storybook-button--icon'].join(' ')} name={icon} />
+            icon && <Icon className={[`${prefixCls}--icon`].join(' ')} name={icon} />
         }
         {
           !children&&label&&(
-              <div className={['storybook-button--label'].join(' ')}>{label}</div>
+              <div className={[`${prefixCls}--label`].join(' ')}>{label}</div>
           )
         }
         {
           children&&(
-              <div className={['storybook-button--label'].join(' ')}>{children}</div>
+              <div className={[`${prefixCls}--label`].join(' ')}>{children}</div>
           )
         }
       </div>

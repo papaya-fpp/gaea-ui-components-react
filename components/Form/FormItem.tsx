@@ -1,7 +1,9 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { formContext } from './utils/context';
+import { getPrefixCls } from '../_util/responsiveObserve';
 
 const FormItem: React.FC<any> = (props) => {
+  const prefixCls = getPrefixCls('form');
   const { children, valueschangehandle, name, rules, validateStatus, help, className, ...restProps } = props;
   const formContextValue = useContext<any>(formContext);
   const { setFieldsValue, getFieldsValue, getInternalHooks } = formContextValue;
@@ -76,14 +78,14 @@ const FormItem: React.FC<any> = (props) => {
   };
 
   const getClasses = () => {
-    let c_name = 'form-item';
+    let c_name = `${prefixCls}-item`;
     if (isValid) {
-      c_name += ' valid-item';
+      c_name += ` ${prefixCls}-valid-item`;
     }
     if (className) {
       c_name += ' ' + className;
     }
-    return error ? c_name + ' item-error' : c_name;
+    return error ? c_name + ` ${prefixCls}-item-error` : c_name;
   };
 
   useEffect(() => {
@@ -105,7 +107,7 @@ const FormItem: React.FC<any> = (props) => {
   return (
     <div className={getClasses()} id={name}>
       {getItems(children)}
-      {error && <div className="error-text">{errorText}</div>}
+      {error && <div className={`${prefixCls}-error-text`}>{errorText}</div>}
     </div>
   );
 };

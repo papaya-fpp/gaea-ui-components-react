@@ -2,6 +2,7 @@ import React, {useState, useEffect, useRef} from 'react';
 import Option from './Option';
 // import { IconFont } from '@fppcomponents';
 import Icon from '../Icon';
+import { getPrefixCls } from '../_util/responsiveObserve';
 
 const defaultFilter = (inputValue, option) => {
     return option.value.indexOf(inputValue) > -1;
@@ -37,6 +38,7 @@ const Select: SelectPropsComponents = ({
                                            onFocus,
                                            children
                                        }) => {
+    const prefixCls = getPrefixCls('select');
     const [val, setVal] = useState(value);
     const [pc_shrink, set_pc_shrink_] = useState(false);
     const [listChildren, setListChildren] = useState([]);
@@ -86,13 +88,13 @@ const Select: SelectPropsComponents = ({
             return null;
         }
         return (
-            <div className="option_list">
+            <div className={`${prefixCls}-option_list`}>
                 {filterList.length > 0 ? (
                     filterList.map((item) => {
                         return <Option key={item.key || item.value} {...item} active={val} onChange={changeItem}/>;
                     })
                 ) : (
-                    <div className="kong_wrapper">
+                    <div className={`${prefixCls}-kong_wrapper`}>
                         空！
                     </div>
                 )}
@@ -138,26 +140,26 @@ const Select: SelectPropsComponents = ({
     }, [filterList]);
 
     return (
-        <div className="py-select-container">
+        <div className={`${prefixCls}-container`}>
             {
                 label && (
-                    <div className={'py-select-label' + (label != '' ? '' : ' is-hide')}>{label + ' :'}</div>
+                    <div className={`${prefixCls}-label` + (label != '' ? '' : ` ${prefixCls}-is-hide`)}>{label + ' :'}</div>
                 )
             }
-            <div className={`py-select-wrapper ${className ? className : ''}`}>
+            <div className={`${prefixCls}-wrapper ${className ? className : ''}`}>
                 <span
-                    className={`form-placeholder ${pc_shrink || val ? 'pc_shrink' : ''}` + (inputval ? ' hide_placeholder' : '')}
+                    className={`${prefixCls}-form-placeholder ${pc_shrink || val ? `${prefixCls}-pc_shrink` : ''}` + (inputval ? ` ${prefixCls}-hide_placeholder` : '')}
                     onClick={clickFocus}>
                     {placeholder}
                 </span>
                 <span
                     onClick={clickFocus}
-                    className={`active_text ${pc_shrink ? 'shade' : ''}` + (inputval ? ' hide_placeholder' : '')}>
+                    className={`${prefixCls}-active_text ${pc_shrink ? 'shade' : ''}` + (inputval ? ` ${prefixCls}-hide_placeholder` : '')}>
                     {childText}
                 </span>
                 <input
                     ref={inputRef}
-                    className={`py-input ${!showSearch ? 'nosearch' : ''}`}
+                    className={`${prefixCls}-input ${!showSearch ? 'nosearch' : ''}`}
                     value={inputval}
                     onChange={inputChange}
                     onFocus={inputFocus}
@@ -166,19 +168,19 @@ const Select: SelectPropsComponents = ({
                 {/*清除图标*/}
                 {
                     childText&&allowClear&&(
-                        <div className="py-select-clear" onClick={handleClear}>
+                        <div className={`${prefixCls}-clear`} onClick={handleClear}>
                             <Icon  name="a-Crosssign"/>
                         </div>
                     )
                 }
 
                 {/*右侧箭头*/}
-                <div className="py-select-jiantou" onClick={clickFocus}>
+                <div className={`${prefixCls}-jiantou`} onClick={clickFocus}>
                     {
                         showList ? (
-                            <Icon className="zhankaishouqi" name="Retract"/>
+                            <Icon name="Retract"/>
                         ) : (
-                            <Icon className="zhankaishouqi" name="Drop-down"/>
+                            <Icon name="Drop-down"/>
                         )
                     }
                 </div>

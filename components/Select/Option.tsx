@@ -1,4 +1,5 @@
 import React from 'react';
+import { getPrefixCls } from '../_util/responsiveObserve';
 
 interface optionProps {
   active?: any;
@@ -7,12 +8,14 @@ interface optionProps {
 }
 
 const Option: React.FC<optionProps> = ({ children, active, value, onChange }) => {
+  const prefixCls = getPrefixCls('select');
+
   const changeItem = () => {
     onChange(value, children);
   };
 
   return (
-    <div className={`option_item ${active === value ? 'active' : ''}`} onMouseDown={changeItem}>
+    <div className={`${prefixCls}-option_item ${active === value ? 'active' : ''}`} onMouseDown={changeItem}>
       {children}
     </div>
   );

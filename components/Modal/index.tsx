@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { fixedScroll, resetScroll } from '../_util/scrollControl';
 import Button from '../Button/index';
 import Icon from '../Icon';
+import {getPrefixCls} from "../_util/responsiveObserve";
 interface ModalProps {
     visible: Boolean;
     wrapClassName?: string;
@@ -36,6 +37,7 @@ const Modal: ModalComponentProps = ({
                                         footer,
                                         maskClosable = true
                                     }) => {
+    const prefixCls = getPrefixCls('modal');
     const [target, setTarget] = useState(null);
     const [style] = useState(width ? { width: width + 'px' } : {});
     // 点击关闭
@@ -53,26 +55,26 @@ const Modal: ModalComponentProps = ({
         visible ? fixedScroll() : resetScroll();
     }, [visible]);
 
-    return visible? <div className="py-modal">
-        <div className="py-modal-mask" />
-        <div className={`py-modal-warp ${wrapClassName}`} onClick={maskClosableFn}>
-            <div className="py-modal-content" style={style} onClick={stopPropagationFn}>
-                <div className="py-modal-header">
+    return visible? <div className={`${prefixCls}`}>
+        <div className={`${prefixCls}-mask`} />
+        <div className={`${prefixCls}-warp ${wrapClassName}`} onClick={maskClosableFn}>
+            <div className={`${prefixCls}-content`} style={style} onClick={stopPropagationFn}>
+                <div className={`${prefixCls}-header`}>
                     {
-                        title &&(<div className="py-modal-title">{title}</div>)
+                        title &&(<div className={`${prefixCls}-title`}>{title}</div>)
                     }
                     {   closable && (
-                        <div className="close-wrapper" onClick={handleCancel}>
+                        <div className={`${prefixCls}-close-wrapper`} onClick={handleCancel}>
                             <Icon color="rgba(94, 108, 132, 0.49)" name="a-Crosssign" />
                         </div>)
                     }
                 </div>
 
-                <div className="py-modal-body">{children}</div>
+                <div className={`${prefixCls}-body`}>{children}</div>
                 {footer || footer === null ? (
                     footer
                 ) : (
-                    <div className="py-modal-footer">
+                    <div className={`${prefixCls}-footer`}>
                         <Button  onClick={handleCancel}>{cancelText}</Button>
                         <Button backgroundColor="#FF8A8A" primary onClick={handleOK}>
                             {okText}

@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Icon from '../Icon';
+import { getPrefixCls } from '../_util/responsiveObserve';
 
 interface InputProps {
     label?: string;
@@ -60,6 +61,8 @@ export const Input: React.FC<InputProps> = ({
                           ref = null,
                           ...props
                       }: InputProps) => {
+    const prefixClsInput = getPrefixCls('input');
+    const prefixClsTextarea = getPrefixCls('textarea');
     const [val, setVal] = useState(value || '');
     const numberReg = /^[0-9]+\.?[0-9]*/;
     const setValueHandle = (value: any) => {
@@ -91,17 +94,17 @@ export const Input: React.FC<InputProps> = ({
         // setValueHandle(value);
     }, [value]);
     return (
-        <div className={`py-input-body ${className}`}>
+        <div className={`${prefixClsInput}-body ${className}`}>
             {
                 label && (
-                    <div className={'py-input-label' + (label != '' ? '' : ' is-hide')}>{label + ' :'}</div>
+                    <div className={`${prefixClsInput}-label` + (label != '' ? '' : ' is-hide')}>{label + ' :'}</div>
                 )
             }
             {
                 type === 'textarea' ? (
-                    <div className={'py-textarea' + ` ${size}` + (error ? ' error' : '') + (readonly ? ' readonly' : '')}>
+                    <div className={`${prefixClsTextarea}` + ` ${size}` + (error ? ' error' : '') + (readonly ? ' readonly' : '')}>
                          <textarea
-                             className="py-textarea-affix-wrapper"
+                             className={`${prefixClsTextarea}-affix-wrapper`}
                              ref={ref}
                              placeholder={placeholder}
                              id={id}
@@ -125,11 +128,11 @@ export const Input: React.FC<InputProps> = ({
                          />
                     </div>
                 ) : (
-                    <div className={'py-input' + ` ${size}` + (error ? ' error' : '') + (readonly ? ' readonly' : '')}>
-                        <div className={'py-input-wrapper' + (groupAddon ? ' py-input-group' : '')}>
-                            <div className="py-input-affix-wrapper">
+                    <div className={`${prefixClsInput}` + ` ${size}` + (error ? ' error' : '') + (readonly ? ' readonly' : '')}>
+                        <div className={`${prefixClsInput}-wrapper` + (groupAddon ? ` ${prefixClsInput}-group` : '')}>
+                            <div className={`${prefixClsInput}-affix-wrapper`}>
                                 {
-                                    prefix && <Icon className="py-input-prefix" name={prefix}/>
+                                    prefix && <Icon className={`${prefixClsInput}-prefix`} name={prefix}/>
                                 }
                                 <input
                                     ref={ref}
@@ -156,13 +159,13 @@ export const Input: React.FC<InputProps> = ({
                                 />
                                 {
                                     !passwordIcon && suffix && (
-                                        <Icon className="py-input-suffix" name={suffix}/>
+                                        <Icon className={`${prefixClsInput}-suffix`} name={suffix}/>
                                     )
                                 }
                                 {/*清除图标*/}
                                 {
                                     val&&allowClear&&(
-                                        <div className="py-input-clear" onClick={handleClear}>
+                                        <div className={`${prefixClsInput}-clear`} onClick={handleClear}>
                                             <Icon  name="a-Crosssign"/>
                                         </div>
                                     )
@@ -178,7 +181,7 @@ export const Input: React.FC<InputProps> = ({
                                                                 onChangeType('zhengyan');
                                                             }
                                                         }}
-                                                        className="py-input-suffix" name="zhengyan"/>)
+                                                        className={`${prefixClsInput}-suffix`} name="zhengyan"/>)
                                             }
                                             {
                                                 type !== 'password' && (<Icon
@@ -187,7 +190,7 @@ export const Input: React.FC<InputProps> = ({
                                                             onChangeType('biyan');
                                                         }
                                                     }}
-                                                    className="py-input-suffix"
+                                                    className={`${prefixClsInput}-suffix`}
                                                     name="biyan"/>)
                                             }
                                         </span>
@@ -197,7 +200,7 @@ export const Input: React.FC<InputProps> = ({
                             {/*操作按钮 例如:复制*/}
                             {
                                 groupAddon && (
-                                    <div onClick={onAddon} className="py-input-group-addon">
+                                    <div onClick={onAddon} className={`${prefixClsInput}-group-addon`}>
                                         <Icon name={groupAddon}/>
                                     </div>
                                 )

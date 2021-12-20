@@ -109,9 +109,9 @@ const Template: ComponentStory<typeof Form> = (args) => {
 
     return (
         <Form  {...args}>
-            <div className="py-checkoutFrom-row">
+            <div className="fpp-checkoutFrom-row">
                 <Form.Item
-                    className="py-form-item"
+                    className="fpp-form-item"
                     name="first_name"
                     rules={[{ required: true, message: '不能为空' }]
                     }
@@ -120,16 +120,16 @@ const Template: ComponentStory<typeof Form> = (args) => {
                         allowClear={true}
                         label="email"
                         name="search"
-                        className="py-form-input"
+                        className="fpp-form-input"
                         placeholder="请输入"
                         maxLength={30}
                     />
                 </Form.Item>
             </div>
 
-            <div className="py-checkoutFrom-row">
+            <div className="fpp-checkoutFrom-row">
                 <Form.Item
-                    className="py-form-item py-form-item-select"
+                    className="fpp-form-item fpp-form-item-select"
                     name="singlePage_country_code"
                     rules={[{ required: true, message: '不能为空'  }]}
                 >
@@ -138,7 +138,7 @@ const Template: ComponentStory<typeof Form> = (args) => {
                         showSearch
                         label="国家/地区"
                         placeholder="请输入"
-                        className="py-checkoutFrom-select"
+                        className="fpp-checkoutFrom-select"
                         filterOption={selectFilter}
                         onBlur={() => selectIsFocus(false)}
                         onFocus={() => selectIsFocus(true)}
