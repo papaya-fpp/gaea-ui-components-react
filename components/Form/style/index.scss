@@ -22,7 +22,8 @@
       margin-top: 4px;
       color: $red-1;
     }
-    .fpp-new-input {
+    .#{$prefix}-input-affix-wrapper,
+    .#{$prefix}-select-active_text {
       border-color: $red-1 !important;
       margin-bottom: 0;
     }

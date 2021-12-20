@@ -6,6 +6,7 @@ interface ButtonProps {
    * Is this the principal call to action on the page?
    */
   primary?: boolean;
+  danger?: boolean;
   /**
    * 是否禁用
    */
@@ -39,6 +40,7 @@ interface ButtonProps {
  */
 const Button = ({
   primary = false,
+  danger = false,
   disabled = false,
   size = 'medium',
   backgroundColor,
@@ -49,11 +51,12 @@ const Button = ({
 }: ButtonProps) => {
   const prefixCls = getPrefixCls('button');
   const mode = primary ? `${prefixCls}--primary` : `${prefixCls}--secondary`;
+  const dangerState = danger ? (primary?`${prefixCls}--danger-primary` : `${prefixCls}--danger-secondary`):'';
   const disabledState = disabled ? `${prefixCls}--disabled` : '';
   return (
     <button
       type="button"
-      className={[`${prefixCls}`, `${prefixCls}--${size}`, mode,disabledState].join(' ')}
+      className={[`${prefixCls}`, `${prefixCls}--${size}`, mode,disabledState,dangerState].join(' ')}
       style={{ backgroundColor }}
       {...props}
     >

@@ -13,6 +13,9 @@
   &.#{$prefix}-button--primary {
     color: white;
     background: $purple-1;
+    &.#{$prefix}-button--danger-primary{
+      background:$red-1 !important;
+    }
     &:not(.#{$prefix}-button--disabled):hover{
       opacity: 0.79;
     }
@@ -28,6 +31,10 @@
   color: #5E6C84;
   border-radius: 6px;
   border: 1px solid #E9EDF0;
+  &.#{$prefix}-button--danger-secondary{
+    border: 1px solid $red-1  !important;
+    color: $red-1  !important;
+  }
   &:not(.#{$prefix}-button--disabled):hover{
     background: #FAF9FF;
     opacity: 0.49;
