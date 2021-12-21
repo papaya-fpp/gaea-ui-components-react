@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { fixedScroll, resetScroll } from "../_util/scrollControl";
 import Button from "../Button/index";
+import ReactDOM from 'react-dom';
 import Icon from "../Icon";
 import { getPrefixCls } from "../_util/responsiveObserve";
 interface ModalProps {
@@ -19,7 +20,20 @@ interface ModalProps {
 }
 
 interface ModalComponentProps extends React.FC<ModalProps> {
-  // confirm: typeof confirm;
+  confirm: typeof confirm;
+}
+
+interface ModalConfirmProps {
+  title?: string;
+  content?: any;
+  cancelText?: string;
+  okText?: string;
+  onCancel?: any;
+  onOK?: any;
+  footer?: any;
+  closable?: boolean;
+  width?: any;
+  wrapClassName?: string;
 }
 
 const Modal: ModalComponentProps = ({
@@ -53,46 +67,84 @@ const Modal: ModalComponentProps = ({
   useEffect(() => {
     visible ? fixedScroll() : resetScroll();
   }, [visible]);
-
-  return visible ? (
-    <div className={`${prefixCls}`}>
-      <div className={`${prefixCls}-mask`} />
-      <div
-        className={`${prefixCls}-warp ${wrapClassName}`}
-        onClick={maskClosableFn}
-      >
-        <div
-          className={`${prefixCls}-content`}
-          style={style}
-          onClick={stopPropagationFn}
-        >
-          <div className={`${prefixCls}-header`}>
-            {title && <div className={`${prefixCls}-title`}>{title}</div>}
-            {closable && (
-              <div
-                className={`${prefixCls}-close-wrapper`}
-                onClick={handleCancel}
-              >
-                <Icon color="rgba(94, 108, 132, 0.49)" name="a-Crosssign" />
+  const getModalDOM = () => {
+    return (
+        <div className={`${prefixCls}`}>
+          <div className={`${prefixCls}-mask`} />
+          <div
+              className={`${prefixCls}-warp ${wrapClassName}`}
+              onClick={maskClosableFn}
+          >
+            <div
+                className={`${prefixCls}-content`}
+                style={style}
+                onClick={stopPropagationFn}
+            >
+              <div className={`${prefixCls}-header`}>
+                {title && <div className={`${prefixCls}-title`}>{title}</div>}
+                {closable && (
+                    <div
+                        className={`${prefixCls}-close-wrapper`}
+                        onClick={handleCancel}
+                    >
+                      <Icon color="rgba(94, 108, 132, 0.49)" name="a-Crosssign" />
+                    </div>
+                )}
               </div>
-            )}
-          </div>
 
-          <div className={`${prefixCls}-body`}>{children}</div>
-          {footer || footer === null ? (
-            footer
-          ) : (
-            <div className={`${prefixCls}-footer`}>
-              <Button onClick={handleCancel}>{cancelText}</Button>
-              <Button backgroundColor="#FF8A8A" primary onClick={handleOK}>
-                {okText}
-              </Button>
+              <div className={`${prefixCls}-body`}>{children}</div>
+              {footer || footer === null ? (
+                  footer
+              ) : (
+                  <div className={`${prefixCls}-footer`}>
+                    <Button onClick={handleCancel}>{cancelText}</Button>
+                    <Button backgroundColor="#FF8A8A" primary onClick={handleOK}>
+                      {okText}
+                    </Button>
+                  </div>
+              )}
             </div>
-          )}
+          </div>
         </div>
-      </div>
-    </div>
-  ) : null;
+    );
+  };
+  return visible && typeof window !== 'undefined' && target && ReactDOM.createPortal(getModalDOM(), document.getElementById('modal-root'));
 };
-
+const confirm = (props: ModalConfirmProps) => {
+  const { content, onCancel, onOK, ...restProps } = props;
+  let div = document.createElement('div');
+  document.body.appendChild(div);
+  // 关闭
+  const destroy = () => {
+    const unmountResult = ReactDOM.unmountComponentAtNode(div);
+    if (unmountResult && div.parentNode) {
+      div.parentNode.removeChild(div);
+    }
+  };
+  const handleCancel = () => {
+    onCancel && onCancel();
+    destroy();
+  };
+  const handleOk = () => {
+    onOK && onOK();
+    destroy();
+  };
+  let currentConfig = Object.assign(
+      {
+        visible: true,
+        children: content,
+        onCancel: handleCancel,
+        onOK: handleOk
+      },
+      restProps
+  );
+  const render = (config) => {
+    ReactDOM.render(<Modal {...config} />, div);
+  };
+  render(currentConfig);
+  return {
+    destroy: destroy
+  };
+};
+Modal.confirm = confirm;
 export default Modal;
