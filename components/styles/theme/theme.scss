@@ -20,6 +20,7 @@ $layout-header-shadow: 0px 25px 50px 0px rgba(0, 0, 0, 0.04);
 $layout-sider-shadow: 1px 0px 25px 0px rgba(0, 0, 0, 0.04);
 $menu-hover-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
 $dropdown-list-shadow: 0px 10px 24px 0px rgba(0, 0, 0, 0.04);
+$header-border-shadow: 0px 25px 50px 0px rgba(101, 84, 192, 0.04);
 
 // Animation
 $animation-duration-slow: 0.3s; // Modal
@@ -101,3 +102,8 @@ $dropdown-list-redius: $border-radius-6;
 $dropdown-list-item-height: 36px;
 $dropdown-list-item-color-hover: $purple-1;
 $dropdown-list-item-bg-hover: $hover-bg-1;
+
+// header
+$header-bg: $block-background;
+$header-height: 70px;
+$header-padding: 0 24px;
