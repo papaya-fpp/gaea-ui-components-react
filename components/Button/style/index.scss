@@ -23,6 +23,9 @@
       opacity: 0.3;
       cursor: not-allowed;
     }
+    &.#{$prefix}-button--loading {
+
+    }
   }
 }
 
@@ -64,7 +67,13 @@
   .#{$prefix}-button--icon{
     margin-right: 10px;
   }
+  .#{$prefix}-button--loading-icon{
+    animation: loading 1s infinite linear;
+  }
   .#{$prefix}-button--label{
 
   }
 }
+ @keyframes loading{
+     from{transform: rotate(0deg)}to{transform: rotate(360deg)}
+ }

@@ -64,11 +64,12 @@ const Button = ({
   const prefixCls = getPrefixCls('button');
   const mode = primary ? `${prefixCls}--primary` : `${prefixCls}--secondary`;
   const dangerState = danger ? (primary?`${prefixCls}--danger-primary` : `${prefixCls}--danger-secondary`):'';
-  const disabledState = disabled ? `${prefixCls}--disabled` : '';
+  const disabledState = disabled || loading ? `${prefixCls}--disabled` : '';
+  const loadingState = loading ? `${prefixCls}--loading` : '';
   return (
     <button
       type="button"
-      className={[`${prefixCls}`, `${prefixCls}--${size}`, mode,disabledState,dangerState,className].join(' ')}
+      className={[`${prefixCls}`, `${prefixCls}--${size}`, mode,disabledState,dangerState,loadingState,className].join(' ')}
       style={{ backgroundColor,...style }}
       {...props}
     >
@@ -77,7 +78,9 @@ const Button = ({
             icon && <Icon className={[`${prefixCls}--icon`].join(' ')} name={icon} />
         }
         {
-          loading && <Icon className={[`${prefixCls}--icon`].join(' ')} name={"Bell"} />
+          loading && <span>
+            <Icon className={[`${prefixCls}--icon`,`${prefixCls}--loading-icon`].join(' ')} name={"Spinnerjiazai1"} />
+          </span>
         }
         {
           !children&&label&&(

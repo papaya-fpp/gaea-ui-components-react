@@ -65,9 +65,9 @@
     &::placeholder {
       color: $input-placeholder;
     }
-    &::-ms-clear {
-      display: none;
-    }
+    //&::-ms-clear {
+    //  display: none;
+    //}
   }
   .#{$prefix}-textarea-affix-wrapper{
     min-height: 100px;
@@ -141,7 +141,7 @@
       padding: 4px 0px 4px 6px;
       z-index: 9999;
       cursor: pointer;
-      display: none;
+      //display: none;
     }
   }
 

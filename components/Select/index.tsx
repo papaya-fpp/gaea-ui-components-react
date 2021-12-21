@@ -94,7 +94,7 @@ const Select: SelectPropsComponents = ({
                         return <Option key={item.key || item.value} {...item} active={val} onChange={changeItem}/>;
                     })
                 ) : (
-                    <div className={`${prefixCls}-kong_wrapper`}>
+                    <div onClick={(e)=>{e.stopPropagation()}} className={`${prefixCls}-kong_wrapper`}>
                         空！
                     </div>
                 )}
@@ -169,7 +169,7 @@ const Select: SelectPropsComponents = ({
                 {
                     childText&&allowClear&&(
                         <div className={`${prefixCls}-clear`} onClick={handleClear}>
-                            <Icon  name="a-Crosssign"/>
+                            <Icon color="#8691A3" name="guanbi1"/>
                         </div>
                     )
                 }
