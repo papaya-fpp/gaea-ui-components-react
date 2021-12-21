@@ -62,7 +62,7 @@ const Modal: ModalComponentProps = ({
   // 点击确定
   const handleOK = () => onOK && onOK();
   useEffect(() => {
-    setTarget(document.getElementById("modal-root") as any);
+    setTarget(document.getElementById("fpp-modal-root") as any);
   }, []);
   useEffect(() => {
     visible ? fixedScroll() : resetScroll();
@@ -115,7 +115,6 @@ const Modal: ModalComponentProps = ({
     var bo = document.body; //获取body对象.
     //动态插入到body中
     bo.insertBefore(div, bo.lastChild);
-    console.log('bo',bo)
   }
 
   let modalRoot = document.getElementById('fpp-modal-root')

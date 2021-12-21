@@ -8,7 +8,6 @@ export default {
     title: 'Example/Modal',
     component: Modal,
 } as ComponentMeta<typeof Modal>;
-// let visible = true
 const Template: ComponentStory<typeof Modal> = (args) => {
 
     const [visible, setVisible] = useState(args.visible);

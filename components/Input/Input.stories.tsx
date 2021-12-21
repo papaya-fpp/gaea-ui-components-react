@@ -24,33 +24,75 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Input> = (args) => {
+  const [inputVal, setInputVal] = useState('');
+  const [type, setType] = useState('password');
+  const handleChange = (val)=>{
+    console.log('val',val)
+    setInputVal(val)
+  }
+  const handleOnAddon = ()=>{
+
+  }
+  const handleChangeType = (val)=>{
+    if(val==='show'){
+      setType('text')
+    }else{
+      setType('password')
+    }
+  }
   return (
-      <Input {...args} />
+      <Input {...args} value={inputVal} type={type} onChange={handleChange} onChangeType={handleChangeType}  />
   )
 }
-let value = ''
-let type = 'password'
-const handleChange = (val)=>{
-  value = val
-}
-const handleOnAddon = ()=>{
-
-}
-const handleChangeType = (val)=>{
-  if(val==='zhengyan'){
-    type = 'text'
-  }else{
-    type = 'password'
+const Template2: ComponentStory<typeof Input> = (args) => {
+  const [inputVal, setInputVal] = useState('');
+  const [type, setType] = useState('password');
+  const handleChange = (val)=>{
+    console.log('val',val)
+    setInputVal(val)
   }
+  const handleOnAddon = ()=>{
+
+  }
+  const handleChangeType = (val)=>{
+    if(val==='show'){
+      setType('text')
+    }else{
+      setType('password')
+    }
+  }
+  return (
+      <Input {...args} value={inputVal} onChange={handleChange} onChangeType={handleChangeType}  />
+  )
 }
-export const error = Template.bind({});
+const Template3: ComponentStory<typeof Input> = (args) => {
+  const [inputVal, setInputVal] = useState('');
+  const [type, setType] = useState('password');
+  const handleChange = (val)=>{
+    console.log('val',val)
+    setInputVal(val)
+  }
+  const handleOnAddon = ()=>{
+
+  }
+  const handleChangeType = (val)=>{
+    if(val==='show'){
+      setType('text')
+    }else{
+      setType('password')
+    }
+  }
+  return (
+      <Input {...args} value={inputVal} error={inputVal===''} errorText={inputVal===''?'您输入的不能为空':''} onChange={handleChange} onChangeType={handleChangeType}  />
+  )
+}
+
+export const error = Template3.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 error.args = {
-  value:value,
-  error:value==='',
-  errorText: value===''?'您输入的不能为空！':'',
+  value:'',
   label: 'Input',
-  onChange:handleChange(value)
+  onChange:()=>{}
 };
 
 export const readonly = Template.bind({});
@@ -62,32 +104,36 @@ readonly.args = {
 export const password = Template.bind({});
 password.args = {
   placeholder:'login_Password',
-  type:type,
   name:"password",
   passwordIcon:true,
-  value:value,
-  onChange:handleChange(value),
-  onChangeType:handleChangeType(value)
+  value:'',
+  onChange:() => {
+  },
+  onChangeType:() => {
+  }
 };
 
-export const textarea = Template.bind({});
+export const textarea = Template2.bind({});
 textarea.args = {
   placeholder:'textarea',
   type:"textarea",
   name:"textarea",
-  value:value,
-  onChange:handleChange(value)
+  value:'',
+  onChange:() => {
+  }
 };
 
 export const search = Template.bind({});
 search.args = {
   placeholder:'login_Password',
   name:"search",
-  value:value,
+  value:'',
   prefix:'Search',
   // suffix:'a-Crosssign',
   allowClear:true,
   groupAddon:'copy',
-  onAddon:handleOnAddon(),
-  onChange:handleChange(value)
+  onAddon:() => {
+  },
+  onChange:() => {
+  }
 };

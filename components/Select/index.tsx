@@ -95,7 +95,7 @@ const Select: SelectPropsComponents = ({
                     })
                 ) : (
                     <div onClick={(e)=>{e.stopPropagation()}} className={`${prefixCls}-kong_wrapper`}>
-                        空！
+                        <Icon name="kongzhuangtai"/>
                     </div>
                 )}
             </div>
