@@ -78,9 +78,7 @@ const Button = ({
             icon && <Icon className={[`${prefixCls}--icon`].join(' ')} name={icon} />
         }
         {
-          loading && <span>
-            <Icon className={[`${prefixCls}--icon`,`${prefixCls}--loading-icon`].join(' ')} name={"Spinnerjiazai1"} />
-          </span>
+          loading && <Icon className={[`${prefixCls}--icon`,`${prefixCls}--loading-icon`].join(' ')} name={"Spinnerjiazai1"} />
         }
         {
           !children&&label&&(

@@ -87,7 +87,8 @@
     width: 100%;
     &:hover{
       .#{$prefix}-input-clear{
-        display: flex;
+        //display: flex;
+        color: #8691A3;
       }
     }
     .#{$prefix}-input-affix-wrapper{
@@ -128,7 +129,7 @@
     }
     .#{$prefix}-input-clear{
       position: absolute;
-      right: 20px;
+      right: 12px;
       top: 50%;
       margin-top: -9px;
       width: 18px;
@@ -141,6 +142,7 @@
       padding: 4px 0px 4px 6px;
       z-index: 9999;
       cursor: pointer;
+      color: rgba(134, 145, 163, 0.49);
       //display: none;
     }
   }

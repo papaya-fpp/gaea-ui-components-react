@@ -29,6 +29,9 @@ $animation-duration-fast: 0.1s; // Tooltip
 
 $ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
 
+@keyframes loading{
+  from{transform: rotate(0deg)}to{transform: rotate(360deg)}
+}
 // Layout
 $layout-body-background: $bg-1;
 $layout-header-height: 70px;
