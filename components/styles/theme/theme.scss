@@ -31,8 +31,8 @@ $ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
 
 // Layout
 $layout-body-background: $bg-1;
-$layout-header-height: 64px;
-$layout-header-padding: 0 50px;
+$layout-header-height: 70px;
+$layout-header-padding: 0 24px;
 $layout-header-color: $fontColor-1;
 $layout-header-background: $block-background;
 $layout-footer-padding: 24px 50px;
@@ -99,8 +99,3 @@ $dropdown-list-redius: $border-radius-6;
 $dropdown-list-item-height: 36px;
 $dropdown-list-item-color-hover: $purple-1;
 $dropdown-list-item-bg-hover: $hover-bg-1;
-
-// header
-$header-bg: $block-background;
-$header-height: 70px;
-$header-padding: 0 24px;
