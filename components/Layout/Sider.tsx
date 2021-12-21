@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import classNames from 'classnames';
-import { getPrefixCls} from '../_util/responsiveObserve';
+import { getPrefixCls } from '../_util/responsiveObserve';
 import isNumeric from '../_util/isNumber';
 
 export type SiderTheme = 'light' | 'dark';
@@ -28,9 +28,9 @@ const Sider: React.FC<SiderProps> = props => {
     children,
     ...others
   } = props;
-  const [collapsed, setCollapsed] = React.useState('collapsed' in props ? props.collapsed : defaultCollapsed);
+  const [collapsed, setCollapsed] = useState('collapsed' in props ? props.collapsed : defaultCollapsed);
   
-  React.useEffect(() => {
+  useEffect(() => {
     if ('collapsed' in props) {
       setCollapsed(props.collapsed);
     }
@@ -55,7 +55,7 @@ const Sider: React.FC<SiderProps> = props => {
     minWidth: siderWidth,
     width: siderWidth,
   };
-  const contextValue = React.useMemo(
+  const contextValue = useMemo(
     () => ({
       siderCollapsed: collapsed,
     }),
