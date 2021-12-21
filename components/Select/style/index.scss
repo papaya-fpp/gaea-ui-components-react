@@ -2,7 +2,7 @@
 @import '../../styles/theme/theme.scss';
 .#{$prefix}-select-container {
   .#{$prefix}-select-label {
-    font-size: 14px;
+    font-size: $font-size-base;
     font-weight: 500;
     color: $input-label;
     margin-bottom:10px;
@@ -26,7 +26,7 @@
       width: 100%;
       line-height:36px;
       padding-left: 14px;
-      font-size: 14px;
+      font-size: $font-size-base;
       transition: all 0.3s;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -60,7 +60,7 @@
       border: 1px solid #E9EDF0;
       border-radius: 6px;
       transition: all 0.3s;
-      font-size: 14px;
+      font-size: $font-size-base;
       &::placeholder {
         color: $input-placeholder;
       }
@@ -87,7 +87,7 @@
       display: flex;
       align-items: center;
       color: $fontColor-1;
-      font-size: 12px;
+      font-size: $font-size-sm;
       padding: 4px 0px 4px 6px;
       z-index: 9999;
       cursor: pointer;
@@ -103,7 +103,7 @@
       overflow: hidden;
       display: flex;
       color: $fontColor-1;
-      font-size: 12px;
+      font-size: $font-size-sm;
       padding: 4px 0px 4px 6px;
       z-index: 9999;
     }
@@ -146,7 +146,7 @@
       padding: 5px 12px;
       color: $fontColor-2;
       font-weight: 400;
-      font-size: 14px;
+      font-size: $font-size-base;
       line-height: 22px;
       width: 100%;
       cursor: pointer;
@@ -165,7 +165,7 @@
       color: #00000040;
       text-align: center;
       .#{$prefix}-select-kong {
-        font-size: 30px;
+        //font-size: 30px;
         margin: 14px 0;
       }
     }

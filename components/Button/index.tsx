@@ -6,6 +6,8 @@ interface ButtonProps {
    * Is this the principal call to action on the page?
    */
   primary?: boolean;
+
+  danger?: boolean;
   /**
    * 是否禁用
    */
@@ -29,9 +31,17 @@ interface ButtonProps {
    */
   icon?: string;
   /**
+   * loading 图标
+   */
+  loading?: boolean;
+  /**
    * Optional click handler
    */
   onClick?: () => void;
+
+  className?:any;
+
+  style?:any;
 }
 
 /**
@@ -39,27 +49,38 @@ interface ButtonProps {
  */
 const Button = ({
   primary = false,
+  danger = false,
   disabled = false,
   size = 'medium',
   backgroundColor,
   label,
   children,
   icon,
+  loading,
+  style,
+  className,
   ...props
 }: ButtonProps) => {
   const prefixCls = getPrefixCls('button');
   const mode = primary ? `${prefixCls}--primary` : `${prefixCls}--secondary`;
-  const disabledState = disabled ? `${prefixCls}--disabled` : '';
+  const dangerState = danger ? (primary?`${prefixCls}--danger-primary` : `${prefixCls}--danger-secondary`):'';
+  const disabledState = disabled || loading ? `${prefixCls}--disabled` : '';
+  const loadingState = loading ? `${prefixCls}--loading` : '';
   return (
     <button
       type="button"
-      className={[`${prefixCls}`, `${prefixCls}--${size}`, mode,disabledState].join(' ')}
-      style={{ backgroundColor }}
+      className={[`${prefixCls}`, `${prefixCls}--${size}`, mode,disabledState,dangerState,loadingState,className].join(' ')}
+      style={{ backgroundColor,...style }}
       {...props}
     >
       <div className={[`${prefixCls}-text`].join(' ')}>
         {
             icon && <Icon className={[`${prefixCls}--icon`].join(' ')} name={icon} />
+        }
+        {
+          loading && <span>
+            <Icon className={[`${prefixCls}--icon`,`${prefixCls}--loading-icon`].join(' ')} name={"Spinnerjiazai1"} />
+          </span>
         }
         {
           !children&&label&&(

@@ -13,12 +13,18 @@
   &.#{$prefix}-button--primary {
     color: white;
     background: $purple-1;
+    &.#{$prefix}-button--danger-primary{
+      background:$red-1 !important;
+    }
     &:not(.#{$prefix}-button--disabled):hover{
       opacity: 0.79;
     }
     &.#{$prefix}-button--disabled {
       opacity: 0.3;
       cursor: not-allowed;
+    }
+    &.#{$prefix}-button--loading {
+
     }
   }
 }
@@ -28,6 +34,10 @@
   color: #5E6C84;
   border-radius: 6px;
   border: 1px solid #E9EDF0;
+  &.#{$prefix}-button--danger-secondary{
+    border: 1px solid $red-1  !important;
+    color: $red-1  !important;
+  }
   &:not(.#{$prefix}-button--disabled):hover{
     background: #FAF9FF;
     opacity: 0.49;
@@ -53,10 +63,17 @@
 }
 .#{$prefix}-button-text{
   display: flex;
+  justify-content: center;
   .#{$prefix}-button--icon{
     margin-right: 10px;
+  }
+  .#{$prefix}-button--loading-icon{
+    animation: loading 1s infinite linear;
   }
   .#{$prefix}-button--label{
 
   }
 }
+ @keyframes loading{
+     from{transform: rotate(0deg)}to{transform: rotate(360deg)}
+ }

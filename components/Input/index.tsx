@@ -166,7 +166,7 @@ export const Input: React.FC<InputProps> = ({
                                 {
                                     val&&allowClear&&(
                                         <div className={`${prefixClsInput}-clear`} onClick={handleClear}>
-                                            <Icon  name="a-Crosssign"/>
+                                            <Icon color="#8691A3" name="guanbi1"/>
                                         </div>
                                     )
                                 }

@@ -21,10 +21,21 @@ Primary.args = {
   primary: true,
   children: 'primary',
 };
+export const dangerPrimary = Template.bind({});
+dangerPrimary.args = {
+  primary: true,
+  danger: true,
+  children: 'dangerPrimary',
+};
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   label: 'Secondary',
+};
+export const dangerSecondary = Template.bind({});
+dangerSecondary.args = {
+  danger: true,
+  children: 'dangerSecondary',
 };
 
 export const Primarydisabled = Template.bind({});
@@ -44,6 +55,13 @@ export const icon = Template.bind({});
 icon.args = {
   label: '图标',
   icon: 'Settings'
+};
+
+export const loading = Template.bind({});
+loading.args = {
+  label: 'loading',
+  primary: true,
+  loading: true
 };
 
 export const Large = Template.bind({});
