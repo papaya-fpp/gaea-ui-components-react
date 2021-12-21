@@ -108,7 +108,21 @@ const Modal: ModalComponentProps = ({
         </div>
     );
   };
-  return visible && typeof window !== 'undefined' && target && ReactDOM.createPortal(getModalDOM(), document.getElementById('modal-root'));
+  const creatdiv = () => {
+    //创建一个div
+    var div = document.createElement('div');
+    div.id = "fpp-modal-root";//设置div的属性
+    var bo = document.body; //获取body对象.
+    //动态插入到body中
+    bo.insertBefore(div, bo.lastChild);
+    console.log('bo',bo)
+  }
+
+  let modalRoot = document.getElementById('fpp-modal-root')
+  if(!modalRoot){
+    creatdiv()
+  }
+  return visible && typeof window !== 'undefined' && target && ReactDOM.createPortal(getModalDOM(),modalRoot);
 };
 const confirm = (props: ModalConfirmProps) => {
   const { content, onCancel, onOK, ...restProps } = props;

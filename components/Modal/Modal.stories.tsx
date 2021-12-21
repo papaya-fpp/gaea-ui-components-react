@@ -30,7 +30,7 @@ const Template: ComponentStory<typeof Modal> = (args) => {
     }, [args.visible])
 
     return (
-        <div id="modal-root">
+        <div>
             <Button onClick={confirm}>confirm</Button>
             <Modal {...args} onCancel={onCancelHandle} onOK={confirm} visible={visible}/>
         </div>)
