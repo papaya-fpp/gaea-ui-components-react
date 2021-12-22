@@ -6,6 +6,8 @@ import { SiderContext } from '../Layout/Sider';
 import { getPrefixCls } from '../_util/responsiveObserve';
 import SubMenu from './SubMenu';
 import Item from './MenuItem';
+import Divider from './Divider';
+
 interface PublicProps {
 	theme?: MenuTheme;
 	multiple?: boolean;
@@ -25,7 +27,8 @@ interface InternalMenuProps extends PublicProps {
 
 interface MenuProps extends React.FC<PublicProps> {
 	Item: typeof Item;
-	SubMenu: typeof SubMenu;
+  SubMenu: typeof SubMenu;
+  Divider: typeof Divider;
 }
 
 
@@ -124,4 +127,5 @@ const Menu: MenuProps = (props) => {
 
 Menu.Item = Item;
 Menu.SubMenu = SubMenu;
+Menu.Divider = Divider;
 export default Menu;

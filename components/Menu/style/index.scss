@@ -20,6 +20,7 @@
   &.#{$prefix}-menu-collapsed {
     width: 80px;
   }
+
   .#{$prefix}-menu-item,.#{$prefix}-submenu {
     padding: 0 15px;
     cursor: pointer;
@@ -42,6 +43,7 @@
       }
     }
   }
+
   .#{$prefix}-submenu{
     .#{$prefix}-submenu-container {
       height: $menu-item-height;
@@ -89,6 +91,7 @@
       
     }
   }
+
   .#{$prefix}-menu-item{
     display: flex;
     align-items: center;
@@ -122,5 +125,33 @@
       }
     }
 
+  }
+  
+  .#{$prefix}-menu-divider{
+    height: $menu-item-height;
+    line-height: $menu-item-height;
+    padding: 0 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: break-all;
+    cursor: initial;
+    .#{$prefix}-menu-divider-text{
+      padding-left: 17px;
+      font-size: 12px;
+      font-weight: 500;
+      color: $fontColor-4;
+      letter-spacing: 1px;
+    }
+  }
+  .#{$prefix}-submenu{
+    .#{$prefix}-menu-divider{
+      height: $menu-item-no-first-height;
+      line-height: $menu-item-no-first-height;
+      padding: 0 15px;
+      .#{$prefix}-menu-divider-text{
+        padding-left: 27px;
+      }
+    }
   }
 }

@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import Icon from "../Icon";
 import { getPrefixCls } from "../_util/responsiveObserve";
 interface ModalProps {
-  visible: Boolean;
+  visible?: Boolean;
   wrapClassName?: string;
   width?: number;
   title?: string | React.ReactNode;
@@ -121,7 +121,11 @@ const Modal: ModalComponentProps = ({
   if(!modalRoot){
     creatdiv()
   }
-  return visible && typeof window !== 'undefined' && target && ReactDOM.createPortal(getModalDOM(),modalRoot);
+  const wrapper = document.getElementById('modal-root');
+  if (wrapper && visible && typeof window !== 'undefined' && target) {
+    return ReactDOM.createPortal(getModalDOM(), wrapper)
+  }
+  return null
 };
 const confirm = (props: ModalConfirmProps) => {
   const { content, onCancel, onOK, ...restProps } = props;
