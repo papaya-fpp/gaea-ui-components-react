@@ -22,7 +22,7 @@ DropdownClick.args = {
 
 export const DropdownHover = Template.bind({});
 DropdownHover.args = {
-  title: 'click me',
+  title: 'hover me',
   trigger: 'hover',
   list: [
     { key: '1', label: 'click 1'},

@@ -30,6 +30,14 @@
     border-radius: calc($badge-height / 2);
     box-shadow: 0 0 0 1px #fff;
   }
+  .#{$prefix}-badge-small {
+    min-width: $badge-height-sm;
+    height: $badge-height-sm;
+    padding: 0 2px;
+    font-size: $badge-font-size;
+    line-height: $badge-height-sm;
+    border-radius: calc($badge-height-sm / 2);
+  }
   .#{$prefix}-badge-dot {
     z-index: $badge-zindex;
     width: $badge-dot-size;

@@ -17,7 +17,7 @@ interface PublicProps {
 	openKeys?: string[];
 	defaultSelectedKeys?: string;
 	selectedKeys?: string,
-	onSelect?: (key: string | string[]) => void
+	onSelect?: (key: string) => void
 	onOpenChange?: (openKeys: string | string[]) => void;
 }
 
@@ -40,10 +40,9 @@ const InternalMenu: React.FC<InternalMenuProps> = (props) => {
     className,
 		children,
 		defaultOpenKeys,
-		defaultSelectedKeys,
+    defaultSelectedKeys,
 		onSelect,
 		onOpenChange,
-    ...others
 	} = props;
 	
 	let initKeys = props.selectedKeys || defaultOpenKeys;
@@ -109,7 +108,7 @@ const InternalMenu: React.FC<InternalMenuProps> = (props) => {
 	
   return (
 		<MenuContext.Provider value={contextValue}>
-			<ul className={classes} {...others}>
+			<ul className={classes}>
 				{renderItem()}
 			</ul>
 		</MenuContext.Provider>

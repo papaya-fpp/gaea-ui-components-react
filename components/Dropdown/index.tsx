@@ -48,7 +48,8 @@ const Dropdown: React.FC<DropdownProps> = (props) => {
   const setHiddenHandle = (status: boolean) => {
     if (status) {
       if (listRef.current) {
-        listRef.current.style.height = 0 + 'px';
+        listRef.current.style.height = '0px';
+        listRef.current.style.opacity = '0';
       }
       clearTimeout(hiddenTimer);
       hiddenTimer = setTimeout(() => {
@@ -119,6 +120,7 @@ const Dropdown: React.FC<DropdownProps> = (props) => {
   React.useEffect(()=>{
     if (listRef.current && !hidden) {
       listRef.current.style.height = totalHeight + 'px';
+      listRef.current.style.opacity = '1';
     }
   }, [hidden])
   

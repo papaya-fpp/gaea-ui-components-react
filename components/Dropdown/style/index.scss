@@ -25,7 +25,8 @@
     background: $dropdown-list-bg;
     box-shadow: $dropdown-list-shadow;
     border-radius: $dropdown-list-redius;
-    transition: height $animation-duration-slow $ease-in-out;
+    transition: height $animation-duration-slow $ease-in-out,
+                opacity $animation-duration-slow $ease-in-out;
     overflow: hidden;
     position: absolute;
     z-index: 999;
