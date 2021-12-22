@@ -15,3 +15,4 @@ import '../components/Select/style';
 import '../components/Dropdown/style';
 import '../components/SaveButtonBar/style';
 import '../components/Card/style';
+import '../components/Pagination/style';
