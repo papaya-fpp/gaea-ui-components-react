@@ -27,3 +27,5 @@ export { default as Select } from './Select';
 export { default as SaveButtonBar } from './SaveButtonBar';
 
 export { default as Icon } from './Icon';
+
+export { default as Card } from './Card';

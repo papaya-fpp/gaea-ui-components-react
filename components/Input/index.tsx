@@ -171,14 +171,14 @@ export const Input: React.FC<InputProps> = ({
                                     )
                                 }
                                 {
-                                    type === 'password' && passwordIcon && (
+                                     passwordIcon && (
                                         <span>
                                             {
                                                 type === 'password' && (
                                                     <Icon
                                                         onClick={() => {
                                                             if (onChangeType) {
-                                                                onChangeType('zhengyan');
+                                                                onChangeType('show');
                                                             }
                                                         }}
                                                         className={`${prefixClsInput}-suffix`} name="zhengyan"/>)
@@ -187,7 +187,7 @@ export const Input: React.FC<InputProps> = ({
                                                 type !== 'password' && (<Icon
                                                     onClick={() => {
                                                         if (onChangeType) {
-                                                            onChangeType('biyan');
+                                                            onChangeType('hide');
                                                         }
                                                     }}
                                                     className={`${prefixClsInput}-suffix`}

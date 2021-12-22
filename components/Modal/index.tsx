@@ -62,7 +62,7 @@ const Modal: ModalComponentProps = ({
   // 点击确定
   const handleOK = () => onOK && onOK();
   useEffect(() => {
-    setTarget(document.getElementById("modal-root") as any);
+    setTarget(document.getElementById("fpp-modal-root") as any);
   }, []);
   useEffect(() => {
     visible ? fixedScroll() : resetScroll();
@@ -108,6 +108,19 @@ const Modal: ModalComponentProps = ({
         </div>
     );
   };
+  const creatdiv = () => {
+    //创建一个div
+    var div = document.createElement('div');
+    div.id = "fpp-modal-root";//设置div的属性
+    var bo = document.body; //获取body对象.
+    //动态插入到body中
+    bo.insertBefore(div, bo.lastChild);
+  }
+
+  let modalRoot = document.getElementById('fpp-modal-root')
+  if(!modalRoot){
+    creatdiv()
+  }
   const wrapper = document.getElementById('modal-root');
   if (wrapper && visible && typeof window !== 'undefined' && target) {
     return ReactDOM.createPortal(getModalDOM(), wrapper)

@@ -8,7 +8,6 @@ export default {
     title: 'Example/Modal',
     component: Modal,
 } as ComponentMeta<typeof Modal>;
-// let visible = true
 const Template: ComponentStory<typeof Modal> = (args) => {
 
     const [visible, setVisible] = useState(args.visible);
@@ -30,7 +29,7 @@ const Template: ComponentStory<typeof Modal> = (args) => {
     }, [args.visible])
 
     return (
-        <div id="modal-root">
+        <div>
             <Button onClick={confirm}>confirm</Button>
             <Modal {...args} onCancel={onCancelHandle} onOK={confirm} visible={visible}/>
         </div>)

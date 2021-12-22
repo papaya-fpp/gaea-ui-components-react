@@ -168,8 +168,10 @@
       }
     }
     .#{$prefix}-select-kong_wrapper {
-      color: #00000040;
+      color: #939DAD;
       text-align: center;
+      padding: 16px;
+      font-size: 40px;
       .#{$prefix}-select-kong {
         //font-size: 30px;
         margin: 14px 0;
