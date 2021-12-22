@@ -1,0 +1,81 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fpp-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .fpp-pagination-list {
+    display: flex;
+    > li {
+      min-width: 32px;
+      margin-right: 8px;
+      line-height: 30px;
+      vertical-align: middle;
+      user-select: none;
+      cursor: pointer;
+      text-align: center;
+      overflow: hidden;
+      height: 32px;
+      width: 32px;
+      &.pageNum,
+      &.page-prev-arrow,
+      &.page-next-arrow {
+        border: 1px solid #d9d9d9;
+        border-radius: 2px;
+        &:hover,
+        &.active {
+          border-color: #000;
+          color: #000;
+        }
+      }
+      &.fpp-pagination-dot {
+        color: rgba(0, 0, 0, 0.25);
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: 2px;
+        text-align: center;
+        text-indent: 0.13em;
+        opacity: 1;
+        .next-icon,
+        .prev-icon {
+          width: 32px;
+          @include flex-center();
+          display: none;
+        }
+        .next-icon {
+          height: 28px;
+          //transform: rotate(180deg);
+        }
+        .prev-icon {
+          height: 38px;
+        }
+        &:hover {
+          .dot {
+            display: none;
+          }
+          .next-icon,
+          .prev-icon {
+            display: block;
+          }
+        }
+      }
+      .page-prev-arrow-d {
+        @include flex-center();
+        height: 28px;
+        //transform: rotate(180deg);
+      }
+      .page-next-arrow-d {
+        @include flex-center();
+        height: 30px;
+      }
+    }
+  }
+  .fpp-pagination-options{
+    width: 110px;
+  }
+  .fpp-pagination-total{
+    margin-right: 10px;
+  }
+}

@@ -121,7 +121,7 @@ const Modal: ModalComponentProps = ({
   if(!modalRoot){
     creatdiv()
   }
-  const wrapper = document.getElementById('modal-root');
+  const wrapper = document.getElementById('fpp-modal-root');
   if (wrapper && visible && typeof window !== 'undefined' && target) {
     return ReactDOM.createPortal(getModalDOM(), wrapper)
   }

@@ -1,6 +1,7 @@
 @import '../../styles/theme/color';
 @import '../../styles/theme/theme.scss';
 .#{$prefix}-select-container {
+  position: relative;
   .#{$prefix}-select-label {
     font-size: $font-size-base;
     font-weight: 500;
@@ -14,6 +15,10 @@
     transition: height $animation-duration-slow $ease-in-out;
     border-radius: 6px;
     background-color: $input-bg;
+    cursor: text;
+    &.#{$prefix}-select-cursorPointer{
+      cursor: pointer;
+    }
     &:hover{
       .#{$prefix}-select-clear{
         //display: flex;
@@ -135,8 +140,8 @@
     display: none !important;
   }
   .#{$prefix}-select-option_list {
-    position: relative;
-    top: 4px;
+    position: absolute;
+    margin-top: 4px;
     width: 100%;
     z-index: 999;
     outline: none;
