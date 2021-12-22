@@ -1,6 +1,6 @@
 {
   "name": "gaea-ui-components-react",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "fpp-ui",
   "main": "lib/index.js",
   "scripts": {
