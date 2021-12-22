@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Table from './index';
 
 export default {
-  title: 'Example/Table',
+  title: 'DataShow/Table',
   component: Table,
 } as ComponentMeta<typeof Table>;
 const dataSource = [

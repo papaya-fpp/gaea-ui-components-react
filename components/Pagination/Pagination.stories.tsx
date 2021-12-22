@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Pagination from './index';
 
 export default {
-  title: 'Example/Pagination',
+  title: 'NAV/Pagination',
   component: Pagination,
 } as ComponentMeta<typeof Pagination>;
 

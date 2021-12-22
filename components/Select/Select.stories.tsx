@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Select from './index';
 const { Option } = Select;
 export default {
-  title: 'Example/Select',
+  title: 'DataEntry/Select',
   component: Select,
 } as ComponentMeta<typeof Select>;
 

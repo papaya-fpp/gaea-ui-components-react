@@ -17,3 +17,4 @@ import '../components/SaveButtonBar/style';
 import '../components/Card/style';
 import '../components/Pagination/style';
 import '../components/Table/style';
+import '../components/Loading/style';

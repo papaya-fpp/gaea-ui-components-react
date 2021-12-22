@@ -5,7 +5,7 @@ import Button from '../Button/index'
 import Card from './index';
 
 export default {
-  title: 'Example/Card',
+  title: 'DataShow/Card',
   component: Card,
 } as ComponentMeta<typeof Card>;
 

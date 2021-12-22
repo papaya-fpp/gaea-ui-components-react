@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import SaveButtonBar from './index';
 
 export default {
-  title: 'Example/SaveButtonBar',
+  title: 'DataEntry/SaveButtonBar',
   component: SaveButtonBar,
 } as ComponentMeta<typeof SaveButtonBar>;
 

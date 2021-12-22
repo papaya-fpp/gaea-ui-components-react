@@ -5,7 +5,7 @@ import Modal from './index';
 import Button from '../Button/index'
 
 export default {
-    title: 'Example/Modal',
+    title: 'Feedback/Modal',
     component: Modal,
 } as ComponentMeta<typeof Modal>;
 const Template: ComponentStory<typeof Modal> = (args) => {

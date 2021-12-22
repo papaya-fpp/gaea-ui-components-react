@@ -7,7 +7,7 @@ import Input from '../Input/index';
 import Select from '../Select/index';
 const { Option } = Select;
 export default {
-  title: 'Example/Form',
+  title: 'DataEntry/Form',
   component: Form,
 } as ComponentMeta<typeof Form>;
 
