@@ -88,7 +88,7 @@
     &:hover{
       .#{$prefix}-input-clear{
         //display: flex;
-        color: #8691A3;
+        color: $fontColor-4;
       }
     }
     .#{$prefix}-input-affix-wrapper{
