@@ -75,15 +75,9 @@ const Template3: ComponentStory<typeof Input> = (args) => {
   const handleOnAddon = ()=>{
 
   }
-  const handleChangeType = (val)=>{
-    if(val==='show'){
-      setType('text')
-    }else{
-      setType('password')
-    }
-  }
+
   return (
-      <Input {...args} value={inputVal} error={inputVal===''} errorText={inputVal===''?'您输入的不能为空':''} onChange={handleChange} onChangeType={handleChangeType}  />
+      <Input {...args} value={inputVal} error={inputVal===''} errorText={inputVal===''?'您输入的不能为空':''} onChange={handleChange}   />
   )
 }
 

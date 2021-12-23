@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Icon from '../Icon';
-import { getPrefixCls } from '../_util/responsiveObserve';
+import {getPrefixCls} from '../_util/responsiveObserve';
 
 interface InputProps {
     label?: string;
@@ -15,7 +15,6 @@ interface InputProps {
     value?: string;
     size?: string;
     onAddon?: any; //右侧操作按钮 点击事件（例：复制）
-    onChangeType?: any; //修改输入框类型
     onChange?: any;
     onBlur?: any;
     onFocus?: any;
@@ -34,36 +33,36 @@ interface InputProps {
  * Primary UI component for user interaction
  */
 export const Input: React.FC<InputProps> = ({
-                          label = '',
-                          placeholder = '',
-                          prefix,
-                          suffix,
-                          passwordIcon,
-                          groupAddon,
-                          type = 'text',
-                          name = '',
-                          value = '',
-                          size = '',
-                          error = false,
-                          onAddon,
-                          onChangeType,
-                          onChange,
-                          onBlur,
-                          onFocus,
-                          className = '',
-                          errorText = '',
-                          readonly = false,
-                          allowClear = false,
-                          maxLength,
-                          fixed,
-                          onlyPpositive,
-                          id = '',
-                          ref = null,
-                          ...props
-                      }: InputProps) => {
+                                                label = '',
+                                                placeholder = '',
+                                                prefix,
+                                                suffix,
+                                                passwordIcon,
+                                                groupAddon,
+                                                type = 'text',
+                                                name = '',
+                                                value = '',
+                                                size = '',
+                                                error = false,
+                                                onAddon,
+                                                onChange,
+                                                onBlur,
+                                                onFocus,
+                                                className = '',
+                                                errorText = '',
+                                                readonly = false,
+                                                allowClear = false,
+                                                maxLength,
+                                                fixed,
+                                                onlyPpositive,
+                                                id = '',
+                                                ref = null,
+                                                ...props
+                                            }: InputProps) => {
     const prefixClsInput = getPrefixCls('input');
     const prefixClsTextarea = getPrefixCls('textarea');
     const [val, setVal] = useState(value || '');
+    const [typeTemp, setTypeTemp] = useState(type);
     const numberReg = /^[0-9]+\.?[0-9]*/;
     const setValueHandle = (value: any) => {
         let val = value.toString();
@@ -93,6 +92,9 @@ export const Input: React.FC<InputProps> = ({
         setVal(value);
         // setValueHandle(value);
     }, [value]);
+    useEffect(() => {
+        setTypeTemp(type);
+    }, [type]);
     return (
         <div className={`${prefixClsInput}-body ${className}`}>
             {
@@ -102,7 +104,8 @@ export const Input: React.FC<InputProps> = ({
             }
             {
                 type === 'textarea' ? (
-                    <div className={`${prefixClsTextarea}` + ` ${size}` + (error ? ' error' : '') + (readonly ? ' readonly' : '')}>
+                    <div
+                        className={`${prefixClsTextarea}` + ` ${size}` + (error ? ' error' : '') + (readonly ? ' readonly' : '')}>
                          <textarea
                              className={`${prefixClsTextarea}-affix-wrapper`}
                              ref={ref}
@@ -128,7 +131,8 @@ export const Input: React.FC<InputProps> = ({
                          />
                     </div>
                 ) : (
-                    <div className={`${prefixClsInput}` + ` ${size}` + (error ? ' error' : '') + (readonly ? ' readonly' : '')}>
+                    <div
+                        className={`${prefixClsInput}` + ` ${size}` + (error ? ' error' : '') + (readonly ? ' readonly' : '')}>
                         <div className={`${prefixClsInput}-wrapper` + (groupAddon ? ` ${prefixClsInput}-group` : '')}>
                             <div className={`${prefixClsInput}-affix-wrapper`}>
                                 {
@@ -137,7 +141,7 @@ export const Input: React.FC<InputProps> = ({
                                 <input
                                     ref={ref}
                                     placeholder={placeholder}
-                                    type={type === 'number' ? 'text' : type}
+                                    type={typeTemp === 'number' ? 'text' : typeTemp}
                                     id={id}
                                     name={name}
                                     readOnly={readonly}
@@ -164,31 +168,26 @@ export const Input: React.FC<InputProps> = ({
                                 }
                                 {/*清除图标*/}
                                 {
-                                    val&&allowClear&&(
-                                        <div className={`${prefixClsInput}-clear`} onClick={handleClear}>
-                                            <Icon name="guanbi1"/>
-                                        </div>
+                                    val && allowClear && (
+                                        <Icon className={[`${prefixClsInput}-clear`,passwordIcon?`${prefixClsInput}-clear-space`:''].join(' ')} onClick={handleClear}
+                                              name="guanbi1"/>
                                     )
                                 }
                                 {
-                                     passwordIcon && (
+                                    passwordIcon && (
                                         <span>
                                             {
-                                                type === 'password' && (
+                                                typeTemp === 'password' && (
                                                     <Icon
                                                         onClick={() => {
-                                                            if (onChangeType) {
-                                                                onChangeType('show');
-                                                            }
+                                                            setTypeTemp('text')
                                                         }}
                                                         className={`${prefixClsInput}-suffix`} name="zhengyan"/>)
                                             }
                                             {
-                                                type !== 'password' && (<Icon
+                                                typeTemp !== 'password' && (<Icon
                                                     onClick={() => {
-                                                        if (onChangeType) {
-                                                            onChangeType('hide');
-                                                        }
+                                                        setTypeTemp('password')
                                                     }}
                                                     className={`${prefixClsInput}-suffix`}
                                                     name="biyan"/>)
