@@ -25,7 +25,7 @@ interface ButtonProps {
    */
   label?: string;
 
-  children: string | React.ReactNode;
+  children?: string | React.ReactNode;
   /**
    * icon 图标
    */

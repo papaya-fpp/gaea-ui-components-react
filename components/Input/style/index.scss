@@ -145,6 +145,9 @@
         cursor: pointer;
         color: rgba(134, 145, 163, 0.49);
         //display: none;
+        &.#{$prefix}-input-clear-space{
+          right: 32px;
+        }
       }
     }
 
