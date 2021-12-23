@@ -11,17 +11,16 @@ interface AvatarProps extends React.HTMLAttributes<HTMLDivElement> {
   shape?: 'circle' | 'square';
 }
 
-const Avatar: React.FC<AvatarProps> = (props) => {
-  const {
-    size,
-    src,
-    icon,
-    shape = 'circle',
-    children,
-    className,
-    style,
-    ...other
-  } = props;
+const Avatar: React.FC<AvatarProps> = ({
+  size,
+  src,
+  icon,
+  shape = 'circle',
+  children,
+  className,
+  style,
+  ...other
+}) => {
   const prefixCls = getPrefixCls('avatar');
 
   const classes = classNames(

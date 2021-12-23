@@ -13,7 +13,8 @@ const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} />;
 
 export const AvatarSrc = Template.bind({});
 AvatarSrc.args = {
-  src: "https://www.w3school.com.cn/i/eg_tulip.jpg"
+  src: "https://www.w3school.com.cn/i/eg_tulip.jpg",
+  shape: 'circle'
 }
 
 export const AvatarIcon = Template.bind({});

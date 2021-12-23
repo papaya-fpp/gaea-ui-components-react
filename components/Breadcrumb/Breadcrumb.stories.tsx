@@ -7,6 +7,16 @@ const { Item } = Breadcrumb;
 export default {
   title: 'Nav/Breadcrumb',
   component: Breadcrumb,
+  argTypes: {
+    separator: {
+      type: { name: 'string' },
+      table: {
+        defaultValue: { summary: '/' },
+      },
+      description: '分隔符',
+      defaultValue: '/'
+    }
+  },
 } as ComponentMeta<typeof Breadcrumb>;
 
 const Template: ComponentStory<typeof Breadcrumb> = (args) => (
@@ -19,6 +29,6 @@ const Template: ComponentStory<typeof Breadcrumb> = (args) => (
 
 export const defaultComp = Template.bind({});
 defaultComp.args = {
-  separator: '/'
+  // separator: '/'
 };
 
