@@ -20,18 +20,17 @@ interface DropdownProps {
   onChange?: (item: ItemProps) => void;
 }
 
-const Dropdown: React.FC<DropdownProps> = (props) => {
-  const {
-    arrow = true,
-    disabled,
-    trigger = 'click',
-    visible,
-    list = [],
-    title,
-    children,
-    onChange,
-    placement = 'bottomLeft',
-  } = props;
+const Dropdown: React.FC<DropdownProps> = ({
+  arrow = true,
+  disabled = false,
+  trigger = 'click',
+  visible = true,
+  list = [],
+  title,
+  children,
+  onChange,
+  placement = 'bottomLeft',
+}) => {
 
   const totalHeight = list.length * 36 + 16;
   let titleHeight = 0;

@@ -18,5 +18,6 @@ const Template: ComponentStory<typeof Badge> = (args) => (
 export const BadgeDefault = Template.bind({});
 BadgeDefault.args = {
   count: 10,
-  overflowCount: 99
+  overflowCount: 99,
+  size: "default"
 }

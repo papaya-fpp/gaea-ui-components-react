@@ -8,6 +8,85 @@ const { Item, SubMenu, Divider } = Menu
 export default {
   title: 'Nav/Menu',
   component: Menu,
+  argTypes: {
+    inlineCollapsed: {
+      type: 'boolean',
+      description: '是否折叠',
+      table: {
+        type: { summary: 'boolean' },
+        defaultValue: {
+          summary: false
+        }
+      }
+    },
+    theme: {
+      options: ['dark','light'],
+      description: '主题',
+      control: { 
+        type: 'radio'
+      },
+      table: {
+        type: { summary: 'string' },
+        defaultValue: {
+          summary: 'dark'
+        }
+      }
+    },
+    defaultOpenKeys:{
+      description: '默认展开项',
+      table: {
+        type: { summary: 'array' },
+        defaultValue: {
+          summary: '[]'
+        }
+      }
+    },
+    openKeys:{
+      description: '展开项',
+      table: {
+        type: { summary: 'array' },
+        defaultValue: {
+          summary: '[]'
+        }
+      }
+    },
+    defaultSelectedKeys:{
+      description: '默认选中项',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: {
+          summary: ''
+        }
+      }
+    },
+    selectedKeys:{
+      description: '选中项',
+      table: {
+        type: { summary: 'string' },
+        defaultValue: {
+          summary: ''
+        }
+      }
+    },
+    onSelect:{
+      description: '选中回调',
+      table: {
+        type: { summary: 'func' },
+        defaultValue: {
+          summary: '(key: string) => void'
+        }
+      }
+    },
+    onOpenChange:{
+      description: '展开回调',
+      table: {
+        type: { summary: 'func' },
+        defaultValue: {
+          summary: '(openKeys: string[]) => void;'
+        }
+      }
+    }
+  },
 } as ComponentMeta<typeof Menu>;
 
 const Template: ComponentStory<typeof Menu> = (args) => (
