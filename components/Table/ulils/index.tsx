@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const createColgroup = (columns) => {
-  const ary = [];
+  const ary:Array<any> = [];
   let prevWitch = '';
   for (let i = 0; i < columns.length; i++) {
     if (columns[i].width) {
@@ -15,7 +15,7 @@ export const createColgroup = (columns) => {
       prevWitch = '';
     }
   }
-  const colDom = [];
+  const colDom:Array<any> = [];
   for (let i = 0; i < ary.length; i++) {
     if (!ary[i]) {
       colDom.push(() => <col />);
@@ -33,12 +33,12 @@ export const createColgroup = (columns) => {
 };
 
 export const createNewList = (list, getRowKey, level = 0, parentId?) => {
-  let ary = [];
+  let ary:Array<any> = [];
   for (let i = 0; i < list.length; i++) {
     const { description, children, ...data } = list[i];
     const isCollapse = !!(description || (children && children.length > 0));
     const item_key = getRowKey(data);
-    const obj = {
+    const obj:any = {
       ...data,
       level,
       isCollapse,

@@ -13,7 +13,9 @@ const Template: ComponentStory<typeof Loading> = (args: any) => (
   <div>
     <p>Loading Components:</p>
     <div style={{width: '200px', height: '200px', border: '1px solid #ccc'}}>
-      <Loading {...args} />
+      <Loading {...args}>
+          <div>111</div>
+      </Loading>
     </div>
   </div>
 )
@@ -22,6 +24,6 @@ export const defaultStyle = Template.bind({});
 defaultStyle.args = {
   loading: true,
   text:'loading...',
-  fullScreen:false,
+  fullScreen:true,
   opacity:false,
 };

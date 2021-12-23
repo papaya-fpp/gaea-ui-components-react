@@ -70,6 +70,9 @@
         @include flex-center();
         height: 30px;
       }
+      .fpp-pagination-disabled{
+        cursor: not-allowed;
+      }
     }
   }
   .fpp-pagination-options{

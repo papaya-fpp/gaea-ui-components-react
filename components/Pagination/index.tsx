@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Select from '../Select'
+import classNames from "classnames";
 const { Option } = Select;
 interface PaginationProps {
   total: number; //总数
@@ -31,7 +32,7 @@ const Pagination: React.FC<PaginationProps> = ({ total, current = 1, PageSize = 
     },
   ])
   const [pageCount, setPageCount] = useState(Math.ceil(total / PageSize));
-  const [showList, setShowList] = useState([]);
+  const [showList, setShowList] = useState<any>([]);
   const [comCurrent, setComCurrent] = useState(+current);
   const [defaultPageSize, setDefaultPageSize] = useState(+PageSize);
   useEffect(() => {
@@ -42,7 +43,7 @@ const Pagination: React.FC<PaginationProps> = ({ total, current = 1, PageSize = 
 
 
   const createShowList = (curt) => {
-    let ary = [];
+    let ary:Array<any> = [];
     if (pageCount <= 7) {
       for (let i = 1; i <= pageCount; i++) {
         ary.push(i);
@@ -104,7 +105,14 @@ const Pagination: React.FC<PaginationProps> = ({ total, current = 1, PageSize = 
                 handleClick('prev', 1);
               }}
           >
-            <div className="page-prev-arrow-d">
+            <div className={
+              classNames(
+                  `page-prev-arrow-d`,
+                  {
+                  'fpp-pagination-disabled':comCurrent == 1,
+                  }
+              )
+            }>
               《
               {/*<Icon name="page-arrow" size={16} />*/}
             </div>
@@ -162,7 +170,14 @@ const Pagination: React.FC<PaginationProps> = ({ total, current = 1, PageSize = 
                 handleClick('next', 1);
               }}
           >
-            <div className="page-next-arrow-d">
+            <div className={
+              classNames(
+                  `page-next-arrow-d`,
+                  {
+                    'fpp-pagination-disabled':comCurrent == pageCount
+                  }
+              )
+            }>
               》
               {/*<Icon name="page-arrow" size={16} />*/}
             </div>
