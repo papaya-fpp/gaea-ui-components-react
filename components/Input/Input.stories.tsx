@@ -47,6 +47,8 @@ const Template: ComponentStory<typeof Input> = (args) => {
 const Template2: ComponentStory<typeof Input> = (args) => {
   const [inputVal, setInputVal] = useState('');
   const [type, setType] = useState('password');
+  const [verificationCodeLoading, setVerificationCodeLoading] = useState(false);
+  const [verificationCodeTrgger, setVerificationCodeTrgger] = useState(false);
   const handleChange = (val)=>{
     console.log('val',val)
     setInputVal(val)
@@ -54,6 +56,7 @@ const Template2: ComponentStory<typeof Input> = (args) => {
   const handleOnAddon = ()=>{
 
   }
+
   const handleChangeType = (val)=>{
     if(val==='show'){
       setType('text')
@@ -61,8 +64,23 @@ const Template2: ComponentStory<typeof Input> = (args) => {
       setType('password')
     }
   }
+  const handleSendVerificationCode = () => {
+    setVerificationCodeLoading(true)
+    setTimeout(()=>{
+      setVerificationCodeLoading(false)
+      setVerificationCodeTrgger(true)
+    },2000)
+    setVerificationCodeTrgger(false) // 触发成功之后一定要置为false
+  }
   return (
-      <Input {...args} value={inputVal} onChange={handleChange} onChangeType={handleChangeType}  />
+      <Input {...args}
+             value={inputVal}
+             verificationCodeLoading={verificationCodeLoading}
+             verificationCodeTrgger={verificationCodeTrgger}
+             onChange={handleChange}
+             onChangeType={handleChangeType}
+             sendVerificationCode={handleSendVerificationCode}
+      />
   )
 }
 const Template3: ComponentStory<typeof Input> = (args) => {
@@ -100,6 +118,7 @@ password.args = {
   placeholder:'login_Password',
   name:"password",
   passwordIcon:true,
+  allowClear:true,
   value:'',
   onChange:() => {
   },
@@ -123,9 +142,29 @@ search.args = {
   name:"search",
   value:'',
   prefix:'Search',
-  // suffix:'a-Crosssign',
+  suffix:'a-Crosssign',
   allowClear:true,
   groupAddon:'copy',
+  passwordIcon:true,
+  onAddon:() => {
+  },
+  onChange:() => {
+  }
+};
+
+
+export const verificationCode = Template2.bind({});
+verificationCode.args = {
+  placeholder:'verificationCode',
+  name:"verificationCode",
+  value:'',
+  allowClear:true,
+  verificationCode:true,
+  verificationCodeLoading:false,
+  verificationCodeTrgger:false,
+  verificationCodeTime:3,
+  verificationCodeText:'Send',
+  sendVerificationCode:()=>{},
   onAddon:() => {
   },
   onChange:() => {

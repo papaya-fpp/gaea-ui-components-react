@@ -19,12 +19,6 @@
     &.#{$prefix}-select-cursorPointer{
       cursor: pointer;
     }
-    &:hover{
-      .#{$prefix}-select-clear{
-        //display: flex;
-        color: $fontColor-4;
-      }
-    }
     .#{$prefix}-select-form-placeholder {
       z-index: 100;
       color: $input-placeholder;
@@ -102,6 +96,9 @@
       //display: none;
       &:hover+.#{$prefix}-select-input{
         border-color: $purple-1;
+      }
+      &:hover{
+        color: $fontColor-4;
       }
     }
     .#{$prefix}-select-jiantou {
