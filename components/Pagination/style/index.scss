@@ -1,3 +1,6 @@
+@import '../../styles/theme/color';
+@import '../../styles/theme/theme.scss';
+
 @mixin flex-center {
   display: flex;
   align-items: center;
@@ -20,15 +23,27 @@
       overflow: hidden;
       height: 32px;
       width: 32px;
+      background: $input-bg;
+      color:$fontColor-2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.04);
       &.pageNum,
       &.page-prev-arrow,
       &.page-next-arrow {
-        border: 1px solid #d9d9d9;
-        border-radius: 2px;
+        border: 1px solid $input-border;
+        border-radius: 6px;
         &:hover,
         &.active {
-          border-color: #000;
-          color: #000;
+          border-color: $purple-1;
+          color: $purple-1;
+        }
+        &.fpp-pagination-disabled{
+          cursor: not-allowed;
+          background: $disabled-background;
+          border: 1px solid $disabledBorder;
+          color:rgba(134, 145, 163, 0.5)
         }
       }
       &.fpp-pagination-dot {
@@ -38,19 +53,22 @@
         text-align: center;
         text-indent: 0.13em;
         opacity: 1;
+        box-shadow:none;
+        background: transparent;
         .next-icon,
         .prev-icon {
           width: 32px;
+          color: $purple-1;
           @include flex-center();
           display: none;
         }
-        .next-icon {
-          height: 28px;
-          //transform: rotate(180deg);
-        }
-        .prev-icon {
-          height: 38px;
-        }
+        //.next-icon {
+        //  height: 28px;
+        //  //transform: rotate(180deg);
+        //}
+        //.prev-icon {
+        //  height: 38px;
+        //}
         &:hover {
           .dot {
             display: none;
@@ -69,9 +87,6 @@
       .page-next-arrow-d {
         @include flex-center();
         height: 30px;
-      }
-      .fpp-pagination-disabled{
-        cursor: not-allowed;
       }
     }
   }

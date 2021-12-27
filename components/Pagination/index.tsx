@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Select from '../Select'
 import classNames from "classnames";
+import Icon from '../Icon';
+import Select from '../Select'
 const { Option } = Select;
 interface PaginationProps {
   total: number; //总数
@@ -100,21 +101,22 @@ const Pagination: React.FC<PaginationProps> = ({ total, current = 1, PageSize = 
         }
         <ul className="fpp-pagination-list">
           <li
-              className="page-prev-arrow"
+              className={classNames(
+                  `page-prev-arrow`,
+                  {
+                    'fpp-pagination-disabled':comCurrent == 1,
+                  }
+              )}
               onClick={() => {
                 handleClick('prev', 1);
               }}
           >
             <div className={
               classNames(
-                  `page-prev-arrow-d`,
-                  {
-                  'fpp-pagination-disabled':comCurrent == 1,
-                  }
+                  `page-prev-arrow-d`
               )
             }>
-              《
-              {/*<Icon name="page-arrow" size={16} />*/}
+              <Icon name="zuo" size={16} />
             </div>
           </li>
           {showList.map((item) => {
@@ -129,8 +131,7 @@ const Pagination: React.FC<PaginationProps> = ({ total, current = 1, PageSize = 
                   >
                     <span className="dot">•••</span>
                     <div className="prev-icon">
-                      《
-                     {/* <Icon name="page-dbl-arrow" size={14} />*/}
+                      <Icon name="fanyezuo" size={14} />
                     </div>
                   </li>
               );
@@ -145,8 +146,7 @@ const Pagination: React.FC<PaginationProps> = ({ total, current = 1, PageSize = 
                   >
                     <span className="dot">•••</span>
                     <div className="next-icon">
-                      》
-                      {/*<Icon name="page-dbl-arrow" size={14} />*/}
+                      <Icon name="fanyeyou" size={14} />
                     </div>
                   </li>
               );
@@ -165,21 +165,24 @@ const Pagination: React.FC<PaginationProps> = ({ total, current = 1, PageSize = 
             }
           })}
           <li
-              className="page-next-arrow"
+              className={
+            classNames(
+                `page-next-arrow`,
+                {
+                  'fpp-pagination-disabled':comCurrent == pageCount
+                }
+            )
+          }
               onClick={() => {
                 handleClick('next', 1);
               }}
           >
             <div className={
               classNames(
-                  `page-next-arrow-d`,
-                  {
-                    'fpp-pagination-disabled':comCurrent == pageCount
-                  }
+                  `page-next-arrow-d`
               )
             }>
-              》
-              {/*<Icon name="page-arrow" size={16} />*/}
+              <Icon name="you" size={16} />
             </div>
           </li>
         </ul>
