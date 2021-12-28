@@ -26,6 +26,7 @@
   "include": ["components"],
   "exclude": [
     "node_modules",
+    "assets",
     "lib",
     "dist",
     "components/**/*.stories.tsx",

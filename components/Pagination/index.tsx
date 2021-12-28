@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import classNames from "classnames";
+import Icon from '../Icon';
 import Select from '../Select'
+import {getPrefixCls} from "../_util/responsiveObserve";
 const { Option } = Select;
 interface PaginationProps {
-  total: number; //总数
+  total?: number; //总数
   current?: number; //当前页
   PageSize?: number; // 页数
   showSizeChanger?: boolean; //是否显示分页器
-  showTotal?: any; //是否显示分页器
+  showTotal?: any; //是否显示全部
   onChange?: any;
 }
 
-const Pagination: React.FC<PaginationProps> = ({ total, current = 1, PageSize = 10, showSizeChanger = false, showTotal, onChange }) => {
+const Pagination: React.FC<PaginationProps> = ({ total = 0, current = 1, PageSize = 10, showSizeChanger = false, showTotal, onChange }) => {
   const dotPageNum = 5;
+  const prefixCls = getPrefixCls('pagination');
   const [optionList,setOptionList] = useState([
     {
       value:10,
@@ -31,7 +35,7 @@ const Pagination: React.FC<PaginationProps> = ({ total, current = 1, PageSize = 
     },
   ])
   const [pageCount, setPageCount] = useState(Math.ceil(total / PageSize));
-  const [showList, setShowList] = useState([]);
+  const [showList, setShowList] = useState<any>([]);
   const [comCurrent, setComCurrent] = useState(+current);
   const [defaultPageSize, setDefaultPageSize] = useState(+PageSize);
   useEffect(() => {
@@ -42,7 +46,7 @@ const Pagination: React.FC<PaginationProps> = ({ total, current = 1, PageSize = 
 
 
   const createShowList = (curt) => {
-    let ary = [];
+    let ary:Array<any> = [];
     if (pageCount <= 7) {
       for (let i = 1; i <= pageCount; i++) {
         ary.push(i);
@@ -91,22 +95,30 @@ const Pagination: React.FC<PaginationProps> = ({ total, current = 1, PageSize = 
     createShowList(+current);
   }, [current, pageCount]);
   return total > 0 ? (
-      <div className="fpp-pagination">
+      <div className={prefixCls}>
         {
           showTotal&&(
-              <div className="fpp-pagination-total">{showTotal}</div>
+              <div className={`${prefixCls}-total`}>{showTotal}</div>
           )
         }
-        <ul className="fpp-pagination-list">
+        <ul className={`${prefixCls}-list`}>
           <li
-              className="page-prev-arrow"
+              className={classNames(
+                  `${prefixCls}-prev-arrow`,
+                  {
+                    'fpp-pagination-disabled':comCurrent == 1,
+                  }
+              )}
               onClick={() => {
                 handleClick('prev', 1);
               }}
           >
-            <div className="page-prev-arrow-d">
-              《
-              {/*<Icon name="page-arrow" size={16} />*/}
+            <div className={
+              classNames(
+                  `${prefixCls}-prev-arrow-d`
+              )
+            }>
+              <Icon name="zuo" size={16} />
             </div>
           </li>
           {showList.map((item) => {
@@ -114,15 +126,14 @@ const Pagination: React.FC<PaginationProps> = ({ total, current = 1, PageSize = 
               return (
                   <li
                       key={item}
-                      className={`fpp-pagination-dot pagination-prev`}
+                      className={`${prefixCls}-dot ${prefixCls}-prev`}
                       onClick={() => {
                         handleClick('prev', dotPageNum);
                       }}
                   >
                     <span className="dot">•••</span>
                     <div className="prev-icon">
-                      《
-                     {/* <Icon name="page-dbl-arrow" size={14} />*/}
+                      <Icon name="fanyezuo" size={14} />
                     </div>
                   </li>
               );
@@ -130,15 +141,14 @@ const Pagination: React.FC<PaginationProps> = ({ total, current = 1, PageSize = 
               return (
                   <li
                       key={item}
-                      className={`fpp-pagination-dot pagination-next`}
+                      className={`${prefixCls}-dot ${prefixCls}-next`}
                       onClick={() => {
                         handleClick('next', dotPageNum);
                       }}
                   >
                     <span className="dot">•••</span>
                     <div className="next-icon">
-                      》
-                      {/*<Icon name="page-dbl-arrow" size={14} />*/}
+                      <Icon name="fanyeyou" size={14} />
                     </div>
                   </li>
               );
@@ -157,20 +167,30 @@ const Pagination: React.FC<PaginationProps> = ({ total, current = 1, PageSize = 
             }
           })}
           <li
-              className="page-next-arrow"
+              className={
+            classNames(
+                `${prefixCls}-next-arrow`,
+                {
+                  'fpp-pagination-disabled':comCurrent == pageCount
+                }
+            )
+          }
               onClick={() => {
                 handleClick('next', 1);
               }}
           >
-            <div className="page-next-arrow-d">
-              》
-              {/*<Icon name="page-arrow" size={16} />*/}
+            <div className={
+              classNames(
+                  `${prefixCls}-next-arrow-d`
+              )
+            }>
+              <Icon name="you" size={16} />
             </div>
           </li>
         </ul>
         {
           showSizeChanger&&(
-              <div className="fpp-pagination-options">
+              <div className="${prefixCls}-options">
                 <Select
                     filterOption={false}
                     value={defaultPageSize}

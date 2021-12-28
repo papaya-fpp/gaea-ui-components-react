@@ -1,6 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react';
 import Option from './Option';
-// import { IconFont } from '@fppcomponents';
 import Icon from '../Icon';
 import { getPrefixCls } from '../_util/responsiveObserve';
 

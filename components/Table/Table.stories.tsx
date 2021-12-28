@@ -56,4 +56,11 @@ tableBase.args = {
   dataSource:dataSource,
   columns:columns,
   width:800,
+  pagination:{
+    total : 0,
+    current : 1,
+    PageSize : 10,
+    showSizeChanger : false,
+    showTotal:true,
+  }
 }

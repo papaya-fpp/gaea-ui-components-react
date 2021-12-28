@@ -1,4 +1,5 @@
 @import '../../styles/theme/theme.scss';
+@import '../../styles/theme/color';
 
 @keyframes loading {
   100% {
@@ -34,6 +35,7 @@
     }
 
     .#{$prefix}-loading-img {
+      color:$green-1;
       animation: loading 0.5s linear infinite;
     }
 

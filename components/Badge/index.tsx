@@ -12,17 +12,16 @@ interface BadgeProps {
   size?: ('default' | 'small')
 }
 
-const Badge: React.FC<BadgeProps> = (props) => {
-  const {
-    count = 0,
-    overflowCount = 99,
-    dot,
-    children,
-    className,
-    style,
-    size = 'default',
-    ...other
-  } = props;
+const Badge: React.FC<BadgeProps> = ({
+  count = 0,
+  overflowCount = 99,
+  dot,
+  children,
+  className,
+  style,
+  size = 'default',
+  ...other
+}) => {
 
   const prefixCls = getPrefixCls('badge');
 

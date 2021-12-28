@@ -1,38 +1,48 @@
 @import "../../styles/theme/color";
 @import "../../styles/theme/theme.scss";
+
 .#{$prefix}-input-body {
   width: 100%;
+
   .is-hide {
     display: none !important;
   }
+
   .#{$prefix}-input-label {
     font-size: $font-size-base;
     font-weight: 500;
     color: $input-label;
     margin-bottom: 10px;
   }
+
   .error-text {
     margin-top: 4px;
     color: $red-1;
     font-size: $font-size-sm;
   }
+
   .#{$prefix}-input {
     height: 36px;
+
     &.mini {
       height: 46px;
+
       input {
         height: 44px;
         line-height: 40px;
       }
     }
+
     &.supermini {
       height: 40px;
+
       input {
         height: 40px;
         line-height: 40px;
       }
     }
   }
+
   .#{$prefix}-input,
   .#{$prefix}-textarea {
     width: 100%;
@@ -63,13 +73,16 @@
       padding: 0;
       border: none;
       outline: none;
+
       &::placeholder {
         color: $input-placeholder;
       }
+
       //&::-ms-clear {
       //  display: none;
       //}
     }
+
     .#{$prefix}-textarea-affix-wrapper {
       min-height: 100px;
       resize: vertical;
@@ -78,20 +91,17 @@
       box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.04);
       border-radius: 6px;
       border: 1px solid $input-border;
+
       &:hover,
       &:focus-within {
         background: $input-hover-bg;
         border-color: $purple-1;
       }
     }
+
     .#{$prefix}-input-wrapper {
       width: 100%;
-      &:hover {
-        .#{$prefix}-input-clear {
-          //display: flex;
-          color: $fontColor-4;
-        }
-      }
+
       .#{$prefix}-input-affix-wrapper {
         width: 100%;
         height: 36px;
@@ -108,11 +118,13 @@
         transition: all 0.3s;
         display: flex;
         align-items: center;
+
         &:hover,
         &:focus-within {
           background: $input-hover-bg;
           border-color: $purple-1;
         }
+
         .#{$prefix}-input-prefix {
           cursor: pointer;
           margin-right: 10px;
@@ -120,19 +132,24 @@
           flex: none;
           align-items: center;
         }
+
         .#{$prefix}-input-suffix {
           cursor: pointer;
-          margin-left: 10px;
+          margin-left: 5px;
           display: flex;
           flex: none;
           align-items: center;
         }
       }
+
+      .#{$prefix}-input-all-icon {
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex: none;
+      }
+
       .#{$prefix}-input-clear {
-        position: absolute;
-        right: 12px;
-        top: 50%;
-        margin-top: -9px;
         width: 18px;
         height: 18px;
         overflow: hidden;
@@ -144,7 +161,26 @@
         z-index: 9999;
         cursor: pointer;
         color: rgba(134, 145, 163, 0.49);
-        //display: none;
+
+        &:hover {
+          color: $fontColor-4;
+        }
+      }
+
+      .#{$prefix}-input-verification-code {
+        font-size: $font-size-base;
+        color: $fontColor-4;
+        margin-left: 5px;
+        cursor: pointer;
+        border-left: 1px solid $input-border;
+        padding-left: 23px;
+        &.#{$prefix}-input-verification-disabled{
+          cursor: not-allowed;
+        }
+        & .#{$prefix}-input-loading-icon{
+          margin-right: 10px;
+          animation: loading 1s infinite linear;
+        }
       }
     }
 
@@ -152,13 +188,16 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
       .#{$prefix}-input-affix-wrapper {
         border-radius: 6px 0 0 6px;
+
         &:hover,
         &:focus-within {
           z-index: 9;
         }
       }
+
       .#{$prefix}-input-group-addon {
         width: 36px;
         height: 36px;
@@ -173,6 +212,7 @@
         border-radius: 0px 6px 6px 0px;
         border: 1px solid $input-border;
         cursor: pointer;
+
         &:hover,
         &:focus-within {
           z-index: 9;
@@ -184,16 +224,19 @@
         }
       }
     }
+
     // 错误提示
     &.error {
       .#{$prefix}-input-affix-wrapper {
         background: $input-hover-bg-err;
         border: 1px solid $red-1;
+
         &:hover,
         &:focus-within {
           background: $input-hover-bg-err;
           border: 1px solid $red-1;
         }
+
         //&:focus-within {
         //  border-color: #f44e4e;
         //  box-shadow: 0 0 0 2px #f44e4e !important;
@@ -203,6 +246,7 @@
         //}
       }
     }
+
     // 禁用 只读样式
     &.readonly {
       .#{$prefix}-input-affix-wrapper {
@@ -210,11 +254,13 @@
         color: $fontColor-1;
         cursor: not-allowed;
         border-color: transparent;
+
         &:hover {
           border-color: transparent;
           background: rgba(134, 145, 163, 0.09) !important;
           color: $fontColor-1 !important;
         }
+
         input,
         textarea {
           cursor: not-allowed;
