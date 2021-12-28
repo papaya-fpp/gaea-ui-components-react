@@ -11,7 +11,8 @@
     "build2": "webpack --config ./webpack.config.js --mode=production",
     "build:watch": "npm run clear && fpp-ui-tool build --watch",
     "dist": "webpack --config ./webpack.config.js",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "storybook-docs": "start-storybook --docs --no-manager-cache"
   },
   "author": "",
   "license": "MIT",
@@ -22,6 +23,7 @@
     "@babel/preset-typescript": "^7.7.4",
     "@babel/runtime": "^7.7.6",
     "@storybook/addon-actions": "^6.4.8",
+    "@storybook/addon-docs": "^6.4.9",
     "@storybook/addon-essentials": "^6.4.8",
     "@storybook/addon-links": "^6.4.8",
     "@storybook/react": "^6.4.8",
