@@ -253,7 +253,7 @@ export const Input: React.FC<InputProps> = ({
                                     {/*发送验证码*/}
                                     {
                                         verificationCode&&(
-                                            <div onClick={()=>{!verificationCodeDisabled && handleClickVerificationCode()}} className={[`${prefixClsInput}-verification-code`,verificationCodeDisabled || verificationCodeLoading?`${prefixClsInput}-verification-disabled`:''].join(' ')}>
+                                            <div onClick={()=>{!verificationCodeDisabled && handleClickVerificationCode()}} className={[`${prefixClsInput}-verification-code`,(verificationCodeDisabled || verificationCodeLoading)?`${prefixClsInput}-verification-disabled`:''].join(' ')}>
                                                 {
                                                     verificationCodeLoading && <Icon className={[`${prefixClsInput}-loading-icon`].join(' ')} name={"Spinnerjiazai1"} />
                                                 }

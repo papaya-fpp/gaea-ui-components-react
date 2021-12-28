@@ -2,14 +2,23 @@ import React, {useEffect, useState, useRef} from 'react';
 import {createColgroup, createNewList} from './ulils';
 import Icon from '../Icon';
 import {getPrefixCls} from '../_util/responsiveObserve';
+import Pagination from '../Pagination'
 const prefixCls = getPrefixCls('table');
-
+ interface paginationProps {
+     total?: number, //分页器总数
+     current?: number, //分页器-当前页
+     PageSize?: number, //分页器-每页页数
+     showTotal?: any, //是否展示分页器总数
+     showSizeChanger?: boolean, //是否显示分页器下拉
+     onChange?: any;//页码改变事件
+ }
 interface TableProps {
     columns: Array<any>; //表格列的配置
     dataSource: Array<any>, //数据数组
     rowKey: string, //表格行 key 的取值
     bordered?: boolean, //是否有边框
-    width?: Number //宽度配置
+    width?: number, //宽度配置
+    pagination: boolean | paginationProps
 }
 
 const TableCollapse = ({value = 1, showTableCollapse = false, onChange}) => {
@@ -32,7 +41,7 @@ const TableCollapse = ({value = 1, showTableCollapse = false, onChange}) => {
 };
 
 const TableComp = (props) => {
-    const {columns, dataSource, rowKey, bordered = false, width}: TableProps = props;
+    const {columns, dataSource, rowKey, bordered = false, width, pagination}: TableProps = props;
     const [tableList, setTableList] = useState<any>([]);
     const tableRef = useRef(null);
 
@@ -153,7 +162,6 @@ const TableComp = (props) => {
     if (width) {
         table_styles.width = width + 'px';
     }
-
     return (
         <div className={prefixCls}>
             <table  className={`${prefixCls}-wrapper`} ref={tableRef}>
@@ -161,6 +169,11 @@ const TableComp = (props) => {
                 {createTHead()}
                 <tbody>{createRow()}</tbody>
             </table>
+       {/*     {
+                pagination&&(
+                    <Pagination {...pagination}></Pagination>
+                )
+            }*/}
         </div>
     );
 };
