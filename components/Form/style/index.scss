@@ -30,12 +30,12 @@
     }
   }
 }
-@media screen and (min-width: 0) and (max-width: 800px) {
-  .#{$prefix}-form-wrapper {
-    .#{$prefix}-form-item-error {
-      .#{$prefix}-form-error-text {
-        line-height: 0.4rem;
-      }
-    }
-  }
-}
+//@media screen and (min-width: 0) and (max-width: 800px) {
+//  .#{$prefix}-form-wrapper {
+//    .#{$prefix}-form-item-error {
+//      .#{$prefix}-form-error-text {
+//        line-height: 0.4rem;
+//      }
+//    }
+//  }
+//}

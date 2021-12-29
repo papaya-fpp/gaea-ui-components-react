@@ -30,6 +30,10 @@
     box-shadow: $layout-header-shadow;
     position: relative;
     z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
   }
 
   .#{$prefix}-layout-footer {

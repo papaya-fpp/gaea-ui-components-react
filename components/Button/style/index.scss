@@ -6,7 +6,7 @@
   border: 0;
   cursor: pointer;
   display: inline-block;
-  line-height: 1;
+  line-height: 20px;
   //box-shadow: 0px -3px 0px 0px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   font-size: 14px;
@@ -64,6 +64,7 @@
 .#{$prefix}-button-text{
   display: flex;
   justify-content: center;
+  align-items: center;
   .#{$prefix}-button--icon{
     margin-right: 10px;
   }

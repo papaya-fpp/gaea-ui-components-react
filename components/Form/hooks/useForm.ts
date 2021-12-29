@@ -93,11 +93,17 @@ export class FormStore {
     });
   };
 
-  private validateFields = () => {
+  private validateFields = (arr:string[]) => {
     const validate = this.subscribable;
-    const list: any = [];
-    for (let valid in validate) {
-      list.push(validate[valid]());
+    let list: any = [];
+    if(arr&&arr.length>0){
+      for (let validItem of arr) {
+        list.push(validate[validItem]());
+      }
+    }else {
+      for (let valid in validate) {
+        list.push(validate[valid]());
+      }
     }
     return this.promiseAll(list)
       .then((res) => {
