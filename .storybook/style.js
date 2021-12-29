@@ -19,4 +19,4 @@ import '../components/Pagination/style';
 import '../components/Table/style';
 import '../components/Loading/style';
 import '../components/Checkbox/style';
-
+import '../components/Radio/style';

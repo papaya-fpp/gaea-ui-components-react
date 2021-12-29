@@ -7,6 +7,7 @@ $prefix: fpp;
 $font-size-large: 16px;
 $font-size-base: 14px;
 $font-size-sm: 12px;
+$font-size-lg: $font-size-base + 2px;
 
 // border radius
 $border-radius-base: 2px;
@@ -17,6 +18,12 @@ $border-color-base: #d9d9d9;
 
 // vertical paddings
 $padding-xs: 8px;
+$padding-sm: 12px;
+
+// height rules
+$height-base: 32px;
+$height-lg: 40px;
+$height-sm: 24px;
 
 // Outline
 $outline-blur-size: 0;
@@ -30,7 +37,7 @@ $background-color-base: #f5f5f5;
 // Disabled states
 $disabled-color: #00000040;
 $disabled-bg: $background-color-base;
-$disabled-active-bg: tint(#000, 90%);
+$disabled-active-bg: #e6e6e6;
 $disabled-color-dark: fade(#fff, 35%);
 
 // Shadow
@@ -59,6 +66,16 @@ $ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
 $ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
 $ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
 
+// vertical paddings
+$padding-md: 16px; 
+
+// vertical padding for all form controls
+$control-padding-horizontal: $padding-sm;
+$control-padding-horizontal-sm: $padding-xs;
+
+// Buttons
+$btn-height-base: $height-base;
+
 // Layout
 $layout-body-background: $bg-1;
 $layout-header-height: 70px;
@@ -78,6 +95,8 @@ $layout-zero-trigger-height: 42px;
 
 // input
 $input-disabled-bg: $disabled-bg;
+$input-height-lg: $height-lg;
+$input-height-sm: $height-sm;
 
 // Breadcrumb
 $breadcrumb-base-color: $fontColor-2;
@@ -141,3 +160,24 @@ $checkbox-check-bg: #fff;
 $checkbox-border-width: $border-width-base;
 $checkbox-border-radius: $border-radius-base;
 $checkbox-group-item-margin-right: 8px;
+
+// Radio
+$radio-size: 16px;
+$radio-top: 0.2em;
+$radio-border-width: 1px;
+$radio-dot-size: $radio-size - 8px;
+$radio-dot-color: $purple-1;
+$radio-dot-disabled-color: #0003;
+$radio-solid-checked-color: $purple-1;
+
+// Radio buttons
+$radio-button-bg: #fff;
+$radio-button-checked-bg: $purple-1;
+$radio-button-color: $purple-1;
+$radio-button-hover-color: $purple-1;
+$radio-button-active-color: $purple-1;
+$radio-disabled-button-checked-bg: $disabled-active-bg;
+$radio-disabled-button-checked-color: $disabled-color;
+$radio-wrapper-margin-right: 8px;
+$radio-checked-focus-color: rgba(101, 84, 192, .1);
+$radio-checked-focus-color-8: rgba(101, 84, 192, .8);

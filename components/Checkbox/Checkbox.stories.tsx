@@ -59,17 +59,7 @@ export default {
         disable: true
       }
     },
-    value: {
-      table: {
-        disable: true
-      }
-    },
     tabIndex: {
-      table: {
-        disable: true
-      }
-    },
-    name: {
       table: {
         disable: true
       }
@@ -90,29 +80,83 @@ export default {
       }
     },
     autoFocus: {
+      table: {
+        category: 'Checkbox',
+      },
       defaultValue: { summary: false },
       description: '自动获取焦点',
     },
     checked: {
+      table: {
+        category: 'Checkbox',
+      },
       defaultValue: { summary: false },
       description: '指定当前是否选中',
     },
     defaultChecked: {
+      table: {
+        category: 'Checkbox',
+      },
       defaultValue: { summary: false },
       description: '初始是否选中',
       control: false
     },
     disabled: {
+      table: {
+        category: 'Checkbox',
+      },
       defaultValue: { summary: false },
       description: '失效状态',
     },
     indeterminate: {
+      table: {
+        category: 'Checkbox',
+      },
       defaultValue: { summary: false },
       description: '设置 indeterminate 状态，只负责样式控制',
     },
     onChange: {
+      table: {
+        category: 'Checkbox',
+      },
       description: '变化时回调函数',
-    }
+    },
+    defaultValue: {
+      table: {
+        category: 'Checkbox Group',
+        type: { summary: 'string[]' },
+      },
+      defaultValue: { summary: '[]' },
+      description: '默认选中的选项',
+      control: false
+    },
+    name: {
+      table: {
+        category: 'Checkbox Group',
+        type: { summary: 'string' },
+      },
+      defaultValue: { summary: '-' },
+      description: 'CheckboxGroup 下所有 input[type="checkbox"] 的 name 属性',
+      control: false
+    },
+    options: {
+      table: {
+        category: 'Checkbox Group',
+        type: { summary: 'string[] | Option[]' },
+      },
+      defaultValue: { summary: '[]' },
+      description: '指定可选项',
+      control: false
+    },
+    value: {
+      table: {
+        category: 'Checkbox Group',
+        type: { summary: 'string[]' },
+      },
+      defaultValue: { summary: '[]' },
+      description: '指定选中的选项',
+      control: false
+    },
   },
   parameters: {
     docs: {
@@ -151,13 +195,8 @@ export default {
           <Primary name='All'>
             <All />
           </Primary>
-          <Title>
-            API
-          </Title>
-          <Description>###属性</Description>
-          <Description>####Checkbox</Description>
+          <Title>API</Title>
           <ArgsTable story={PRIMARY_STORY} />
-          {/* <Description>####Checkbox Group</Description> */}
         </>
       ),
       source: {
