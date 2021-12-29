@@ -76,7 +76,6 @@ export const Input: React.FC<InputProps> = ({
     const [val, setVal] = useState(value || '');
     const [typeTemp, setTypeTemp] = useState(type);
     const [verificationCodeDisabled, setVerificationCodeDisabled] = useState(false);
-    const [verificationCodeLoadingTemp, setVerificationCodeLoadingTemp] = useState(verificationCodeLoading);
     const [verificationCodeTimeTemp, setVerificationCodeTimeTemp] = useState(+verificationCodeTime);
     const [verificationCodeTextTemp, setVerificationCodeTextTemp] = useState(verificationCodeText);
     const timeChangeRef = useRef<any>(null)
