@@ -7,13 +7,38 @@ $prefix: fpp;
 $font-size-large: 16px;
 $font-size-base: 14px;
 $font-size-sm: 12px;
+$font-size-lg: $font-size-base + 2px;
 
 // border radius
 $border-radius-base: 2px;
 $border-radius-6: 6px;
+$border-width-base: 1px;
+$border-style-base: solid;
+$border-color-base: #d9d9d9;
 
 // vertical paddings
 $padding-xs: 8px;
+$padding-sm: 12px;
+
+// height rules
+$height-base: 32px;
+$height-lg: 40px;
+$height-sm: 24px;
+
+// Outline
+$outline-blur-size: 0;
+$outline-width: 2px;
+$outline-color: $purple-1; // No use anymore
+$outline-fade: 20%;
+
+$background-color-light: hsv(0, 0, 98%); // background of header and selected item
+$background-color-base: #f5f5f5;
+
+// Disabled states
+$disabled-color: #00000040;
+$disabled-bg: $background-color-base;
+$disabled-active-bg: #e6e6e6;
+$disabled-color-dark: fade(#fff, 35%);
 
 // Shadow
 $layout-header-shadow: 0px 25px 50px 0px rgba(0, 0, 0, 0.04);
@@ -26,8 +51,30 @@ $header-border-shadow: 0px 25px 50px 0px rgba(101, 84, 192, 0.04);
 $animation-duration-slow: 0.3s; // Modal
 $animation-duration-base: 0.2s;
 $animation-duration-fast: 0.1s; // Tooltip
-
+$ease-base-out: cubic-bezier(0.7, 0.3, 0.1, 1);
+$ease-base-in: cubic-bezier(0.9, 0, 0.3, 0.7);
+$ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+$ease-in: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 $ease-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+$ease-out-back: cubic-bezier(0.12, 0.4, 0.29, 1.46);
+$ease-in-back: cubic-bezier(0.71, -0.46, 0.88, 0.6);
+$ease-in-out-back: cubic-bezier(0.71, -0.46, 0.29, 1.46);
+$ease-out-circ: cubic-bezier(0.08, 0.82, 0.17, 1);
+$ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.34);
+$ease-in-out-circ: cubic-bezier(0.78, 0.14, 0.15, 0.86);
+$ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+$ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+$ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+
+// vertical paddings
+$padding-md: 16px; 
+
+// vertical padding for all form controls
+$control-padding-horizontal: $padding-sm;
+$control-padding-horizontal-sm: $padding-xs;
+
+// Buttons
+$btn-height-base: $height-base;
 
 // Layout
 $layout-body-background: $bg-1;
@@ -45,6 +92,11 @@ $layout-trigger-color: $white-background;
 $layout-trigger-background: #002140;
 $layout-zero-trigger-width: 36px;
 $layout-zero-trigger-height: 42px;
+
+// input
+$input-disabled-bg: $disabled-bg;
+$input-height-lg: $height-lg;
+$input-height-sm: $height-sm;
 
 // Breadcrumb
 $breadcrumb-base-color: $fontColor-2;
@@ -99,3 +151,33 @@ $dropdown-list-redius: $border-radius-6;
 $dropdown-list-item-height: 36px;
 $dropdown-list-item-color-hover: $purple-1;
 $dropdown-list-item-bg-hover: $hover-bg-1;
+
+// checkbox
+$checkbox-size: 16;
+$checkbox-color: $purple-1;
+$checkbox-check-color: #fff;
+$checkbox-check-bg: #fff;
+$checkbox-border-width: $border-width-base;
+$checkbox-border-radius: $border-radius-base;
+$checkbox-group-item-margin-right: 8px;
+
+// Radio
+$radio-size: 16px;
+$radio-top: 0.2em;
+$radio-border-width: 1px;
+$radio-dot-size: $radio-size - 8px;
+$radio-dot-color: $purple-1;
+$radio-dot-disabled-color: #0003;
+$radio-solid-checked-color: $purple-1;
+
+// Radio buttons
+$radio-button-bg: #fff;
+$radio-button-checked-bg: $purple-1;
+$radio-button-color: $purple-1;
+$radio-button-hover-color: $purple-1;
+$radio-button-active-color: $purple-1;
+$radio-disabled-button-checked-bg: $disabled-active-bg;
+$radio-disabled-button-checked-color: $disabled-color;
+$radio-wrapper-margin-right: 8px;
+$radio-checked-focus-color: rgba(101, 84, 192, .1);
+$radio-checked-focus-color-8: rgba(101, 84, 192, .8);
