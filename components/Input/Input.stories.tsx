@@ -84,7 +84,7 @@ const Template2: ComponentStory<typeof Input> = (args) => {
   )
 }
 const Template3: ComponentStory<typeof Input> = (args) => {
-  const [inputVal, setInputVal] = useState('');
+  const [inputVal, setInputVal] = useState('123');
   const [type, setType] = useState('password');
   const handleChange = (val)=>{
     console.log('val',val)

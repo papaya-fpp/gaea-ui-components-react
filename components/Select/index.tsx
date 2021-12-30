@@ -118,25 +118,15 @@ const Select: SelectPropsComponents = ({
     }, [children]);
 
     useEffect(() => {
-        if (value) {
-            const child: any = filterList.filter((item: any) => item.value === value)[0];
+        if (val) {
+            const child: any = filterList.filter((item: any) => item.value === val)[0];
             if (child) {
                 setChildText(child.children);
             }
         } else {
             setChildText('');
         }
-        setVal(value);
-    }, [value]);
-
-    useEffect(() => {
-        if (val) {
-            const child: any = filterList.filter((item: any) => item.value === value)[0];
-            if (child) {
-                setChildText(child.children);
-            }
-        }
-    }, [filterList]);
+    }, [val,filterList]);
 
     return (
         <div className={`${prefixCls}-container`}>

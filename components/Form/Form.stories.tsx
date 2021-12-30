@@ -117,6 +117,7 @@ const Template: ComponentStory<typeof Form> = (args) => {
                     }
                 >
                     <Input
+                        value="123"
                         allowClear={true}
                         label="email"
                         name="search"
@@ -134,6 +135,7 @@ const Template: ComponentStory<typeof Form> = (args) => {
                     rules={[{ required: true, message: '不能为空'  }]}
                 >
                     <Select
+                        value="1"
                         allowClear={true}
                         showSearch
                         label="国家/地区"

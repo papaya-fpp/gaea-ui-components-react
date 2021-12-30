@@ -26,6 +26,7 @@
     .#{$prefix}-input-affix-wrapper,
     .#{$prefix}-select-active_text {
       border-color: $red-1 !important;
+      background: $input-hover-bg-err !important;
       margin-bottom: 0;
     }
   }

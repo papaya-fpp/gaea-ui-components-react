@@ -106,6 +106,7 @@ const Template: ComponentStory<typeof Select> = (args) => {
     };
   return (
       <Select
+          value="1"
           allowClear={true}
           showSearch
           label="国家/城市"
