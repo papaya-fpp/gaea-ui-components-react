@@ -13,6 +13,7 @@
   &.#{$prefix}-button--primary {
     color: white;
     background: $purple-1;
+    box-shadow: inset 0px -3px 0px 0px rgba(0, 0, 0, 0.1);
     &.#{$prefix}-button--danger-primary{
       background:$red-1 !important;
     }
