@@ -1,0 +1,48 @@
+.fpp-badge {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+}
+.fpp-badge .fpp-badge-sup {
+  background: #6554C0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  transform-origin: 100% 0%;
+}
+.fpp-badge .fpp-badge-count {
+  z-index: auto;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  color: #fff;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
+  white-space: nowrap;
+  text-align: center;
+  background: #6554C0;
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px #fff;
+}
+.fpp-badge .fpp-badge-small {
+  min-width: 14px;
+  height: 14px;
+  padding: 0 2px;
+  font-size: 12px;
+  line-height: 14px;
+  border-radius: 7px;
+}
+.fpp-badge .fpp-badge-dot {
+  z-index: auto;
+  width: 6px;
+  min-width: 6px;
+  height: 6px;
+  background: #6554C0;
+  border-radius: 100%;
+  box-shadow: 0 0 0 1px #fff;
+}
