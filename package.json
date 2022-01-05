@@ -8,7 +8,6 @@
     "link": "npm link && npm run build:watch",
     "start": "start-storybook -p 6006",
     "build": "npm run clear && fpp-ui-tool build",
-    "publish": "npm run build",
     "build:watch": "npm run clear && fpp-ui-tool build --watch",
     "dist": "webpack --config ./webpack.config.js",
     "build-storybook": "build-storybook",
