@@ -117,7 +117,7 @@ const Select: SelectPropsComponents = ({
         setFilterList(list);
     }, [children]);
     useEffect(() => {
-        // setVal(value); // todo 打开之后有bug,form表单默认有值的情况下 清除剩最后一个字符的时候 再点击删除 会将初始值重新赋值过来
+        setVal(value); // todo 打开之后有bug,form表单默认有值的情况下 清除剩最后一个字符的时候 再点击删除 会将初始值重新赋值过来
     }, [value]);
     useEffect(() => {
         if (val) {
