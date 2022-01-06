@@ -1,5 +1,5 @@
 
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Form from './index';
 import Input from '../Input/index';
@@ -12,6 +12,7 @@ export default {
 } as ComponentMeta<typeof Form>;
 
 const Template: ComponentStory<typeof Form> = (args) => {
+    const [form] = Form.useForm();
     const [optionList,setOptionList] = useState([
         {
             id:'1',
@@ -106,7 +107,13 @@ const Template: ComponentStory<typeof Form> = (args) => {
         }
         // onIsFocusChange && onIsFocusChange(type);
     };
+    useEffect(()=>{
+        form.setFieldsValue({
+            first_name:'123',
+            singlePage_country_code:'1'
+        })
 
+    },[])
     return (
         <Form  {...args}>
             <div className="fpp-checkoutFrom-row">
@@ -117,10 +124,8 @@ const Template: ComponentStory<typeof Form> = (args) => {
                     }
                 >
                     <Input
-                        value="123"
                         allowClear={true}
                         label="email"
-                        name="search"
                         className="fpp-form-input"
                         placeholder="请输入"
                         maxLength={30}
@@ -135,7 +140,6 @@ const Template: ComponentStory<typeof Form> = (args) => {
                     rules={[{ required: true, message: '不能为空'  }]}
                 >
                     <Select
-                        value="1"
                         allowClear={true}
                         showSearch
                         label="国家/地区"
