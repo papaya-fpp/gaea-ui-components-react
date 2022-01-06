@@ -39,9 +39,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   const [ hidden, setHidden ] = React.useState(true);
   const setListHidden = (status: boolean) => {
     if (disabled) return;
-    // if (visible === undefined) {
       setHiddenHandle(status)
-    // }
   }
 
   const setHiddenHandle = (status: boolean) => {
