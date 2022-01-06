@@ -115,7 +115,7 @@ const Template: ComponentStory<typeof Form> = (args) => {
 
     },[])
     return (
-        <Form  {...args}>
+        <Form  {...args} form={form}>
             <div className="fpp-checkoutFrom-row">
                 <Form.Item
                     className="fpp-form-item"
