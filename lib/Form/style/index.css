@@ -1,0 +1,19 @@
+.fpp-form-wrapper .fpp-form-item {
+  margin-bottom: 24px;
+  position: relative;
+}
+.fpp-form-wrapper .fpp-form-item-error {
+  margin-bottom: 12px;
+}
+.fpp-form-wrapper .fpp-form-item-error .fpp-form-error-text {
+  line-height: 1.5;
+  margin-top: 4px;
+  color: #FF8A8A;
+  font-size: 12px;
+}
+.fpp-form-wrapper .fpp-form-item-error .fpp-input-affix-wrapper,
+.fpp-form-wrapper .fpp-form-item-error .fpp-select-active_text {
+  border-color: #FF8A8A !important;
+  background: #FFFBFB !important;
+  margin-bottom: 0;
+}

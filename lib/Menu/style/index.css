@@ -1,0 +1,121 @@
+.fpp-menu {
+  width: 100%;
+  margin-bottom: 0;
+  padding-left: 0;
+  color: #344563;
+  font-size: 14px;
+  line-height: 0;
+  text-align: left;
+  list-style: none;
+  background: #fff;
+  outline: none;
+}
+.fpp-menu.fpp-menu-collapsed {
+  width: 80px;
+}
+.fpp-menu .fpp-menu-item, .fpp-menu .fpp-submenu {
+  padding: 0 15px;
+  cursor: pointer;
+}
+.fpp-menu .fpp-menu-item .fpp-menu-item-container, .fpp-menu .fpp-menu-item .fpp-submenu-container, .fpp-menu .fpp-menu-item .fpp-submenu-title-container, .fpp-menu .fpp-submenu .fpp-menu-item-container, .fpp-menu .fpp-submenu .fpp-submenu-container, .fpp-menu .fpp-submenu .fpp-submenu-title-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.fpp-menu .fpp-menu-item .fpp-menu-item-container, .fpp-menu .fpp-menu-item .fpp-submenu-title-container, .fpp-menu .fpp-submenu .fpp-menu-item-container, .fpp-menu .fpp-submenu .fpp-submenu-title-container {
+  padding-left: 17px;
+  width: 100%;
+  height: 36px;
+  border-radius: 6px;
+  transition: background 0.3s, width 0.3s cubic-bezier(0.2, 0, 0, 1) 0s;
+}
+.fpp-menu .fpp-menu-item .fpp-menu-item-container .fpp-menu-item-title-content, .fpp-menu .fpp-menu-item .fpp-menu-item-container .fpp-submenu-title-content, .fpp-menu .fpp-menu-item .fpp-submenu-title-container .fpp-menu-item-title-content, .fpp-menu .fpp-menu-item .fpp-submenu-title-container .fpp-submenu-title-content, .fpp-menu .fpp-submenu .fpp-menu-item-container .fpp-menu-item-title-content, .fpp-menu .fpp-submenu .fpp-menu-item-container .fpp-submenu-title-content, .fpp-menu .fpp-submenu .fpp-submenu-title-container .fpp-menu-item-title-content, .fpp-menu .fpp-submenu .fpp-submenu-title-container .fpp-submenu-title-content {
+  display: block;
+  margin-left: 10px;
+  height: 36px;
+  line-height: 36px;
+}
+.fpp-menu .fpp-submenu .fpp-submenu-container {
+  height: 50px;
+}
+.fpp-menu .fpp-submenu:hover .fpp-submenu-title-content, .fpp-menu .fpp-submenu:hover svg {
+  color: #6554C0;
+}
+.fpp-menu .fpp-submenu.fpp-submenu-disabled {
+  color: #00000040 !important;
+  background: none;
+  cursor: not-allowed;
+}
+.fpp-menu .fpp-submenu.fpp-submenu-disabled:hover .fpp-submenu-title-content, .fpp-menu .fpp-submenu.fpp-submenu-disabled:hover svg {
+  color: #00000040 !important;
+}
+.fpp-menu .fpp-submenu .drop-down {
+  position: absolute;
+  top: 35%;
+  right: 16px;
+  transition: transform 0.3s;
+}
+.fpp-menu .fpp-submenu.fpp-submenu-open .drop-down {
+  transform: rotate(180deg);
+}
+.fpp-menu .fpp-submenu.fpp-submenu-light .fpp-submenu-title-content, .fpp-menu .fpp-submenu.fpp-submenu-light svg {
+  color: #6554C0;
+}
+.fpp-menu .fpp-submenu .fpp-submenu-list {
+  transition: background 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), height 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  overflow: hidden;
+}
+.fpp-menu .fpp-submenu .fpp-submenu-hidden {
+  height: 0;
+}
+.fpp-menu .fpp-menu-item {
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+.fpp-menu .fpp-menu-item.fpp-menu-item-no-first {
+  height: 36px;
+}
+.fpp-menu .fpp-menu-item:hover .fpp-menu-item-title-content, .fpp-menu .fpp-menu-item:hover svg {
+  color: #6554C0;
+}
+.fpp-menu .fpp-menu-item.fpp-menu-item-disabled {
+  color: #00000040 !important;
+  background: none;
+  cursor: not-allowed;
+}
+.fpp-menu .fpp-menu-item.fpp-menu-item-disabled:hover .fpp-menu-item-title-content, .fpp-menu .fpp-menu-item.fpp-menu-item-disabled:hover svg {
+  color: #00000040 !important;
+}
+.fpp-menu .fpp-menu-item.fpp-menu-item-select .fpp-menu-item-container {
+  background: #F6F7F9;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+}
+.fpp-menu .fpp-menu-item.fpp-menu-item-select .fpp-menu-item-title-content, .fpp-menu .fpp-menu-item.fpp-menu-item-select svg {
+  color: #6554C0;
+}
+.fpp-menu .fpp-menu-divider {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 15px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+  cursor: initial;
+}
+.fpp-menu .fpp-menu-divider .fpp-menu-divider-text {
+  padding-left: 17px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #8691A3;
+  letter-spacing: 1px;
+}
+.fpp-menu .fpp-submenu .fpp-menu-divider {
+  height: 36px;
+  line-height: 36px;
+  padding: 0 15px;
+}
+.fpp-menu .fpp-submenu .fpp-menu-divider .fpp-menu-divider-text {
+  padding-left: 27px;
+}
