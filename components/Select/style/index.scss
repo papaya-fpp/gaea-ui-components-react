@@ -180,4 +180,34 @@
       }
     }
   }
+  // 禁用 只读样式
+  & .readonly {
+    &.#{$prefix}-select-wrapper {
+      background: rgba(134, 145, 163, 0.09) !important;
+      color: $fontColor-1;
+      cursor: not-allowed;
+      border: none;
+
+      &:hover,
+      &:focus{
+        border: none;
+        background: rgba(134, 145, 163, 0.09) !important;
+        color: $fontColor-1 !important;
+      }
+      .#{$prefix}-select-input,
+      .#{$prefix}-select-active_text {
+        border: none;
+        &:hover,
+        &:focus,
+        &:focus-visible{
+          border: none;
+          outline: 0;
+        }
+      }
+      input,
+      textarea {
+        cursor: not-allowed;
+      }
+    }
+  }
 }

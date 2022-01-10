@@ -11,6 +11,7 @@ interface SelectProps {
     filterOption?: any;
     onBlur?: any;
     onFocus?: any;
+    readonly?: boolean;
 }
 interface SelectPropsComponents extends React.FC<SelectProps> {
     Option: typeof Option;

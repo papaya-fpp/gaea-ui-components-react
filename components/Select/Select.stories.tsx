@@ -106,6 +106,7 @@ const Template: ComponentStory<typeof Select> = (args) => {
     };
   return (
       <Select
+          {...args}
           value="1"
           allowClear={true}
           showSearch
@@ -126,3 +127,10 @@ const Template: ComponentStory<typeof Select> = (args) => {
   )
 };
 export const SelectExample = Template.bind({});
+
+
+export const readonlyExample = Template.bind({});
+readonlyExample.args = {
+    readonly: true,
+    placeholder:'当前输入框不可编辑'
+};

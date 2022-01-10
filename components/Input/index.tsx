@@ -215,7 +215,7 @@ export const Input: React.FC<InputProps> = ({
                                 <div className={`${prefixClsInput}-all-icon`}>
                                     {/*清除图标*/}
                                     {
-                                        val && allowClear && (
+                                        val && allowClear && !readonly && (
                                             <Icon className={[`${prefixClsInput}-clear`,passwordIcon?`${prefixClsInput}-clear-space`:''].join(' ')} onClick={handleClear}
                                                   name="guanbi1"/>
                                         )

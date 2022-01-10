@@ -237,14 +237,15 @@
 }
 .fpp-input-body .fpp-input.readonly .fpp-input-affix-wrapper,
 .fpp-input-body .fpp-textarea.readonly .fpp-input-affix-wrapper {
-  background: rgba(134, 145, 163, 0.09);
+  background: rgba(134, 145, 163, 0.09) !important;
   color: #344563;
   cursor: not-allowed;
-  border-color: transparent;
+  border: none;
 }
-.fpp-input-body .fpp-input.readonly .fpp-input-affix-wrapper:hover,
-.fpp-input-body .fpp-textarea.readonly .fpp-input-affix-wrapper:hover {
-  border-color: transparent;
+.fpp-input-body .fpp-input.readonly .fpp-input-affix-wrapper:hover, .fpp-input-body .fpp-input.readonly .fpp-input-affix-wrapper:focus,
+.fpp-input-body .fpp-textarea.readonly .fpp-input-affix-wrapper:hover,
+.fpp-input-body .fpp-textarea.readonly .fpp-input-affix-wrapper:focus {
+  border: none;
   background: rgba(134, 145, 163, 0.09) !important;
   color: #344563 !important;
 }
