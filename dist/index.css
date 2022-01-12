@@ -2219,30 +2219,30 @@ span.fpp-radio + * {
 .fpp-select-container .fpp-select-option_list .fpp-select-kong_wrapper .fpp-select-kong {
   margin: 14px 0;
 }
-.fpp-select-container .readonly.fpp-select-wrapper {
+.fpp-select-container .disabled.fpp-select-wrapper {
   background: rgba(134, 145, 163, 0.09) !important;
   color: #344563;
   cursor: not-allowed;
   border: none;
 }
-.fpp-select-container .readonly.fpp-select-wrapper:hover, .fpp-select-container .readonly.fpp-select-wrapper:focus {
+.fpp-select-container .disabled.fpp-select-wrapper:hover, .fpp-select-container .disabled.fpp-select-wrapper:focus {
   border: none;
   background: rgba(134, 145, 163, 0.09) !important;
   color: #344563 !important;
 }
-.fpp-select-container .readonly.fpp-select-wrapper .fpp-select-input,
-.fpp-select-container .readonly.fpp-select-wrapper .fpp-select-active_text {
+.fpp-select-container .disabled.fpp-select-wrapper .fpp-select-input,
+.fpp-select-container .disabled.fpp-select-wrapper .fpp-select-active_text {
   border: none;
 }
-.fpp-select-container .readonly.fpp-select-wrapper .fpp-select-input:hover, .fpp-select-container .readonly.fpp-select-wrapper .fpp-select-input:focus, .fpp-select-container .readonly.fpp-select-wrapper .fpp-select-input:focus-visible,
-.fpp-select-container .readonly.fpp-select-wrapper .fpp-select-active_text:hover,
-.fpp-select-container .readonly.fpp-select-wrapper .fpp-select-active_text:focus,
-.fpp-select-container .readonly.fpp-select-wrapper .fpp-select-active_text:focus-visible {
+.fpp-select-container .disabled.fpp-select-wrapper .fpp-select-input:hover, .fpp-select-container .disabled.fpp-select-wrapper .fpp-select-input:focus, .fpp-select-container .disabled.fpp-select-wrapper .fpp-select-input:focus-visible,
+.fpp-select-container .disabled.fpp-select-wrapper .fpp-select-active_text:hover,
+.fpp-select-container .disabled.fpp-select-wrapper .fpp-select-active_text:focus,
+.fpp-select-container .disabled.fpp-select-wrapper .fpp-select-active_text:focus-visible {
   border: none;
   outline: 0;
 }
-.fpp-select-container .readonly.fpp-select-wrapper input,
-.fpp-select-container .readonly.fpp-select-wrapper textarea {
+.fpp-select-container .disabled.fpp-select-wrapper input,
+.fpp-select-container .disabled.fpp-select-wrapper textarea {
   cursor: not-allowed;
 }
 @charset "UTF-8";

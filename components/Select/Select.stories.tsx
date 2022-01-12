@@ -129,8 +129,8 @@ const Template: ComponentStory<typeof Select> = (args) => {
 export const SelectExample = Template.bind({});
 
 
-export const readonlyExample = Template.bind({});
-readonlyExample.args = {
-    readonly: true,
+export const disabledExample = Template.bind({});
+disabledExample.args = {
+    disabled: true,
     placeholder:'当前输入框不可编辑'
 };

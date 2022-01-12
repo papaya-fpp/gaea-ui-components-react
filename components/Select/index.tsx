@@ -18,7 +18,7 @@ interface SelectProps {
     filterOption?: any;
     onBlur?: any;
     onFocus?: any;
-    readonly?: boolean;
+    disabled?: boolean;
 }
 
 interface SelectPropsComponents extends React.FC<SelectProps> {
@@ -37,7 +37,7 @@ const Select: SelectPropsComponents = ({
                                            onBlur,
                                            onFocus,
                                            children,
-                                           readonly = false,
+                                           disabled = false,
                                        }) => {
     const prefixCls = getPrefixCls('select');
     const [val, setVal] = useState(value);
@@ -85,7 +85,7 @@ const Select: SelectPropsComponents = ({
     };
 
     const getListNode = () => {
-        if (!showList || readonly) {
+        if (!showList) {
             return null;
         }
         return (
@@ -139,7 +139,7 @@ const Select: SelectPropsComponents = ({
                     <div className={`${prefixCls}-label` + (label != '' ? '' : ` ${prefixCls}-is-hide`)}>{label + ' :'}</div>
                 )
             }
-            <div className={`${prefixCls}-wrapper ${!filterOption ? `${prefixCls}-cursorPointer` : ''} ${className ? className : ''} ${readonly ? ' readonly' : ''}`}>
+            <div className={`${prefixCls}-wrapper ${!filterOption ? `${prefixCls}-cursorPointer` : ''} ${className ? className : ''} ${disabled ? ' disabled' : ''}`}>
                 <span
                     className={`${prefixCls}-form-placeholder ${pc_shrink || val ? `${prefixCls}-pc_shrink` : ''}` + (inputval ? ` ${prefixCls}-hide_placeholder` : '')}
                     onClick={clickFocus}>
@@ -151,7 +151,7 @@ const Select: SelectPropsComponents = ({
                     {childText}
                 </span>
                 <input
-                    readOnly={readonly}
+                    disabled={disabled}
                     ref={inputRef}
                     className={`${prefixCls}-input ${!showSearch ? 'nosearch' : ''}`}
                     value={inputval}
@@ -161,7 +161,7 @@ const Select: SelectPropsComponents = ({
                 />
                 {/*清除图标*/}
                 {
-                    childText&&allowClear&&!readonly&&(
+                    childText&&allowClear&&!disabled&&(
                         <div className={`${prefixCls}-clear`} onClick={handleClear}>
                             <Icon name="guanbi1"/>
                         </div>
@@ -171,7 +171,7 @@ const Select: SelectPropsComponents = ({
                 {/*右侧箭头*/}
                 <div className={`${prefixCls}-jiantou`} onClick={clickFocus}>
                     {
-                        (showList || readonly) ? (
+                        showList ? (
                             <Icon name="Retract"/>
                         ) : (
                             <Icon name="Drop-down"/>

@@ -181,7 +181,7 @@
     }
   }
   // 禁用 只读样式
-  & .readonly {
+  & .disabled {
     &.#{$prefix}-select-wrapper {
       background: rgba(134, 145, 163, 0.09) !important;
       color: $fontColor-1;
