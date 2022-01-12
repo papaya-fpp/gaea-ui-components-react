@@ -68,6 +68,7 @@ const Button = ({
   const loadingState = loading ? `${prefixCls}--loading` : '';
   return (
     <button
+      disabled={disabled}
       type="button"
       className={[`${prefixCls}`, `${prefixCls}--${size}`, mode,disabledState,dangerState,loadingState,className].join(' ')}
       style={{ backgroundColor,...style }}
