@@ -225,13 +225,19 @@
   border: 1px solid #6554C0;
 }
 .fpp-input-body .fpp-input.error .fpp-input-affix-wrapper,
-.fpp-input-body .fpp-textarea.error .fpp-input-affix-wrapper {
+.fpp-input-body .fpp-input.error .fpp-textarea-affix-wrapper,
+.fpp-input-body .fpp-textarea.error .fpp-input-affix-wrapper,
+.fpp-input-body .fpp-textarea.error .fpp-textarea-affix-wrapper {
   background: #FFFBFB;
   border: 1px solid #FF8A8A;
 }
 .fpp-input-body .fpp-input.error .fpp-input-affix-wrapper:hover, .fpp-input-body .fpp-input.error .fpp-input-affix-wrapper:focus-within,
+.fpp-input-body .fpp-input.error .fpp-textarea-affix-wrapper:hover,
+.fpp-input-body .fpp-input.error .fpp-textarea-affix-wrapper:focus-within,
 .fpp-input-body .fpp-textarea.error .fpp-input-affix-wrapper:hover,
-.fpp-input-body .fpp-textarea.error .fpp-input-affix-wrapper:focus-within {
+.fpp-input-body .fpp-textarea.error .fpp-input-affix-wrapper:focus-within,
+.fpp-input-body .fpp-textarea.error .fpp-textarea-affix-wrapper:hover,
+.fpp-input-body .fpp-textarea.error .fpp-textarea-affix-wrapper:focus-within {
   background: #FFFBFB;
   border: 1px solid #FF8A8A;
 }

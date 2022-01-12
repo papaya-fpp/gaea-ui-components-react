@@ -227,7 +227,9 @@
 
     // 错误提示
     &.error {
-      .#{$prefix}-input-affix-wrapper {
+      .#{$prefix}-input-affix-wrapper,
+      .#{$prefix}-textarea-affix-wrapper
+      {
         background: $input-hover-bg-err;
         border: 1px solid $red-1;
 
