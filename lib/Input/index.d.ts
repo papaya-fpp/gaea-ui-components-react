@@ -24,7 +24,7 @@ interface InputProps {
     className?: string;
     error?: boolean;
     errorText?: string;
-    readonly?: boolean;
+    disabled?: boolean;
     allowClear?: boolean;
     maxLength?: number;
     fixed?: number;
