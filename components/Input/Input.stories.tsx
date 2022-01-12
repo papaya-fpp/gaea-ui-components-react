@@ -107,9 +107,9 @@ error.args = {
   onChange:()=>{}
 };
 
-export const readonly = Template.bind({});
-readonly.args = {
-  readonly: true,
+export const disabled = Template.bind({});
+disabled.args = {
+  disabled: true,
   placeholder:'当前输入框不可编辑'
 };
 
@@ -128,6 +128,7 @@ password.args = {
 
 export const textarea = Template2.bind({});
 textarea.args = {
+  disabled: true,
   placeholder:'textarea',
   type:"textarea",
   name:"textarea",

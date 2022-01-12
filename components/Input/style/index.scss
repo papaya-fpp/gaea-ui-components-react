@@ -248,8 +248,9 @@
     }
 
     // 禁用 只读样式
-    &.readonly {
-      .#{$prefix}-input-affix-wrapper {
+    &.disabled {
+      .#{$prefix}-input-affix-wrapper,
+      .#{$prefix}-textarea-affix-wrapper{
         background: rgba(134, 145, 163, 0.09) !important;
         color: $fontColor-1;
         cursor: not-allowed;

@@ -27,7 +27,7 @@ interface InputProps {
     className?: string;
     error?: boolean;
     errorText?: string;
-    readonly?: boolean;
+    disabled?: boolean;
     allowClear?: boolean;
     maxLength?: number;
     fixed?: number;
@@ -62,7 +62,7 @@ export const Input: React.FC<InputProps> = ({
                                                 onFocus,
                                                 className = '',
                                                 errorText = '',
-                                                readonly = false,
+                                                disabled = false,
                                                 allowClear = false,
                                                 maxLength,
                                                 fixed,
@@ -155,14 +155,14 @@ export const Input: React.FC<InputProps> = ({
             {
                 type === 'textarea' ? (
                     <div
-                        className={`${prefixClsTextarea}` + ` ${size}` + (error ? ' error' : '') + (readonly ? ' readonly' : '')}>
+                        className={`${prefixClsTextarea}` + ` ${size}` + (error ? ' error' : '') + (disabled ? ' disabled' : '')}>
                          <textarea
                              className={`${prefixClsTextarea}-affix-wrapper`}
                              ref={ref}
                              placeholder={placeholder}
                              id={id}
                              name={name}
-                             readOnly={readonly}
+                             disabled={disabled}
                              value={val}
                              maxLength={maxLength}
                              onFocus={() => {
@@ -182,7 +182,7 @@ export const Input: React.FC<InputProps> = ({
                     </div>
                 ) : (
                     <div
-                        className={`${prefixClsInput}` + ` ${size}` + (error ? ' error' : '') + (readonly ? ' readonly' : '')}>
+                        className={`${prefixClsInput}` + ` ${size}` + (error ? ' error' : '') + (disabled ? ' disabled' : '')}>
                         <div className={`${prefixClsInput}-wrapper` + (groupAddon ? ` ${prefixClsInput}-group` : '')}>
                             <div className={`${prefixClsInput}-affix-wrapper`}>
                                 {/*前缀图标*/}
@@ -195,7 +195,7 @@ export const Input: React.FC<InputProps> = ({
                                     type={typeTemp === 'number' ? 'text' : typeTemp}
                                     id={id}
                                     name={name}
-                                    readOnly={readonly}
+                                    disabled={disabled}
                                     value={val}
                                     maxLength={maxLength}
                                     onFocus={() => {
@@ -215,7 +215,7 @@ export const Input: React.FC<InputProps> = ({
                                 <div className={`${prefixClsInput}-all-icon`}>
                                     {/*清除图标*/}
                                     {
-                                        val && allowClear && !readonly && (
+                                        val && allowClear && !disabled && (
                                             <Icon className={[`${prefixClsInput}-clear`,passwordIcon?`${prefixClsInput}-clear-space`:''].join(' ')} onClick={handleClear}
                                                   name="guanbi1"/>
                                         )
