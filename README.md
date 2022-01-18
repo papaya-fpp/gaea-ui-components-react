@@ -84,3 +84,4 @@ export default App;
 ### 打包并发布到heroku
 1. `npm run build-storybook`
 2. 直接push即可
+3. [Heroku项目地址](https://gaea-ui-components-react.herokuapp.com/)

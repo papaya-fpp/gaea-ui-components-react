@@ -1,1 +1,1 @@
-web: node heroku-server.js
+web: node heroku-server.js $PORT 
