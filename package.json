@@ -11,6 +11,7 @@
     "build:watch": "npm run clear && fpp-ui-tool build --watch",
     "dist": "webpack --config ./webpack.config.js",
     "build-storybook": "build-storybook",
+    "heroku-storybook": "http-server -p 8080 ./storybook-static",
     "storybook-docs": "start-storybook --docs --no-manager-cache"
   },
   "author": "",
@@ -58,5 +59,12 @@
     "assets",
     "/dist"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "express": "^4.17.2",
+    "express-history-api-fallback": "^2.2.1",
+    "http-server": "^14.1.0"
+  },
+  "engines": {
+    "node": "12"
+  }
 }

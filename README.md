@@ -80,3 +80,7 @@ function App() {
 export default App;
 
 ```
+
+### 打包并发布到heroku
+1. `npm run build-storybook`
+2. 直接push即可
