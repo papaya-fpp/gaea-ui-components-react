@@ -2,17 +2,17 @@
 import classNames from 'classnames';
 import React from 'react';
 
-export interface ListItemProps<T> {
+export interface ListItemProps extends React.HTMLAttributes<HTMLDivElement> {
     className?: string;
     prefixCls?: string;
     children?: React.ReactNode
 }
 
-function ListItem<T>({
+function ListItem({
     className,
     prefixCls,
     children
-}: ListItemProps<T>) {
+}: ListItemProps) {
     const classString = classNames(
         prefixCls,
         'gaea-ui__list-item-wrapper',
