@@ -3,7 +3,6 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import List from './index';
-import Item from './Item'
 
 export default {
   title: 'DataSHow/List',
@@ -18,7 +17,7 @@ export const Template: ComponentStory<typeof List> = (args) => {
 
 return (
   <List>
-    {testlist.map(t=><Item key={t}>{t}</Item>)}
+    {testlist.map(t=><List.Item key={t}>{t}</List.Item>)}
   </List>)
 }
 

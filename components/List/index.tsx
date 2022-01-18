@@ -8,6 +8,8 @@ export interface ListProps<T> {
   children?: React.ReactNode
 }
 
+import Item from './Item'
+
 function List<T>({
   className,
   prefixCls,
@@ -23,5 +25,7 @@ function List<T>({
     {children}
   </ul>
 };
+
+List.Item = Item;
 
 export default List
