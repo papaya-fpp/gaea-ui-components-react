@@ -20,3 +20,4 @@ import '../components/Table/style';
 import '../components/Loading/style';
 import '../components/Checkbox/style';
 import '../components/Radio/style';
+import '../components/List/style';
