@@ -20,3 +20,4 @@ export { default as Loading } from './Loading';
 export { default as Checkbox } from './Checkbox';
 export { default as Radio } from './Radio';
 export { default as List } from './List';
+export { default as ListItem } from './List/Item';

@@ -63,6 +63,6 @@
     "express-history-api-fallback": "^2.2.1"
   },
   "engines": {
-    "node": "12"
+    "node": "12.22"
   }
 }
