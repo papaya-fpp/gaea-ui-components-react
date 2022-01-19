@@ -71,7 +71,7 @@ const Select: SelectPropsComponents = ({
         set_pc_shrink_(false);
         setInputval('');
         onBlur && onBlur();
-        setShowList(false);
+        // setShowList(false);
         setFilterList(listChildren);
     };
 
@@ -89,16 +89,18 @@ const Select: SelectPropsComponents = ({
             return null;
         }
         return (
-            <div className={`${prefixCls}-option_list`}>
-                {filterList.length > 0 ? (
-                    filterList.map((item: any) => {
-                        return <Option key={item.key || item.value} {...item} active={val} onChange={changeItem}/>;
-                    })
-                ) : (
-                    <div onClick={(e)=>{e.stopPropagation()}} className={`${prefixCls}-kong_wrapper`}>
-                        <Icon name="kongzhuangtai"/>
-                    </div>
-                )}
+            <div className={`${prefixCls}-option_content`}>
+                <div className={`${prefixCls}-option_list`}>
+                    {filterList.length > 0 ? (
+                        filterList.map((item: any) => {
+                            return <Option key={item.key || item.value} {...item} active={val} onChange={changeItem}/>;
+                        })
+                    ) : (
+                        <div onClick={(e)=>{e.stopPropagation()}} className={`${prefixCls}-kong_wrapper`}>
+                            <Icon name="kongzhuangtai"/>
+                        </div>
+                    )}
+                </div>
             </div>
         );
     };

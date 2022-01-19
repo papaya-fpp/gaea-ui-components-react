@@ -62,18 +62,17 @@
       display: inline-block;
       width: 100%;
       min-width: 0;
-      padding: 4px 11px;
       font-size: $font-size-base;
       line-height: 1.5715;
       background-color: transparent;
       background-image: none;
-      border: 1px solid #d9d9d9;
       border-radius: 2px;
       transition: all 0.3s;
       padding: 0;
       border: none;
       outline: none;
-
+      font-family: Rubik-Regular, Rubik !important;
+      font-weight: 400;
       &::placeholder {
         color: $input-placeholder;
       }
@@ -108,7 +107,7 @@
         background: $input-bg;
         border: 1px solid $input-border;
         color: $fontColor-1;
-        box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.04);
+        box-shadow: inset 0px 2px 3px 0px rgba(101, 84, 192, 0.04);
         border-radius: 6px;
         position: relative;
         min-width: 0;
@@ -255,7 +254,7 @@
       .#{$prefix}-textarea-affix-wrapper{
         background: rgba(134, 145, 163, 0.09) !important;
         color: $fontColor-1;
-        cursor: not-allowed;
+        //cursor: not-allowed;
         border: none;
         &:hover,
         &:focus{
@@ -266,7 +265,7 @@
 
         input,
         textarea {
-          cursor: not-allowed;
+          //cursor: not-allowed;
         }
       }
     }

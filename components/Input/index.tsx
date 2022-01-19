@@ -236,7 +236,7 @@ export const Input: React.FC<InputProps> = ({
                                                         onClick={() => {
                                                             setTypeTemp('text')
                                                         }}
-                                                        className={`${prefixClsInput}-suffix`} name="zhengyan"/>)
+                                                        className={`${prefixClsInput}-suffix`} size={20} name="zhengyan"/>)
                                             }
                                                 {
                                                     typeTemp !== 'password' && (<Icon
@@ -244,6 +244,7 @@ export const Input: React.FC<InputProps> = ({
                                                             setTypeTemp('password')
                                                         }}
                                                         className={`${prefixClsInput}-suffix`}
+                                                        size={20}
                                                         name="biyan"/>)
                                                 }
                                         </span>
@@ -266,7 +267,7 @@ export const Input: React.FC<InputProps> = ({
                             {
                                 groupAddon && (
                                     <div onClick={onAddon} className={`${prefixClsInput}-group-addon`}>
-                                        <Icon name={groupAddon}/>
+                                        <Icon size={20} name={groupAddon}/>
                                     </div>
                                 )
                             }
