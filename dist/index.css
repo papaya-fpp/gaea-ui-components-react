@@ -1,3 +1,67 @@
+@charset "UTF-8";
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+ol, ul, dl {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: color 0.3s;
+  -webkit-text-decoration-skip: objects;
+}
+
+/*全局滚动条样式修改*/
+::-webkit-scrollbar {
+  width: 8px;
+  height: 12px;
+  background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  display: block;
+  min-height: 12px;
+  min-width: 8px;
+  border-radius: 6px;
+  background-color: #d9d9d9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  display: block;
+  min-height: 12px;
+  min-width: 8px;
+  border-radius: 6px;
+  background-color: #9f9f9f;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+html {
+  --primary-color: $purple-1;
+  background: #FAFAFB;
+}
 .fpp-avatar {
   position: relative;
   display: inline-block;
@@ -1362,7 +1426,7 @@
 .fpp-layout .fpp-layout-sider .fpp-layout-sider-children {
   height: 100%;
 }
-.gaea-ui__list-wrapper {
+.fpp-list {
   box-shadow: 0px 10px 24px 0px rgba(0, 0, 0, 0.04);
   border-radius: 6px;
   border: 1px solid #E9EDF0;
@@ -1372,7 +1436,7 @@
   width: 100%;
 }
 
-.gaea-ui__list-item-wrapper {
+.fpp-list-item {
   height: 36px;
   display: flex;
   align-items: center;
@@ -1380,9 +1444,10 @@
   color: #5E6C84;
   cursor: default;
 }
-.gaea-ui__list-item-wrapper:hover {
+.fpp-list-item:hover {
   background: #F6F7F9;
   border-radius: 6px;
+  box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
 }
 @keyframes loading {
   100% {
@@ -2265,137 +2330,6 @@ span.fpp-radio + * {
 .fpp-select-container .disabled.fpp-select-wrapper input,
 .fpp-select-container .disabled.fpp-select-wrapper textarea {
   cursor: not-allowed;
-}
-
-@charset "UTF-8";
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  margin: 0;
-  padding: 0;
-}
-
-ul, ol {
-  list-style: none;
-}
-
-ol, ul, dl {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-a {
-  color: var(--primary-color);
-  text-decoration: none;
-  background-color: transparent;
-  outline: none;
-  cursor: pointer;
-  transition: color 0.3s;
-  -webkit-text-decoration-skip: objects;
-}
-
-/*全局滚动条样式修改*/
-::-webkit-scrollbar {
-  width: 8px;
-  height: 12px;
-  background-color: #fff;
-}
-
-::-webkit-scrollbar-thumb {
-  display: block;
-  min-height: 12px;
-  min-width: 8px;
-  border-radius: 6px;
-  background-color: #d9d9d9;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  display: block;
-  min-height: 12px;
-  min-width: 8px;
-  border-radius: 6px;
-  background-color: #9f9f9f;
-}
-
-@keyframes loading {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@charset "UTF-8";
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  margin: 0;
-  padding: 0;
-}
-
-ul, ol {
-  list-style: none;
-}
-
-ol, ul, dl {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-a {
-  color: var(--primary-color);
-  text-decoration: none;
-  background-color: transparent;
-  outline: none;
-  cursor: pointer;
-  transition: color 0.3s;
-  -webkit-text-decoration-skip: objects;
-}
-
-/*全局滚动条样式修改*/
-::-webkit-scrollbar {
-  width: 8px;
-  height: 12px;
-  background-color: #fff;
-}
-
-::-webkit-scrollbar-thumb {
-  display: block;
-  min-height: 12px;
-  min-width: 8px;
-  border-radius: 6px;
-  background-color: #d9d9d9;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  display: block;
-  min-height: 12px;
-  min-width: 8px;
-  border-radius: 6px;
-  background-color: #9f9f9f;
-}
-
-@keyframes loading {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-html {
-  --primary-color: $purple-1;
-  background: #FAFAFB;
-}
-
-
-html {
-  --primary-color: $purple-1;
-  background: #FAFAFB;
 }
 .fpp-table {
   max-width: 100%;
