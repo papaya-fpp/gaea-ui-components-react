@@ -18,10 +18,10 @@
       background:$red-1 !important;
     }
     &:not(.#{$prefix}-button--disabled):hover{
-      opacity: 0.79;
+      opacity: 0.89;
     }
     &.#{$prefix}-button--disabled {
-      opacity: 0.3;
+      opacity: 0.8;
       cursor: not-allowed;
     }
     &.#{$prefix}-button--loading {
@@ -41,13 +41,13 @@
   }
   &:not(.#{$prefix}-button--disabled):hover{
     background: #FAF9FF;
-    opacity: 0.49;
+    opacity: 0.89;
     border: 1px solid $purple-1;
     color: $purple-1;
   }
   &.#{$prefix}-button--disabled {
     cursor: not-allowed;
-    opacity: 0.3;
+    opacity: 0.8;
   }
 }
 .#{$prefix}-button--small {

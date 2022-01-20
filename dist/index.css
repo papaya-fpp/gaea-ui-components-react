@@ -178,10 +178,10 @@ html {
   background: #FF8A8A !important;
 }
 .fpp-button.fpp-button--primary:not(.fpp-button--disabled):hover {
-  opacity: 0.79;
+  opacity: 0.89;
 }
 .fpp-button.fpp-button--primary.fpp-button--disabled {
-  opacity: 0.3;
+  opacity: 0.8;
   cursor: not-allowed;
 }
 .fpp-button--secondary {
@@ -196,13 +196,13 @@ html {
 }
 .fpp-button--secondary:not(.fpp-button--disabled):hover {
   background: #FAF9FF;
-  opacity: 0.49;
+  opacity: 0.89;
   border: 1px solid #6554C0;
   color: #6554C0;
 }
 .fpp-button--secondary.fpp-button--disabled {
   cursor: not-allowed;
-  opacity: 0.3;
+  opacity: 0.8;
 }
 
 .fpp-button--small {
