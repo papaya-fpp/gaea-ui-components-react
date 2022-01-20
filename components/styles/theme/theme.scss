@@ -9,6 +9,7 @@ $font-size-base: 14px;
 $font-size-sm: 12px;
 $font-size-lg: $font-size-base + 2px;
 
+// Base background color for most components
 $component-background: #fff;
 
 // z-index list, order by `z-index`
@@ -51,6 +52,8 @@ $layout-sider-shadow: 1px 0px 25px 0px rgba(0, 0, 0, 0.04);
 $menu-hover-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
 $dropdown-list-shadow: 0px 10px 24px 0px rgba(0, 0, 0, 0.04);
 $header-border-shadow: 0px 25px 50px 0px rgba(101, 84, 192, 0.04);
+$shadow-2: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08),
+  0 9px 28px 8px rgba(0, 0, 0, 0.05);
 
 // Animation
 $animation-duration-slow: 0.3s; // Modal
@@ -77,6 +80,28 @@ $padding-md: 16px;
 // vertical padding for all form controls
 $control-padding-horizontal: $padding-sm;
 $control-padding-horizontal-sm: $padding-xs;
+
+// Switch
+// ---
+$switch-height: 22px;
+$switch-sm-height: 16px;
+$switch-min-width: 44px;
+$switch-sm-min-width: 28px;
+$switch-disabled-opacity: 0.4;
+$switch-color: $primary-color;
+$switch-bg: $component-background;
+$switch-shadow-color: fade(#00230b, 20%);
+$switch-padding: 2px;
+$switch-inner-margin-min: ceil($switch-height * 0.3);
+$switch-inner-margin-max: ceil($switch-height * 1.1);
+$switch-sm-inner-margin-min: ceil($switch-sm-height * 0.3);
+$switch-sm-inner-margin-max: ceil($switch-sm-height * 1.1);
+
+// Message
+// ---
+$border-radius-base: 2px;
+$message-notice-content-padding: 10px 16px;
+$message-notice-content-bg: $component-background;
 
 // Buttons
 $btn-height-base: $height-base;
@@ -186,23 +211,3 @@ $radio-disabled-button-checked-color: $disabled-color;
 $radio-wrapper-margin-right: 8px;
 $radio-checked-focus-color: rgba(101, 84, 192, .1);
 $radio-checked-focus-color-8: rgba(101, 84, 192, .8);
-
-// Switch
-$switch-height: 22px;
-$switch-sm-height: 16px;
-$switch-min-width: 44px;
-$switch-sm-min-width: 28px;
-$switch-disabled-opacity: 0.4;
-$switch-color: $primary-color;
-$switch-bg: $component-background;
-$switch-shadow-color: fade(#00230b, 20%);
-$switch-padding: 2px;
-$switch-inner-margin-min: ceil($switch-height * 0.3);
-$switch-inner-margin-max: ceil($switch-height * 1.1);
-$switch-sm-inner-margin-min: ceil($switch-sm-height * 0.3);
-$switch-sm-inner-margin-max: ceil($switch-sm-height * 1.1);
-
-// Message
-$border-radius-base: 2px;
-$message-notice-content-padding: 10px 16px;
-$message-notice-content-bg: $component-background;
