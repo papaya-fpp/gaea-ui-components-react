@@ -181,3 +181,23 @@ $radio-disabled-button-checked-color: $disabled-color;
 $radio-wrapper-margin-right: 8px;
 $radio-checked-focus-color: rgba(101, 84, 192, .1);
 $radio-checked-focus-color-8: rgba(101, 84, 192, .8);
+
+// Switch
+$switch-height: 22px;
+$switch-sm-height: 16px;
+$switch-min-width: 44px;
+$switch-sm-min-width: 28px;
+$switch-disabled-opacity: 0.4;
+$switch-color: $primary-color;
+$switch-bg: $component-background;
+$switch-shadow-color: fade(#00230b, 20%);
+$switch-padding: 2px;
+$switch-inner-margin-min: ceil($switch-height * 0.3);
+$switch-inner-margin-max: ceil($switch-height * 1.1);
+$switch-sm-inner-margin-min: ceil($switch-sm-height * 0.3);
+$switch-sm-inner-margin-max: ceil($switch-sm-height * 1.1);
+
+// Message
+$border-radius-base: 2px;
+$message-notice-content-padding: 10px 16px;
+$message-notice-content-bg: $component-background;
