@@ -6,9 +6,18 @@ export type ScreenSizeMap = Partial<Record<Breakpoint, number>>;
 export type BreakpointMap = Record<Breakpoint, string>;
 export const getPrefixCls = (suffixCls?: string, customizePrefixCls?: string) => {
   if (customizePrefixCls) return customizePrefixCls;
-
   return suffixCls ? `fpp-${suffixCls}` : 'fpp';
 };
+
+export const getRootPrefixCls = (rootPrefixCls?: string, customizePrefixCls?: string) => {
+  if (rootPrefixCls) {
+    return rootPrefixCls;
+  }
+  if (customizePrefixCls && customizePrefixCls.includes('-')) {
+    return customizePrefixCls.replace(/^(.*)-[^-]*$/, '$1');
+  }
+  return 'fpp';
+}
 
 export const responsiveArray: Breakpoint[] = ['xxl', 'xl', 'lg', 'md', 'sm', 'xs'];
 
