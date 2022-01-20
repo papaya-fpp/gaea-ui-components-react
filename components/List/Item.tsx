@@ -1,27 +1,31 @@
 
 import classNames from 'classnames';
 import React from 'react';
+import { getPrefixCls } from '../_util/responsiveObserve';
 
 export interface ListItemProps extends React.HTMLAttributes<HTMLDivElement> {
     className?: string;
-    prefixCls?: string;
     children?: React.ReactNode
 }
 
 function ListItem({
     className,
-    prefixCls,
-    children
+    children,
+    ...others
 }: ListItemProps) {
+    const prefixCls = getPrefixCls('list-item')
     const classString = classNames(
         prefixCls,
-        'gaea-ui__list-item-wrapper',
         {},
         className
     )
-    return <li className={classString}>
-        {children}
-    </li>
+    return (
+        <div
+            {...others}
+            className={classString} >
+            {children}
+        </div>
+    )  
 };
 
 export default ListItem
