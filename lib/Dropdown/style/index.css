@@ -27,6 +27,7 @@
   overflow: hidden;
   position: absolute;
   z-index: 999;
+  width: 100%;
 }
 .fpp-dropdown .fpp-dropdown-list .fpp-dropdown-list-item {
   height: 36px;

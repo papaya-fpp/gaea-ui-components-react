@@ -35,7 +35,7 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
     <li className={classes} onClick={clickHandle}>
       <div className={`${prefixCls}-container`}>
         {
-          firstLevel && icon && <Icon name={icon} />
+          firstLevel && icon && <Icon size={17} name={icon} />
         }
         {!inlineCollapsed && <span className={`${prefixCls}-title-content`}>{children}</span>}
       </div>
