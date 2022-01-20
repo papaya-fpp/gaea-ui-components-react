@@ -9,6 +9,11 @@ $font-size-base: 14px;
 $font-size-sm: 12px;
 $font-size-lg: $font-size-base + 2px;
 
+$component-background: #fff;
+
+// z-index list, order by `z-index`
+$zindex-message: 1010;
+
 // border radius
 $border-radius-base: 2px;
 $border-radius-6: 6px;
