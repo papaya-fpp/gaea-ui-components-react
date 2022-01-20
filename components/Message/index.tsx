@@ -119,10 +119,10 @@ export interface MessageType extends PromiseLike<any> {
 }
 
 const typeToIcon = {
-  info: <Icon name={"Spinnerjiazai1"} />,
-  // success: CheckCircleFilled,
-  // error: CloseCircleFilled,
-  // warning: ExclamationCircleFilled,
+  info: <Icon color='#64C8BC' name={"chenggong"} />,
+  success: <Icon color='#64C8BC' name={"chenggong"} />,
+  error: <Icon color='#FF8A8A' name={"shibai"} />,
+  warning: <Icon color='#FFC68A' name={"jinggao"} />,
   // loading: LoadingOutlined,
 };
 export interface ArgsProps {
@@ -157,7 +157,7 @@ function getRCNoticeProps(
     content: (
       <div className={messageClass}>
         {args.icon || IconComponent}
-        <span>{args.content}</span>
+        <span style={{ marginLeft: '5px' }}>{args.content}</span>
       </div>
     ),
     onClose: args.onClose,
