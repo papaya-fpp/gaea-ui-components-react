@@ -1,8 +1,10 @@
 import React from 'react';
 export interface ListProps<T> {
     className?: string;
-    prefixCls?: string;
     children?: React.ReactNode;
 }
-declare function List<T>({ className, prefixCls, children }: ListProps<T>): JSX.Element;
+declare function List<T>({ className, children }: ListProps<T>): JSX.Element;
+declare namespace List {
+    var Item: typeof import("./Item").default;
+}
 export default List;

@@ -1,4 +1,4 @@
-.gaea-ui__list-wrapper {
+.fpp-list {
   box-shadow: 0px 10px 24px 0px rgba(0, 0, 0, 0.04);
   border-radius: 6px;
   border: 1px solid #E9EDF0;
@@ -8,7 +8,7 @@
   width: 100%;
 }
 
-.gaea-ui__list-item-wrapper {
+.fpp-list-item {
   height: 36px;
   display: flex;
   align-items: center;
@@ -16,7 +16,8 @@
   color: #5E6C84;
   cursor: default;
 }
-.gaea-ui__list-item-wrapper:hover {
+.fpp-list-item:hover {
   background: #F6F7F9;
   border-radius: 6px;
+  box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
 }
