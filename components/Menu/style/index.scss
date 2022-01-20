@@ -40,6 +40,9 @@
         margin-left: 10px;
         height: $menu-item-no-first-height;
         line-height: $menu-item-no-first-height;
+        font-family: Rubik-Regular, Rubik;
+        font-weight: 400;
+        font-size: 16px;
       }
     }
   }
@@ -122,6 +125,8 @@
       }
       .#{$prefix}-menu-item-title-content,svg{
         @include hoverStyle;
+        font-family: Rubik-Medium, Rubik;
+        font-weight: 500;
       }
     }
 

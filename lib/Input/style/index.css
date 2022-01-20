@@ -241,13 +241,26 @@
   background: #FFFBFB;
   border: 1px solid #FF8A8A;
 }
+.fpp-input-body .fpp-input.disabled input,
+.fpp-input-body .fpp-input.disabled textarea,
+.fpp-input-body .fpp-textarea.disabled input,
+.fpp-input-body .fpp-textarea.disabled textarea {
+  color: rgba(94, 108, 132, 0.3);
+}
+.fpp-input-body .fpp-input.disabled input::placeholder,
+.fpp-input-body .fpp-input.disabled textarea::placeholder,
+.fpp-input-body .fpp-textarea.disabled input::placeholder,
+.fpp-input-body .fpp-textarea.disabled textarea::placeholder {
+  color: rgba(94, 108, 132, 0.3);
+}
 .fpp-input-body .fpp-input.disabled .fpp-input-affix-wrapper,
 .fpp-input-body .fpp-input.disabled .fpp-textarea-affix-wrapper,
 .fpp-input-body .fpp-textarea.disabled .fpp-input-affix-wrapper,
 .fpp-input-body .fpp-textarea.disabled .fpp-textarea-affix-wrapper {
-  background: rgba(134, 145, 163, 0.09) !important;
-  color: #344563;
-  border: none;
+  background: rgba(134, 145, 163, 0.09);
+  box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(10, 47, 74, 0.09);
+  color: rgba(94, 108, 132, 0.3);
 }
 .fpp-input-body .fpp-input.disabled .fpp-input-affix-wrapper:hover, .fpp-input-body .fpp-input.disabled .fpp-input-affix-wrapper:focus,
 .fpp-input-body .fpp-input.disabled .fpp-textarea-affix-wrapper:hover,
@@ -256,7 +269,8 @@
 .fpp-input-body .fpp-textarea.disabled .fpp-input-affix-wrapper:focus,
 .fpp-input-body .fpp-textarea.disabled .fpp-textarea-affix-wrapper:hover,
 .fpp-input-body .fpp-textarea.disabled .fpp-textarea-affix-wrapper:focus {
-  border: none;
-  background: rgba(134, 145, 163, 0.09) !important;
-  color: #344563 !important;
+  background: rgba(134, 145, 163, 0.09);
+  box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(10, 47, 74, 0.09);
+  color: rgba(94, 108, 132, 0.3);
 }

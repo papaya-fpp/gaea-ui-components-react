@@ -63,6 +63,8 @@
       border-radius: 6px;
       transition: all 0.3s;
       font-size: $font-size-base;
+      font-family: Rubik-Regular, Rubik;
+      font-weight: 400;
       &::placeholder {
         color: $input-placeholder;
       }
@@ -129,6 +131,8 @@
       word-break: break-all;
       display: flex;
       align-items: center;
+      font-family: Rubik-Regular, Rubik;
+      font-weight: 400;
       &.#{$prefix}-select-shade {
         color: $input-placeholder;
         z-index: 0;
@@ -139,18 +143,19 @@
     display: none !important;
   }
   .#{$prefix}-select-option_content{
+    width: 100%;
+    position: absolute;
+    z-index: 99999;
+    margin-top: 4px;
+    box-shadow: 0px 10px 24px 0px rgba(0, 0, 0, 0.04);
+    border-radius: 6px;
+    border: 1px solid #E9EDF0;
+    background: #FEFFFF;
+    padding: 8px;
     .#{$prefix}-select-option_list {
-      position: absolute;
-      margin-top: 4px;
       width: 100%;
-      z-index: 99999;
       outline: none;
       max-height: 256px;
-      background: #FEFFFF;
-      box-shadow: 0px 10px 24px 0px rgba(0, 0, 0, 0.04);
-      border-radius: 6px;
-      border: 1px solid #E9EDF0;
-      padding: 8px;
       overflow-y: auto;
       .#{$prefix}-select-option_item {
         min-height: 36px;
@@ -164,12 +169,16 @@
         overflow: hidden;
         white-space: nowrap;// 控制不换行
         text-overflow: ellipsis;// 控制省略部分以...结束
+        font-family: Rubik-Regular, Rubik;
+        font-weight: 400;
         &:hover,
         &.active{
           box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
           border-radius: 6px;
           background-color: $hover-bg-1;
           color: $purple-1;
+          font-family: Rubik-Medium, Rubik;
+          font-weight: 500;
         }
       }
       .#{$prefix}-select-kong_wrapper {

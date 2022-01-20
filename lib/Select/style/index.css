@@ -59,6 +59,8 @@
   border-radius: 6px;
   transition: all 0.3s;
   font-size: 14px;
+  font-family: Rubik-Regular, Rubik;
+  font-weight: 400;
 }
 .fpp-select-container .fpp-select-wrapper .fpp-select-input::placeholder,
 .fpp-select-container .fpp-select-wrapper .fpp-select-active_text::placeholder {
@@ -127,6 +129,8 @@
   word-break: break-all;
   display: flex;
   align-items: center;
+  font-family: Rubik-Regular, Rubik;
+  font-weight: 400;
 }
 .fpp-select-container .fpp-select-wrapper .fpp-select-active_text.fpp-select-shade {
   color: rgba(52, 69, 99, 0.5);
@@ -135,18 +139,21 @@
 .fpp-select-container .fpp-select-hide_placeholder {
   display: none !important;
 }
-.fpp-select-container .fpp-select-option_content .fpp-select-option_list {
-  position: absolute;
-  margin-top: 4px;
+.fpp-select-container .fpp-select-option_content {
   width: 100%;
+  position: absolute;
   z-index: 99999;
-  outline: none;
-  max-height: 256px;
-  background: #FEFFFF;
+  margin-top: 4px;
   box-shadow: 0px 10px 24px 0px rgba(0, 0, 0, 0.04);
   border-radius: 6px;
   border: 1px solid #E9EDF0;
+  background: #FEFFFF;
   padding: 8px;
+}
+.fpp-select-container .fpp-select-option_content .fpp-select-option_list {
+  width: 100%;
+  outline: none;
+  max-height: 256px;
   overflow-y: auto;
 }
 .fpp-select-container .fpp-select-option_content .fpp-select-option_list .fpp-select-option_item {
@@ -161,12 +168,16 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  font-family: Rubik-Regular, Rubik;
+  font-weight: 400;
 }
 .fpp-select-container .fpp-select-option_content .fpp-select-option_list .fpp-select-option_item:hover, .fpp-select-container .fpp-select-option_content .fpp-select-option_list .fpp-select-option_item.active {
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
   border-radius: 6px;
   background-color: #F6F7F9;
   color: #6554C0;
+  font-family: Rubik-Medium, Rubik;
+  font-weight: 500;
 }
 .fpp-select-container .fpp-select-option_content .fpp-select-option_list .fpp-select-kong_wrapper {
   color: #939DAD;

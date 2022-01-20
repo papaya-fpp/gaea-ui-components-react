@@ -34,6 +34,9 @@
   margin-left: 10px;
   height: 36px;
   line-height: 36px;
+  font-family: Rubik-Regular, Rubik;
+  font-weight: 400;
+  font-size: 16px;
 }
 .fpp-menu .fpp-submenu .fpp-submenu-container {
   height: 50px;
@@ -93,6 +96,8 @@
 }
 .fpp-menu .fpp-menu-item.fpp-menu-item-select .fpp-menu-item-title-content, .fpp-menu .fpp-menu-item.fpp-menu-item-select svg {
   color: #6554C0;
+  font-family: Rubik-Medium, Rubik;
+  font-weight: 500;
 }
 .fpp-menu .fpp-menu-divider {
   height: 50px;

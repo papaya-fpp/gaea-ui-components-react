@@ -250,17 +250,29 @@
 
     // 禁用 只读样式
     &.disabled {
+      input,
+      textarea {
+        color: rgba(94, 108, 132, 0.3);
+        &::placeholder {
+          color: rgba(94, 108, 132, 0.3);
+        }
+      }
       .#{$prefix}-input-affix-wrapper,
       .#{$prefix}-textarea-affix-wrapper{
-        background: rgba(134, 145, 163, 0.09) !important;
-        color: $fontColor-1;
-        //cursor: not-allowed;
-        border: none;
+        //background: $input-label;
+        background: rgba(134, 145, 163, 0.09);
+        box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, 0.04);
+        //opacity: 0.09;
+        border: 1px solid rgba(10, 47, 74, 0.09);
+        //color: $fontColor-1;
+        color: rgba(94, 108, 132, 0.3);
         &:hover,
         &:focus{
-          border: none;
-          background: rgba(134, 145, 163, 0.09) !important;
-          color: $fontColor-1 !important;
+          background: rgba(134, 145, 163, 0.09);
+          box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, 0.04);
+          //opacity: 0.09;
+          border: 1px solid rgba(10, 47, 74, 0.09);
+          color: rgba(94, 108, 132, 0.3);
         }
 
         input,

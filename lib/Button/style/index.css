@@ -27,6 +27,7 @@
   color: #5E6C84;
   border-radius: 6px;
   border: 1px solid #E9EDF0;
+  box-shadow: inset 0px 2px 6px 0px rgba(101, 84, 192, 0.04);
 }
 .fpp-button--secondary.fpp-button--danger-secondary {
   border: 1px solid #FF8A8A !important;
@@ -62,6 +63,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: Rubik-Medium, Rubik;
+  font-weight: 500;
 }
 .fpp-button-text .fpp-button--icon {
   margin-right: 10px;
