@@ -21,3 +21,5 @@ export { default as Checkbox } from './Checkbox';
 export { default as Radio } from './Radio';
 export { default as List } from './List';
 export { default as ListItem } from './List/Item';
+export { default as Message } from './Message';
+export { default as Switch } from './Switch';
