@@ -21,3 +21,5 @@ import '../components/Loading/style';
 import '../components/Checkbox/style';
 import '../components/Radio/style';
 import '../components/List/style';
+import '../components/Message/style';
+import '../components/Switch/style';
