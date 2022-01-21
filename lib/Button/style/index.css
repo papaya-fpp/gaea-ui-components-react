@@ -34,8 +34,7 @@
   color: #FF8A8A !important;
 }
 .fpp-button--secondary:not(.fpp-button--disabled):hover {
-  background: #FAF9FF;
-  opacity: 0.49;
+  background: rgba(250, 249, 255, 0.49);
   border: 1px solid #6554C0;
   color: #6554C0;
 }

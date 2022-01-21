@@ -149,7 +149,7 @@ export const Input: React.FC<InputProps> = ({
         <div className={`${prefixClsInput}-body ${className}`}>
             {
                 label && (
-                    <div className={`${prefixClsInput}-label` + (label != '' ? '' : ' is-hide')}>{label + ' :'}</div>
+                    <div className={`${prefixClsInput}-label` + (label != '' ? '' : ' is-hide')}>{label}</div>
                 )
             }
             {

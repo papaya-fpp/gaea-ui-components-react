@@ -74,7 +74,7 @@
 .fpp-input-body .fpp-input .fpp-textarea-affix-wrapper,
 .fpp-input-body .fpp-textarea .fpp-textarea-affix-wrapper {
   min-height: 100px;
-  resize: vertical;
+  resize: none;
   padding: 8px 13px;
   background: #FBFDFF;
   box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.04);
