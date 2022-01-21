@@ -16,6 +16,7 @@
 .fpp-menu .fpp-menu-item, .fpp-menu .fpp-submenu {
   padding: 0 15px;
   cursor: pointer;
+  color: #5E6C84;
 }
 .fpp-menu .fpp-menu-item .fpp-menu-item-container, .fpp-menu .fpp-menu-item .fpp-submenu-container, .fpp-menu .fpp-menu-item .fpp-submenu-title-container, .fpp-menu .fpp-submenu .fpp-menu-item-container, .fpp-menu .fpp-submenu .fpp-submenu-container, .fpp-menu .fpp-submenu .fpp-submenu-title-container {
   display: flex;
@@ -75,6 +76,7 @@
   display: flex;
   align-items: center;
   height: 50px;
+  color: #5E6C84;
 }
 .fpp-menu .fpp-menu-item.fpp-menu-item-no-first {
   height: 36px;
@@ -92,7 +94,7 @@
 }
 .fpp-menu .fpp-menu-item.fpp-menu-item-select .fpp-menu-item-container {
   background: #F6F7F9;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+  box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
 }
 .fpp-menu .fpp-menu-item.fpp-menu-item-select .fpp-menu-item-title-content, .fpp-menu .fpp-menu-item.fpp-menu-item-select svg {
   color: #6554C0;

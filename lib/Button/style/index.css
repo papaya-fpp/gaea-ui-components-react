@@ -67,6 +67,8 @@
 }
 .fpp-button-text .fpp-button--icon {
   margin-right: 10px;
+  width: 16px;
+  height: 16px;
 }
 .fpp-button-text .fpp-button--loading-icon {
   animation: loading 1s infinite linear;

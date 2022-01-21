@@ -70,6 +70,8 @@
   font-weight: 500;
   .#{$prefix}-button--icon{
     margin-right: 10px;
+    width:16px;
+    height: 16px;
   }
   .#{$prefix}-button--loading-icon{
     animation: loading 1s infinite linear;

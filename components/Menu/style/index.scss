@@ -24,6 +24,7 @@
   .#{$prefix}-menu-item,.#{$prefix}-submenu {
     padding: 0 15px;
     cursor: pointer;
+    color: $fontColor-2;
     .fpp-menu-item-container, .fpp-submenu-container, .fpp-submenu-title-container {
       display: flex;
       align-items: center;
@@ -99,6 +100,7 @@
     display: flex;
     align-items: center;
     height: $menu-item-height;
+    color: $fontColor-2;
     &.#{$prefix}-menu-item-no-first{
       height: $menu-item-no-first-height;
     }

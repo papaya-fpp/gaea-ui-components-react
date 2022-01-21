@@ -65,6 +65,7 @@
       font-size: $font-size-base;
       font-family: Rubik-Regular, Rubik;
       font-weight: 400;
+      outline: none;
       &::placeholder {
         color: $input-placeholder;
       }
@@ -173,7 +174,7 @@
         font-weight: 400;
         &:hover,
         &.active{
-          box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+          box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
           border-radius: 6px;
           background-color: $hover-bg-1;
           color: $purple-1;
