@@ -1,0 +1,58 @@
+.fpp-layout {
+  display: flex;
+  flex: auto;
+  flex-direction: column;
+  min-height: 100%;
+  background: #FAFAFB;
+}
+.fpp-layout.fpp-layout-has-sider {
+  flex-direction: row;
+}
+.fpp-layout.fpp-layout-has-sider > .fpp-layout,
+.fpp-layout.fpp-layout-has-sider > .fpp-layout-content {
+  width: 0;
+}
+.fpp-layout .fpp-layout-header,
+.fpp-layout .fpp-layout-footer {
+  flex: 0 0 auto;
+}
+.fpp-layout .fpp-layout-header {
+  height: 70px;
+  padding: 0 24px;
+  color: #344563;
+  line-height: 70px;
+  background: #FEFFFF;
+  box-shadow: 0px 25px 50px 0px rgba(0, 0, 0, 0.04);
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+.fpp-layout .fpp-layout-footer {
+  padding: 24px 50px;
+  color: #344563;
+  font-size: 14px;
+  background: #FAFAFB;
+}
+.fpp-layout .fpp-layout-content {
+  flex: auto;
+  min-height: 0;
+}
+.fpp-layout .fpp-layout-sider {
+  position: relative;
+  min-width: 0;
+  transition: all 0.2s;
+  box-shadow: 1px 0px 25px 0px rgba(0, 0, 0, 0.04);
+}
+.fpp-layout .fpp-layout-sider.fpp-layout-sider-dark {
+  background: #FEFFFF;
+}
+.fpp-layout .fpp-layout-sider.fpp-layout-sider-light {
+  background: #FEFFFF;
+}
+.fpp-layout .fpp-layout-sider .fpp-layout-sider-children {
+  height: 100%;
+}
