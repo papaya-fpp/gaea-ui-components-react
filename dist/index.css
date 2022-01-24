@@ -1066,6 +1066,8 @@
   margin-top: 4px;
   color: #FF8A8A;
   font-size: 12px;
+  font-family: Rubik-Regular, Rubik;
+  font-weight: 400;
 }
 .fpp-input-body .fpp-input {
   height: 36px;
