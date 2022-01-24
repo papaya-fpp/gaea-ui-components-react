@@ -52,10 +52,9 @@
       list-style: none;
       font-feature-settings: 'tnum';
       position: relative;
-      display: inline-block;
       width: 100%;
       min-width: 0;
-      color: rgba(0, 0, 0, 0.85);
+      color: #344563;
       line-height: 1.5715;
       background-color: transparent;
       background-image: none;
@@ -198,31 +197,30 @@
   // 禁用 只读样式
   & .disabled {
     &.#{$prefix}-select-wrapper {
-      background: rgba(134, 145, 163, 0.09) !important;
-      color: $fontColor-1;
-      cursor: not-allowed;
       border: none;
-
+      background: $input-disabled-background;
+      box-shadow: none;
+      color: $fontColor-4;
       &:hover,
       &:focus{
         border: none;
-        background: rgba(134, 145, 163, 0.09) !important;
-        color: $fontColor-1 !important;
+        background: $input-disabled-background;
+        box-shadow: none;
+        color: $fontColor-4;
       }
       .#{$prefix}-select-input,
       .#{$prefix}-select-active_text {
-        border: none;
+        cursor: default;
+        color: $fontColor-4;
         &:hover,
         &:focus,
         &:focus-visible{
-          background: rgba(134, 145, 163, 0.09) !important;
-          border: none;
+          background: $input-disabled-background;
+          box-shadow: none;
+          border: 1px solid $input-border;
+          color: $fontColor-4;
           outline: 0;
         }
-      }
-      input,
-      textarea {
-        cursor: not-allowed;
       }
     }
   }

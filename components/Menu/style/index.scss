@@ -136,7 +136,7 @@
   
   .#{$prefix}-menu-divider{
     height: $menu-item-height;
-    line-height: $menu-item-height;
+    line-height: 70px;
     padding: 0 15px;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -149,6 +149,8 @@
       font-weight: 500;
       color: $fontColor-4;
       letter-spacing: 1px;
+      font-family: Rubik-Medium, Rubik;
+      font-weight: 500;
     }
   }
   .#{$prefix}-submenu{

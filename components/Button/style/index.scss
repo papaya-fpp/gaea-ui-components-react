@@ -21,7 +21,7 @@
       opacity: 0.79;
     }
     &.#{$prefix}-button--disabled {
-      opacity: 0.3;
+      background: #BEB7E2;;
       cursor: not-allowed;
     }
     &.#{$prefix}-button--loading {
@@ -31,10 +31,10 @@
 }
 
 .#{$prefix}-button--secondary {
-  background: #FBFDFF;
-  color: #5E6C84;
+  background: $input-bg;
+  color: $fontColor-2;
   border-radius: 6px;
-  border: 1px solid #E9EDF0;
+  border: 1px solid $input-border;
   box-shadow: inset 0px 2px 6px 0px rgba(101, 84, 192, 0.04);
   &.#{$prefix}-button--danger-secondary{
     border: 1px solid $red-1  !important;
@@ -47,7 +47,9 @@
   }
   &.#{$prefix}-button--disabled {
     cursor: not-allowed;
-    opacity: 0.3;
+    background: $input-bg;
+    border: 1px solid $input-border;
+    color: $fontColor-4;
   }
 }
 .#{$prefix}-button--small {
