@@ -52,6 +52,8 @@ const FormItem: React.FC<any> = (props) => {
           }
         }
       });
+    }).catch(err=>{
+      console.log('err',err)
     });
   };
 
