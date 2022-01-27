@@ -39,10 +39,10 @@ ModalExample.args = {
     visible: true,
     wrapClassName: 'self-modal',
     // width: 500,
-    title: <div>标题d</div>,
+    title: <div>标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题</div>,
     cancelText: '取消',
     okText: '确定',
-    children: <div>弹窗内容</div>,
+    children: <div>弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容弹窗内容</div>,
     onCancel: () => {
     },
     onOK: () => {

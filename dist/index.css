@@ -1663,7 +1663,7 @@
   display: flex;
   align-items: start;
   justify-content: space-between;
-  padding: 20px 25px 20px 30px;
+  padding: 20px 20px 20px 30px;
   border-bottom: 1px solid #E9EDF0;
 }
 .fpp-modal-warp > .fpp-modal-content .fpp-modal-header .fpp-modal-title {
@@ -1671,12 +1671,15 @@
   font-weight: bold;
   color: #344563;
   line-height: 20px;
+  word-break: break-all;
 }
 .fpp-modal-warp > .fpp-modal-content .fpp-modal-header .fpp-modal-close-wrapper {
   cursor: pointer;
+  margin-left: 20px;
 }
 .fpp-modal-warp > .fpp-modal-content .fpp-modal-body {
-  padding: 20px;
+  padding: 24px 30px;
+  word-break: break-all;
 }
 .fpp-modal-warp > .fpp-modal-content > .fpp-modal-footer {
   padding: 20px;
