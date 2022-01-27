@@ -14,6 +14,9 @@ const dataSource = [
     name: '胡彦斌',
     age: 32,
     address: '西湖区湖底公园1号',
+    name1: '胡彦斌',
+    age1: 32,
+    address1: '西湖区湖底公园1号',
     children:[
       {
         key: '1-1',
@@ -28,6 +31,18 @@ const dataSource = [
     name: '胡彦祖',
     age: 42,
     address: '西湖区湖底公园1号',
+    name1: '胡彦斌',
+    age1: 32,
+    address1: '西湖区湖底公园1号',
+  },
+  {
+    key: '2',
+    name: '胡彦祖',
+    age: 42,
+    address: '西湖区湖底公园1号',
+    name1: '胡彦斌',
+    age1: 32,
+    address1: '西湖区湖底公园1号',
   },
 ];
 
@@ -36,16 +51,37 @@ const columns = [
     title: '姓名',
     dataIndex: 'name',
     key: 'name',
+    width:100
   },
   {
     title: '年龄',
     dataIndex: 'age',
     key: 'age',
+    width:"10%"
   },
   {
     title: '住址',
     dataIndex: 'address',
     key: 'address',
+    width:"10%"
+  },
+  {
+    title: '姓名1',
+    dataIndex: 'name1',
+    key: 'name1',
+    width:"30%"
+  },
+  {
+    title: '年龄1',
+    dataIndex: 'age1',
+    key: 'age1',
+    width:"10%"
+  },
+  {
+    title: '住址1',
+    dataIndex: 'address1',
+    key: 'address1',
+    width:"10%"
   },
 ];
 const Template: ComponentStory<typeof Table> = (args) => <Table {...args} />;

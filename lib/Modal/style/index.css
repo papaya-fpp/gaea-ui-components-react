@@ -36,7 +36,7 @@
 }
 .fpp-modal-warp > .fpp-modal-content .fpp-modal-header {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
   padding: 20px 25px 20px 30px;
   border-bottom: 1px solid #E9EDF0;

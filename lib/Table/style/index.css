@@ -15,6 +15,7 @@
   border-spacing: 0;
   user-select: none;
   margin: 0;
+  table-layout: fixed !important;
 }
 .fpp-table thead tr {
   background: #fff;

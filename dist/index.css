@@ -1661,7 +1661,7 @@
 }
 .fpp-modal-warp > .fpp-modal-content .fpp-modal-header {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
   padding: 20px 25px 20px 30px;
   border-bottom: 1px solid #E9EDF0;
@@ -2610,6 +2610,7 @@ html {
   border-spacing: 0;
   user-select: none;
   margin: 0;
+  table-layout: fixed !important;
 }
 .fpp-table thead tr {
   background: #fff;

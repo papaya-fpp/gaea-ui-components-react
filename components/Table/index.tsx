@@ -74,7 +74,7 @@ const TableComp = (props) => {
             <thead>
             <tr>
                 {columns.map((item) => {
-                    return <th key={item.key || item.dataIndex}>{item.title}</th>;
+                    return <th style={{width:item.width}} key={item.key || item.dataIndex}>{item.title}</th>;
                 })}
             </tr>
             </thead>
@@ -121,7 +121,7 @@ const TableComp = (props) => {
                             content = item.render(obj[key], obj);
                         }
                         return (
-                            <td key={key} data-key={key} data-rowkey={_rowKey} className={classes}>
+                            <td width={item.width} key={key} data-key={key} data-rowkey={_rowKey} className={classes} >
                                 {index === 0 && (
                                     <TableCollapse
                                         showTableCollapse={obj.isCollapse}
@@ -165,15 +165,10 @@ const TableComp = (props) => {
     return (
         <div className={prefixCls}>
             <table  className={`${prefixCls}-wrapper`} ref={tableRef}>
-                {createColgroup(columns)}
+                {/*{createColgroup(columns)}*/}
                 {createTHead()}
                 <tbody>{createRow()}</tbody>
             </table>
-       {/*     {
-                pagination&&(
-                    <Pagination {...pagination}></Pagination>
-                )
-            }*/}
         </div>
     );
 };
