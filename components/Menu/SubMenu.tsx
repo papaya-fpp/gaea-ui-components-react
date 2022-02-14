@@ -4,7 +4,7 @@ import MenuContext from './MenuContext';
 import { getPrefixCls } from '../_util/responsiveObserve';
 import Icon from '../Icon';
 export interface SubMenuProps {
-  icon?: string;
+  icon?: React.ReactNode;
   title?: React.ReactNode;
   value?: string;
   disabled?: boolean;
@@ -100,7 +100,7 @@ const SubMenu: React.FC<SubMenuProps> = (props) => {
         <div className={`${prefixCls}-container`} onClick={openChangeHandel}>
           <div className={`${prefixCls}-title-container`}>
             {
-              firstLevel && icon && <Icon name={icon} />
+              firstLevel && icon
             }
             {!inlineCollapsed && <span className={`${prefixCls}-title-content`}>{title}</span>}
             {!inlineCollapsed && <Icon className="drop-down" name="Drop-down" />}

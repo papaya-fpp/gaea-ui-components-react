@@ -3,6 +3,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import Menu from './index';
+import Icon from '../Icon';
 const { Item, SubMenu, Divider } = Menu
 
 export default {
@@ -93,20 +94,20 @@ const Template: ComponentStory<typeof Menu> = (args) => (
   <div style={{ width: '256px'}}>
     <Menu {...args}>
       <Divider title="MAIN NAVIGATIO" />
-      <Item key="1" icon="Apps" disabled>Home</Item>
-      <Item key="2" icon="Apps">Apps</Item>
-      <Item key="3" icon="Settings">Settings</Item>
+      <Item key="1" icon={<Icon name="Apps" />} disabled>Home</Item>
+      <Item key="2" icon={<Icon name="Apps" />}>Apps</Item>
+      <Item key="3" icon={<Icon name="Settings" />}>Settings</Item>
       <Divider title="MAIN NAVIGATIO 2" />
-      <SubMenu key="sub1" icon="Apps" disabled title="Navigation One">
-        <Item key="4" icon="Settings">Settings</Item>
-        <Item key="5" icon="Settings">Settings</Item>
-        <Item key="6" icon="Settings">Settings</Item>
+      <SubMenu key="sub1" icon={<Icon name="Apps" />} disabled title="Navigation One">
+        <Item key="4" icon={<Icon name="Settings" />}>Settings</Item>
+        <Item key="5" icon={<Icon name="Settings" />}>Settings</Item>
+        <Item key="6" icon={<Icon name="Settings" />}>Settings</Item>
       </SubMenu>
-      <SubMenu key="sub2" icon="Apps" title="Navigation two">
+      <SubMenu key="sub2" icon={<Icon name="Apps" />} title="Navigation two">
         <Divider title="MAIN NAVIGATIO 3" />
-        <Item key="7" icon="Settings">Settings</Item>
-        <Item key="8" icon="Settings">Settings</Item>
-        <Item key="9" icon="Settings">Settings</Item>
+        <Item key="7" icon={<Icon name="Settings" />}>Settings</Item>
+        <Item key="8" icon={<Icon name="Settings" />}>Settings</Item>
+        <Item key="9" icon={<Icon name="Settings" />}>Settings</Item>
       </SubMenu>
     </Menu>
   </div>
