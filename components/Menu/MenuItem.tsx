@@ -5,7 +5,7 @@ import { getPrefixCls } from '../_util/responsiveObserve';
 import Icon from '../Icon';
 
 export interface MenuItemProps {
-  icon?: string;
+  icon?: React.ReactNode;
   title?: React.ReactNode;
   value?: string;
   disabled?: boolean;
@@ -35,7 +35,7 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
     <li className={classes} onClick={clickHandle}>
       <div className={`${prefixCls}-container`}>
         {
-          firstLevel && icon && <Icon size={18} name={icon} />
+          firstLevel && icon
         }
         {!inlineCollapsed && <span className={`${prefixCls}-title-content`}>{children}</span>}
       </div>
