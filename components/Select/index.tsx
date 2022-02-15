@@ -154,12 +154,15 @@ const Select: SelectPropsComponents = ({
             }
             <div className={`${prefixCls}-wrapper ${!filterOption ? `${prefixCls}-cursorPointer` : ''} ${className ? className : ''} ${disabled ? ' disabled' : ''}`}>
                 <span
-                    className={`${prefixCls}-form-placeholder ${pc_shrink || val ? `${prefixCls}-pc_shrink` : ''}` + (inputval ? ` ${prefixCls}-hide_placeholder` : '')}
-                    onClick={clickFocus}>
+                    className={`${prefixCls}-form-placeholder ${ val ? `${prefixCls}-pc_shrink` : ''}` + (inputval ? ` ${prefixCls}-hide_placeholder` : '')}
+                    onMouseDown={handlePreventDefault}
+                    onClick={handleOpen}
+                >
                     {placeholder}
                 </span>
                 <span
-                    onClick={clickFocus}
+                    onMouseDown={handlePreventDefault}
+                    onClick={handleOpen}
                     className={`${prefixCls}-active_text ${pc_shrink ? 'shade' : ''}` + (inputval ? ` ${prefixCls}-hide_placeholder` : '')}>
                     {childText}
                 </span>

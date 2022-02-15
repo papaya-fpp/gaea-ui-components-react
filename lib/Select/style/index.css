@@ -47,7 +47,6 @@
   list-style: none;
   font-feature-settings: "tnum";
   position: relative;
-  width: 85%;
   min-width: 0;
   color: #344563;
   line-height: 1.5715;
@@ -60,9 +59,6 @@
   font-family: Rubik-Regular, Rubik;
   font-weight: 400;
   outline: none;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 .fpp-select-container .fpp-select-wrapper .fpp-select-input {
   height: 36px;

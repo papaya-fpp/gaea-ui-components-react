@@ -51,7 +51,7 @@
       list-style: none;
       font-feature-settings: 'tnum';
       position: relative;
-      width: 85%;
+      //width: 100%;
       min-width: 0;
       color: #344563;
       line-height: 1.5715;
@@ -64,9 +64,9 @@
       font-family: Rubik-Regular, Rubik;
       font-weight: 400;
       outline: none;
-      overflow: hidden;
-      white-space: nowrap;// 控制不换行
-      text-overflow: ellipsis;// 控制省略部分以...结束
+      //overflow: hidden;
+      //white-space: nowrap;// 控制不换行
+      //text-overflow: ellipsis;// 控制省略部分以...结束
     }
     .#{$prefix}-select-input {
       height:36px;
