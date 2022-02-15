@@ -14,7 +14,7 @@ const Template: ComponentStory<typeof Select> = (args) => {
         {
             id:'1',
             value:'1',
-            label:'1',
+            label:'1111111111111111111111111111111111112345',
         },
         {
             id:'2',

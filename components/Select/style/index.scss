@@ -41,8 +41,34 @@
         //margin-top: 8px;
       }
     }
-    .#{$prefix}-select-input,
-    .#{$prefix}-select-active_text {
+    .#{$prefix}-select-active_text{
+      height:36px;
+      text-overflow: ellipsis;
+      padding: 8px 25px 8px 14px;
+      box-sizing: border-box;
+      margin: 0;
+      font-variant: tabular-nums;
+      list-style: none;
+      font-feature-settings: 'tnum';
+      position: relative;
+      width: 85%;
+      min-width: 0;
+      color: #344563;
+      line-height: 1.5715;
+      background-color: transparent;
+      background-image: none;
+      border: 1px solid #E9EDF0;
+      border-radius: 6px;
+      transition: all 0.3s;
+      font-size: $font-size-base;
+      font-family: Rubik-Regular, Rubik;
+      font-weight: 400;
+      outline: none;
+      overflow: hidden;
+      white-space: nowrap;// 控制不换行
+      text-overflow: ellipsis;// 控制省略部分以...结束
+    }
+    .#{$prefix}-select-input {
       height:36px;
       text-overflow: ellipsis;
       padding: 8px 25px 8px 14px;
@@ -118,6 +144,7 @@
       font-size: $font-size-sm;
       padding: 4px 0px 4px 6px;
       z-index: 9999;
+      cursor: pointer;
     }
     .#{$prefix}-select-active_text {
       position: absolute;
@@ -133,9 +160,9 @@
       align-items: center;
       font-family: Rubik-Regular, Rubik;
       font-weight: 400;
-      &.#{$prefix}-select-shade {
+      &.shade {
         color: $input-placeholder;
-        z-index: 0;
+        z-index: 99;
       }
     }
   }

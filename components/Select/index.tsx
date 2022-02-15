@@ -58,7 +58,9 @@ const Select: SelectPropsComponents = ({
         const list = listChildren.filter((item) => filterOption(val, item));
         setFilterList(list);
     };
-
+    const clickFocus = (e:any) => {
+        inputRef.current.focus();
+    };
     const inputFocus = (e: any) => {
         e.stopPropagation();
         setInputval('');
@@ -74,7 +76,18 @@ const Select: SelectPropsComponents = ({
         setShowList(false);
         setFilterList(listChildren);
     };
-
+    //阻止浏览器默认事件
+    const handlePreventDefault = (e:any)=>{
+        e.preventDefault()
+    }
+    const handleOpen = () => {
+        setShowList(true);
+        inputRef.current.focus();
+    }
+    const handleClose = (e:any) => {
+        setShowList(false);
+        inputRef.current.blur();
+    }
     const changeItem = (val: any, text: any) => {
         setVal(val);
         setInputval(text);
@@ -105,9 +118,7 @@ const Select: SelectPropsComponents = ({
         );
     };
 
-    const clickFocus = () => {
-        inputRef.current.focus();
-    };
+
      const handleClear = () => {
          set_pc_shrink_(false);
          setInputval('');
@@ -171,12 +182,13 @@ const Select: SelectPropsComponents = ({
                 }
 
                 {/*右侧箭头*/}
-                <div className={`${prefixCls}-jiantou`} onClick={clickFocus}>
+                {/*onMouseDown={handlePreventDefault} 是为了阻止浏览器默认事件（因为点击handleClose关闭下拉的时候 会先触发onblur 事件，导致下拉框抖动关不掉）*/}
+                <div className={`${prefixCls}-jiantou`} onMouseDown={handlePreventDefault} >
                     {
                         showList ? (
-                            <Icon name="Retract"/>
+                            <Icon  onClick={handleClose} name="Retract"/>
                         ) : (
-                            <Icon name="Drop-down"/>
+                            <Icon  onClick={handleOpen} name="Drop-down"/>
                         )
                     }
                 </div>
