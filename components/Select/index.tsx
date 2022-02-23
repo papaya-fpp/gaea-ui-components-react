@@ -189,9 +189,13 @@ const Select: SelectPropsComponents = ({
                 <div className={`${prefixCls}-jiantou`} onMouseDown={handlePreventDefault} >
                     {
                         showList ? (
-                            <Icon  onClick={handleClose} name="Retract"/>
+                            <div className={`${prefixCls}-jiantou-icon`}>
+                                <Icon  onClick={handleClose} name="Retract"/>
+                            </div>
                         ) : (
-                            <Icon  onClick={handleOpen} name="Drop-down"/>
+                            <div className={`${prefixCls}-jiantou-icon`}>
+                                <Icon  onClick={handleOpen} name="Drop-down"/>
+                            </div>
                         )
                     }
                 </div>

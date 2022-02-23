@@ -75,6 +75,8 @@ const Template2: ComponentStory<typeof Input> = (args) => {
   return (
       <Input {...args}
              value={inputVal}
+             error={inputVal===''}
+             errorText={inputVal===''?'您输入的不能为空':''}
              verificationCodeLoading={verificationCodeLoading}
              verificationCodeTrgger={verificationCodeTrgger}
              onChange={handleChange}
@@ -128,7 +130,7 @@ password.args = {
 
 export const textarea = Template2.bind({});
 textarea.args = {
-  disabled: true,
+  disabled: false,
   placeholder:'textarea',
   type:"textarea",
   name:"textarea",

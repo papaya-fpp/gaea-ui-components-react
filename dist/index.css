@@ -2255,6 +2255,7 @@ span.fpp-radio + * {
   z-index: 9999;
   cursor: pointer;
   color: rgba(134, 145, 163, 0.49);
+  margin-right: 10px;
 }
 .fpp-select-container .fpp-select-wrapper .fpp-select-clear:hover + .fpp-select-input {
   border-color: #6554C0;
@@ -2266,14 +2267,13 @@ span.fpp-radio + * {
   position: absolute;
   right: 10px;
   top: 50%;
-  margin-top: -9px;
+  margin-top: -7px;
   width: 18px;
   height: 18px;
   overflow: hidden;
   display: flex;
   color: #344563;
   font-size: 12px;
-  padding: 4px 0px 4px 6px;
   z-index: 9999;
   cursor: pointer;
 }
