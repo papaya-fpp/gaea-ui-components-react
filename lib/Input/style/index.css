@@ -39,15 +39,14 @@
   width: 100%;
   box-sizing: border-box;
   border: none;
-  display: flex;
   position: relative;
 }
 .fpp-input-body .fpp-input .fpp-textarea-all-icon .fpp-textarea-suffix,
 .fpp-input-body .fpp-textarea .fpp-textarea-all-icon .fpp-textarea-suffix {
   display: inline-block;
   position: absolute;
-  bottom: 8px;
-  right: 10px;
+  bottom: -29px;
+  right: 0px;
   color: #8691A3;
 }
 .fpp-input-body .fpp-input input,
@@ -157,6 +156,8 @@
   display: flex;
   align-items: center;
   flex: none;
+  margin-left: 10px;
+  color: #8691A3;
 }
 .fpp-input-body .fpp-input .fpp-input-wrapper .fpp-input-clear,
 .fpp-input-body .fpp-textarea .fpp-input-wrapper .fpp-input-clear {

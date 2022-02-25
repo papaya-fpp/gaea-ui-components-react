@@ -50,14 +50,13 @@
     width: 100%;
     box-sizing: border-box;
     border: none;
-    display: flex;
     position: relative;
     .#{$prefix}-textarea-all-icon{
       .#{$prefix}-textarea-suffix{
         display: inline-block;
         position: absolute;
-        bottom: 8px;
-        right: 10px;
+        bottom: -29px;
+        right: 0px;
         color: #8691A3;
       }
     }
@@ -158,6 +157,8 @@
         display: flex;
         align-items: center;
         flex: none;
+        margin-left: 10px;
+        color: #8691A3;
       }
 
       .#{$prefix}-input-clear {
