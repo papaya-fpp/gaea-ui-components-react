@@ -51,7 +51,16 @@
     box-sizing: border-box;
     border: none;
     display: flex;
-
+    position: relative;
+    .#{$prefix}-textarea-all-icon{
+      .#{$prefix}-textarea-suffix{
+        display: inline-block;
+        position: absolute;
+        bottom: 8px;
+        right: 10px;
+        color: #8691A3;
+      }
+    }
     input,
     textarea {
       color: $fontColor-1;

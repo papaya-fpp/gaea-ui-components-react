@@ -179,6 +179,16 @@ export const Input: React.FC<InputProps> = ({
                                  setValueHandle(e.target.value);
                              }}
                          />
+                        <div className={`${prefixClsTextarea}-all-icon`}>
+                            {/*后缀图标*/}
+                            <div  className={`${prefixClsTextarea}-suffix`}>
+                                {
+                                    suffix && (
+                                        suffix
+                                    )
+                                }
+                            </div>
+                        </div>
                     </div>
                 ) : (
                     <div

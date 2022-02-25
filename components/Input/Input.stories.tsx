@@ -134,6 +134,8 @@ textarea.args = {
   placeholder:'textarea',
   type:"textarea",
   name:"textarea",
+  maxLength:20,
+  suffix:<span>1/20</span>,
   value:'',
   onChange:() => {
   }
