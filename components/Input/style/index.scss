@@ -14,14 +14,30 @@
     color: $input-label;
     margin-bottom: 10px;
   }
-
-  .error-text {
-    margin-top: 4px;
-    color: $red-1;
-    font-size: $font-size-sm;
-    font-family: Rubik-Regular, Rubik;
-    font-weight: 400;
+  .end-section{
+    position: relative;
+    .error-text {
+      margin-top: 4px;
+      color: $red-1;
+      font-size: $font-size-sm;
+      font-family: Rubik-Regular, Rubik;
+      font-weight: 400;
+      //position: absolute;
+      //left: 0;
+      float: left;
+    }
+    .#{$prefix}-textarea-all-icon{
+      //text-align: right;
+      margin-top: 4px;
+      //position: absolute;
+      //right: 0;
+      float: right;
+      .#{$prefix}-textarea-suffix{
+        color: #8691A3;
+      }
+    }
   }
+
 
   .#{$prefix}-input {
     height: 36px;
@@ -51,15 +67,6 @@
     box-sizing: border-box;
     border: none;
     position: relative;
-    .#{$prefix}-textarea-all-icon{
-      .#{$prefix}-textarea-suffix{
-        display: inline-block;
-        position: absolute;
-        bottom: -29px;
-        right: 0px;
-        color: #8691A3;
-      }
-    }
     input,
     textarea {
       color: $fontColor-1;
@@ -291,4 +298,12 @@
       }
     }
   }
+}
+.clearfix:after,
+.clearfix:before{
+  content: " ";
+  display: table;
+}
+.clearfix:after{
+  clear: both;
 }

@@ -10,12 +10,23 @@
   color: #8691A3;
   margin-bottom: 10px;
 }
-.fpp-input-body .error-text {
+.fpp-input-body .end-section {
+  position: relative;
+}
+.fpp-input-body .end-section .error-text {
   margin-top: 4px;
   color: #FF8A8A;
   font-size: 12px;
   font-family: Rubik-Regular, Rubik;
   font-weight: 400;
+  float: left;
+}
+.fpp-input-body .end-section .fpp-textarea-all-icon {
+  margin-top: 4px;
+  float: right;
+}
+.fpp-input-body .end-section .fpp-textarea-all-icon .fpp-textarea-suffix {
+  color: #8691A3;
 }
 .fpp-input-body .fpp-input {
   height: 36px;
@@ -40,14 +51,6 @@
   box-sizing: border-box;
   border: none;
   position: relative;
-}
-.fpp-input-body .fpp-input .fpp-textarea-all-icon .fpp-textarea-suffix,
-.fpp-input-body .fpp-textarea .fpp-textarea-all-icon .fpp-textarea-suffix {
-  display: inline-block;
-  position: absolute;
-  bottom: -29px;
-  right: 0px;
-  color: #8691A3;
 }
 .fpp-input-body .fpp-input input,
 .fpp-input-body .fpp-input textarea,
@@ -285,4 +288,13 @@
   box-shadow: none;
   border: 1px solid #E9EDF0;
   color: #8691A3;
+}
+.clearfix:after,
+.clearfix:before {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
 }

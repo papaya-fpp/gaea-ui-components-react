@@ -179,16 +179,6 @@ export const Input: React.FC<InputProps> = ({
                                  setValueHandle(e.target.value);
                              }}
                          />
-                        <div className={`${prefixClsTextarea}-all-icon`}>
-                            {/*后缀图标*/}
-                            <div  className={`${prefixClsTextarea}-suffix`}>
-                                {
-                                    suffix && (
-                                        suffix
-                                    )
-                                }
-                            </div>
-                        </div>
                     </div>
                 ) : (
                     <div
@@ -286,7 +276,24 @@ export const Input: React.FC<InputProps> = ({
                     </div>
                 )
             }
-            <div className={'error-text' + (errorText != '' ? '' : ' is-hide')}>{errorText}</div>
+            <div className="end-section clearfix">
+                <div className={'error-text' + (errorText != '' ? '' : ' is-hide')}>{errorText}</div>
+                {
+                    type === 'textarea' && suffix &&(
+                        <div className={`${prefixClsTextarea}-all-icon`}>
+                            {/*后缀图标*/}
+                            <div  className={`${prefixClsTextarea}-suffix`}>
+                                {
+                                    suffix && (
+                                        suffix
+                                    )
+                                }
+                            </div>
+                        </div>
+                    )
+                }
+            </div>
+
         </div>
     );
 };
