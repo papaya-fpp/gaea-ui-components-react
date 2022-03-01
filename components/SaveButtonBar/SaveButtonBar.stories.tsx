@@ -12,6 +12,7 @@ export default {
 const Template: ComponentStory<typeof SaveButtonBar> = (args) => <SaveButtonBar {...args} />;
 export const saveBar = Template.bind({});
 saveBar.args = {
+  tipText:'You have unsaved changes123',
   isShow :true,
   loading :true,
 };

@@ -19,6 +19,7 @@ interface SaveButtonBarProps {
   loading?: boolean;
   cancelText?: String;
   saveText?: String;
+  tipText?: String;
 }
 export const SaveButtonBar: React.FC<SaveButtonBarProps> = props => {
   const {
@@ -28,6 +29,7 @@ export const SaveButtonBar: React.FC<SaveButtonBarProps> = props => {
     loading = false,
     cancelText = '取消',
     saveText = '确定',
+    tipText = '',
   } = props;
   const prefixCls = getPrefixCls('save-button-bar');
 
@@ -35,7 +37,12 @@ export const SaveButtonBar: React.FC<SaveButtonBarProps> = props => {
       <>
         {
           isShow&&(
-              <div className={prefixCls}>
+              <div className={`${prefixCls} clearfix`}>
+                {
+                  tipText&&(
+                      <div className={`${prefixCls}-tip`}>{tipText}</div>
+                  )
+                }
                 <div className={`${prefixCls}-button`}>
                   <Button
                       onClick={handleCancel}

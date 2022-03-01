@@ -289,12 +289,3 @@
   border: 1px solid #E9EDF0;
   color: #8691A3;
 }
-.clearfix:after,
-.clearfix:before {
-  content: " ";
-  display: table;
-}
-
-.clearfix:after {
-  clear: both;
-}

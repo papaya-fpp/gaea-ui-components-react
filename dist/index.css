@@ -1341,15 +1341,6 @@
   border: 1px solid #E9EDF0;
   color: #8691A3;
 }
-.clearfix:after,
-.clearfix:before {
-  content: " ";
-  display: table;
-}
-
-.clearfix:after {
-  clear: both;
-}
 .fpp-layout {
   display: flex;
   flex: auto;
@@ -1871,7 +1862,9 @@
   margin-right: 8px;
   cursor: pointer;
   font-size: 14px;
-  color: #344563;
+  color: #5E6C84;
+  font-family: Rubik-Regular, Rubik;
+  font-weight: 400;
 }
 .fpp-radio-wrapper-disabled {
   cursor: not-allowed;
@@ -2152,12 +2145,23 @@ span.fpp-radio + * {
   bottom: 0;
   left: 0;
   z-index: 99999;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  display: -webkit-flex;
-  -webkit-align-items: center;
-  -webkit-justify-content: flex-end;
+  /* display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   display:-webkit-flex;
+   -webkit-align-items: center;
+   -webkit-justify-content: flex-end;*/
+}
+.fpp-save-button-bar .fpp-save-button-bar-tip {
+  font-size: 14px;
+  font-family: Rubik-Medium, Rubik;
+  font-weight: 500;
+  color: #344563;
+  float: left;
+  line-height: 38px;
+}
+.fpp-save-button-bar .fpp-save-button-bar-button {
+  float: right;
 }
 .fpp-save-button-bar .margin-left-20 {
   margin-left: 20px;
@@ -2459,6 +2463,15 @@ a {
     transform: rotate(360deg);
   }
 }
+.clearfix:after,
+.clearfix:before {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
 @charset "UTF-8";
 *, *:before, *:after {
   box-sizing: border-box;
@@ -2519,6 +2532,16 @@ a {
     transform: rotate(360deg);
   }
 }
+.clearfix:after,
+.clearfix:before {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
 html {
   --primary-color: $purple-1;
   background: #FAFAFB;

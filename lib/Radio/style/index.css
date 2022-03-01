@@ -17,7 +17,9 @@
   margin-right: 8px;
   cursor: pointer;
   font-size: 14px;
-  color: #344563;
+  color: #5E6C84;
+  font-family: Rubik-Regular, Rubik;
+  font-weight: 400;
 }
 .fpp-radio-wrapper-disabled {
   cursor: not-allowed;
