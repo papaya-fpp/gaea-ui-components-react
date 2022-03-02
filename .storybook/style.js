@@ -23,3 +23,4 @@ import '../components/Radio/style';
 import '../components/List/style';
 import '../components/Message/style';
 import '../components/Switch/style';
+import '../components/Alert/style';

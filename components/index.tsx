@@ -48,5 +48,7 @@ export { default as Message } from './Message';
 
 export { default as Switch } from './Switch';
 
+export { default as Alert } from './Alert';
+
 
 

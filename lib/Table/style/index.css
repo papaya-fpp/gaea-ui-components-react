@@ -42,6 +42,10 @@
 .fpp-table tbody tr:last-child td {
   border: none;
 }
+.fpp-table tbody tr:hover td {
+  background: #F6F7F9;
+  opacity: 0.49;
+}
 .fpp-table tbody td {
   padding: 20px 30px;
 }
