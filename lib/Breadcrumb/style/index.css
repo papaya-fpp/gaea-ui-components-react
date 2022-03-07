@@ -1,0 +1,27 @@
+.fpp-breadcrumb {
+  color: #5E6C84;
+  font-size: 14px;
+}
+.fpp-breadcrumb a {
+  color: #5E6C84;
+  transition: color 0.3s;
+}
+.fpp-breadcrumb a:hover {
+  color: #6554C0;
+}
+.fpp-breadcrumb > span:last-child {
+  color: #344563;
+}
+.fpp-breadcrumb > span:last-child a {
+  color: #344563;
+}
+.fpp-breadcrumb > span:last-child .fpp-breadcrumb-separator {
+  display: none;
+}
+.fpp-breadcrumb .fpp-breadcrumb-separator {
+  margin: 0 8px;
+  color: #5E6C84;
+}
+.fpp-breadcrumb .fpp-breadcrumb-link a {
+  margin-left: 4px;
+}
