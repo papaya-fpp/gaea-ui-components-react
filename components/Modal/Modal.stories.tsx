@@ -47,6 +47,8 @@ ModalExample.args = {
     },
     onOK: () => {
     },
+    okButtonBgColor:'',
+    cancelButtonBgColor:'',
     closable: true,
     // footer: '底部',
     maskClosable: true,

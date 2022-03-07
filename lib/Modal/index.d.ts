@@ -12,6 +12,8 @@ interface ModalProps {
     closable?: boolean;
     footer?: any;
     maskClosable?: boolean;
+    cancelButtonBgColor?: string;
+    okButtonBgColor?: string;
 }
 interface ModalComponentProps extends React.FC<ModalProps> {
     confirm: typeof confirm;
@@ -27,6 +29,8 @@ interface ModalConfirmProps {
     closable?: boolean;
     width?: any;
     wrapClassName?: string;
+    cancelButtonBgColor?: string;
+    okButtonBgColor?: string;
 }
 declare const Modal: ModalComponentProps;
 declare const confirm: (props: ModalConfirmProps) => {
