@@ -93,3 +93,8 @@ noborderSelfIcon.args = {
   border:false,
   icon:<Icon color="green" name="chenggong"></Icon>
 };
+
+export const noArgs = Template.bind({});
+noArgs.args = {
+
+};

@@ -1,23 +1,15 @@
-/**
- * @name 页面保存按钮
- * @param isShow    保存bar是否显示
- * @param handleSave  保存按钮回调
- * @param handleCancel 取消按钮回调
- * @param loading 保存按钮的loading效果
- * @param cancelText 取消按钮文案
- * @param saveText 保存按钮文案
- */
+
 
 import React,{useState,useEffect} from "react";
 import { getPrefixCls } from '../_util/responsiveObserve';
 import Icon from '../Icon';
 
 interface AlertProps {
-  icon: React.ReactNode;
-  title: string | React.ReactNode;
-  content: string | React.ReactNode;
-  border: Boolean;
-  visible: Boolean;
+  icon?: React.ReactNode;
+  title?: string | React.ReactNode;
+  content?: string | React.ReactNode;
+  border?: Boolean;
+  visible?: Boolean;
   type?: string;// info success warning err
 }
 export const Alert: React.FC<AlertProps> = props => {
