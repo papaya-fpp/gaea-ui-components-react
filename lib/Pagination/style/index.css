@@ -37,9 +37,11 @@
 }
 .fpp-pagination .fpp-pagination-list > li.pageNum.fpp-pagination-disabled, .fpp-pagination .fpp-pagination-list > li.fpp-pagination-prev-arrow.fpp-pagination-disabled, .fpp-pagination .fpp-pagination-list > li.fpp-pagination-next-arrow.fpp-pagination-disabled {
   cursor: not-allowed;
-  background: rgba(10, 47, 74, 0.09);
-  border: 1px solid rgba(10, 47, 74, 0.09);
   color: rgba(134, 145, 163, 0.5);
+  background: #F9FAFB;
+  box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, 0.04);
+  border-radius: 6px;
+  border: 1px solid #E9EDF0;
 }
 .fpp-pagination .fpp-pagination-list > li.fpp-pagination-dot {
   color: rgba(0, 0, 0, 0.25);

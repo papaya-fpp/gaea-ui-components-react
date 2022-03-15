@@ -44,9 +44,13 @@
         }
         &.#{$prefix}-pagination-disabled{
           cursor: not-allowed;
-          background: $disabled-background;
-          border: 1px solid $disabledBorder;
-          color:rgba(134, 145, 163, 0.5)
+          //background: $disabled-background;
+          //border: 1px solid $disabledBorder;
+          color:rgba(134, 145, 163, 0.5);
+          background: #F9FAFB;
+          box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, 0.04);
+          border-radius: 6px;
+          border: 1px solid #E9EDF0;
         }
       }
       &.#{$prefix}-pagination-dot {
