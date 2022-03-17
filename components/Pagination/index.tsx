@@ -93,6 +93,7 @@ const Pagination: React.FC<PaginationProps> = ({ total = 0, current = 1, PageSiz
   }
   useEffect(() => {
     createShowList(+current);
+    setComCurrent(+current)
   }, [current, pageCount]);
   return total > 0 ? (
       <div className={prefixCls}>
