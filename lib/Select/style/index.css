@@ -37,7 +37,6 @@
 .fpp-select-container .fpp-select-wrapper .fpp-select-form-placeholder.fpp-select-pc_shrink {
   display: none;
 }
-.fpp-select-container .fpp-select-wrapper .fpp-select-input,
 .fpp-select-container .fpp-select-wrapper .fpp-select-active_text {
   height: 36px;
   text-overflow: ellipsis;
@@ -48,10 +47,8 @@
   list-style: none;
   font-feature-settings: "tnum";
   position: relative;
-  display: inline-block;
-  width: 100%;
   min-width: 0;
-  color: rgba(0, 0, 0, 0.85);
+  color: #344563;
   line-height: 1.5715;
   background-color: transparent;
   background-image: none;
@@ -59,22 +56,44 @@
   border-radius: 6px;
   transition: all 0.3s;
   font-size: 14px;
+  font-family: Rubik-Regular, Rubik;
+  font-weight: 400;
+  outline: none;
 }
-.fpp-select-container .fpp-select-wrapper .fpp-select-input::placeholder,
-.fpp-select-container .fpp-select-wrapper .fpp-select-active_text::placeholder {
+.fpp-select-container .fpp-select-wrapper .fpp-select-input {
+  height: 36px;
+  text-overflow: ellipsis;
+  padding: 8px 25px 8px 14px;
+  box-sizing: border-box;
+  margin: 0;
+  font-variant: tabular-nums;
+  list-style: none;
+  font-feature-settings: "tnum";
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  color: #344563;
+  line-height: 1.5715;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid #E9EDF0;
+  border-radius: 6px;
+  transition: all 0.3s;
+  font-size: 14px;
+  font-family: Rubik-Regular, Rubik;
+  font-weight: 400;
+  outline: none;
+}
+.fpp-select-container .fpp-select-wrapper .fpp-select-input::placeholder {
   color: rgba(52, 69, 99, 0.5);
 }
-.fpp-select-container .fpp-select-wrapper .fpp-select-input:hover, .fpp-select-container .fpp-select-wrapper .fpp-select-input:focus, .fpp-select-container .fpp-select-wrapper .fpp-select-input:focus-visible,
-.fpp-select-container .fpp-select-wrapper .fpp-select-active_text:hover,
-.fpp-select-container .fpp-select-wrapper .fpp-select-active_text:focus,
-.fpp-select-container .fpp-select-wrapper .fpp-select-active_text:focus-visible {
+.fpp-select-container .fpp-select-wrapper .fpp-select-input:hover, .fpp-select-container .fpp-select-wrapper .fpp-select-input:focus, .fpp-select-container .fpp-select-wrapper .fpp-select-input:focus-visible {
   background: #FAF9FF;
   border-color: #6554C0;
   border-right-width: 1px !important;
   outline: 0;
 }
-.fpp-select-container .fpp-select-wrapper .fpp-select-input.fpp-select-nosearch,
-.fpp-select-container .fpp-select-wrapper .fpp-select-active_text.fpp-select-nosearch {
+.fpp-select-container .fpp-select-wrapper .fpp-select-input.fpp-select-nosearch {
   color: transparent;
   cursor: pointer;
 }
@@ -94,6 +113,7 @@
   z-index: 9999;
   cursor: pointer;
   color: rgba(134, 145, 163, 0.49);
+  margin-right: 10px;
 }
 .fpp-select-container .fpp-select-wrapper .fpp-select-clear:hover + .fpp-select-input {
   border-color: #6554C0;
@@ -105,17 +125,18 @@
   position: absolute;
   right: 10px;
   top: 50%;
-  margin-top: -9px;
+  margin-top: -7px;
   width: 18px;
   height: 18px;
   overflow: hidden;
   display: flex;
   color: #344563;
   font-size: 12px;
-  padding: 4px 0px 4px 6px;
   z-index: 9999;
+  cursor: pointer;
 }
 .fpp-select-container .fpp-select-wrapper .fpp-select-active_text {
+  width: 100%;
   position: absolute;
   z-index: 100;
   top: 0px;
@@ -127,26 +148,31 @@
   word-break: break-all;
   display: flex;
   align-items: center;
+  font-family: Rubik-Regular, Rubik;
+  font-weight: 400;
 }
-.fpp-select-container .fpp-select-wrapper .fpp-select-active_text.fpp-select-shade {
+.fpp-select-container .fpp-select-wrapper .fpp-select-active_text.shade {
   color: rgba(52, 69, 99, 0.5);
-  z-index: 0;
+  z-index: 99;
 }
 .fpp-select-container .fpp-select-hide_placeholder {
   display: none !important;
 }
-.fpp-select-container .fpp-select-option_content .fpp-select-option_list {
-  position: absolute;
-  margin-top: 4px;
+.fpp-select-container .fpp-select-option_content {
   width: 100%;
+  position: absolute;
   z-index: 99999;
-  outline: none;
-  max-height: 256px;
-  background: #FEFFFF;
+  margin-top: 4px;
   box-shadow: 0px 10px 24px 0px rgba(0, 0, 0, 0.04);
   border-radius: 6px;
   border: 1px solid #E9EDF0;
+  background: #FEFFFF;
   padding: 8px;
+}
+.fpp-select-container .fpp-select-option_content .fpp-select-option_list {
+  width: 100%;
+  outline: none;
+  max-height: 256px;
   overflow-y: auto;
 }
 .fpp-select-container .fpp-select-option_content .fpp-select-option_list .fpp-select-option_item {
@@ -161,15 +187,19 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  font-family: Rubik-Regular, Rubik;
+  font-weight: 400;
 }
 .fpp-select-container .fpp-select-option_content .fpp-select-option_list .fpp-select-option_item:hover, .fpp-select-container .fpp-select-option_content .fpp-select-option_list .fpp-select-option_item.active {
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+  box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
   border-radius: 6px;
   background-color: #F6F7F9;
   color: #6554C0;
+  font-family: Rubik-Medium, Rubik;
+  font-weight: 500;
 }
 .fpp-select-container .fpp-select-option_content .fpp-select-option_list .fpp-select-kong_wrapper {
-  color: #939DAD;
+  color: #E0E6EF;
   text-align: center;
   padding: 16px;
   font-size: 40px;
@@ -178,29 +208,29 @@
   margin: 14px 0;
 }
 .fpp-select-container .disabled.fpp-select-wrapper {
-  background: rgba(134, 145, 163, 0.09) !important;
-  color: #344563;
-  cursor: not-allowed;
   border: none;
+  background: #F9FAFB;
+  box-shadow: none;
+  color: #8691A3;
 }
 .fpp-select-container .disabled.fpp-select-wrapper:hover, .fpp-select-container .disabled.fpp-select-wrapper:focus {
   border: none;
-  background: rgba(134, 145, 163, 0.09) !important;
-  color: #344563 !important;
+  background: #F9FAFB;
+  box-shadow: none;
+  color: #8691A3;
 }
 .fpp-select-container .disabled.fpp-select-wrapper .fpp-select-input,
 .fpp-select-container .disabled.fpp-select-wrapper .fpp-select-active_text {
-  border: none;
+  cursor: default;
+  color: #8691A3;
 }
 .fpp-select-container .disabled.fpp-select-wrapper .fpp-select-input:hover, .fpp-select-container .disabled.fpp-select-wrapper .fpp-select-input:focus, .fpp-select-container .disabled.fpp-select-wrapper .fpp-select-input:focus-visible,
 .fpp-select-container .disabled.fpp-select-wrapper .fpp-select-active_text:hover,
 .fpp-select-container .disabled.fpp-select-wrapper .fpp-select-active_text:focus,
 .fpp-select-container .disabled.fpp-select-wrapper .fpp-select-active_text:focus-visible {
-  background: rgba(134, 145, 163, 0.09) !important;
-  border: none;
+  background: #F9FAFB;
+  box-shadow: none;
+  border: 1px solid #E9EDF0;
+  color: #8691A3;
   outline: 0;
-}
-.fpp-select-container .disabled.fpp-select-wrapper input,
-.fpp-select-container .disabled.fpp-select-wrapper textarea {
-  cursor: not-allowed;
 }

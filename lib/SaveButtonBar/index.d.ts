@@ -15,6 +15,7 @@ interface SaveButtonBarProps {
     loading?: boolean;
     cancelText?: String;
     saveText?: String;
+    tipText?: String;
 }
 export declare const SaveButtonBar: React.FC<SaveButtonBarProps>;
 export default SaveButtonBar;

@@ -14,12 +14,30 @@
     color: $input-label;
     margin-bottom: 10px;
   }
-
-  .error-text {
-    margin-top: 4px;
-    color: $red-1;
-    font-size: $font-size-sm;
+  .end-section{
+    position: relative;
+    .error-text {
+      margin-top: 4px;
+      color: $red-1;
+      font-size: $font-size-sm;
+      font-family: Rubik-Regular, Rubik;
+      font-weight: 400;
+      //position: absolute;
+      //left: 0;
+      float: left;
+    }
+    .#{$prefix}-textarea-all-icon{
+      //text-align: right;
+      margin-top: 4px;
+      //position: absolute;
+      //right: 0;
+      float: right;
+      .#{$prefix}-textarea-suffix{
+        color: #8691A3;
+      }
+    }
   }
+
 
   .#{$prefix}-input {
     height: 36px;
@@ -48,8 +66,7 @@
     width: 100%;
     box-sizing: border-box;
     border: none;
-    display: flex;
-
+    position: relative;
     input,
     textarea {
       color: $fontColor-1;
@@ -84,10 +101,11 @@
 
     .#{$prefix}-textarea-affix-wrapper {
       min-height: 100px;
-      resize: vertical;
+      //resize: vertical;
+      resize: none;
       padding: 8px 13px;
       background: $input-bg;
-      box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.04);
+      box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, 0.04);
       border-radius: 6px;
       border: 1px solid $input-border;
 
@@ -146,6 +164,8 @@
         display: flex;
         align-items: center;
         flex: none;
+        margin-left: 10px;
+        color: #8691A3;
       }
 
       .#{$prefix}-input-clear {
@@ -250,17 +270,25 @@
 
     // 禁用 只读样式
     &.disabled {
+      input,
+      textarea {
+        color: $fontColor-4;
+        &::placeholder {
+          color: $fontColor-4;
+        }
+      }
       .#{$prefix}-input-affix-wrapper,
       .#{$prefix}-textarea-affix-wrapper{
-        background: rgba(134, 145, 163, 0.09) !important;
-        color: $fontColor-1;
-        //cursor: not-allowed;
-        border: none;
+        background: $input-disabled-background;
+        box-shadow: none;
+        border: 1px solid $input-border;
+        color: $fontColor-4;
         &:hover,
         &:focus{
-          border: none;
-          background: rgba(134, 145, 163, 0.09) !important;
-          color: $fontColor-1 !important;
+          background: $input-disabled-background;
+          box-shadow: none;
+          border: 1px solid $input-border;
+          color: $fontColor-4;
         }
 
         input,

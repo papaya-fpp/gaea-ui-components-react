@@ -1,6 +1,6 @@
 import React from 'react';
 export interface SubMenuProps {
-    icon?: string;
+    icon?: React.ReactNode;
     title?: React.ReactNode;
     value?: string;
     disabled?: boolean;

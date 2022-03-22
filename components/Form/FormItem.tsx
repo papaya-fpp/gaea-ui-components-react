@@ -52,7 +52,9 @@ const FormItem: React.FC<any> = (props) => {
           }
         }
       });
-    });
+    })/*.catch(err=>{
+      console.log('err',err)
+    });*/
   };
 
   const getControlled = (childProps: any) => {

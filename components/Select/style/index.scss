@@ -41,8 +41,7 @@
         //margin-top: 8px;
       }
     }
-    .#{$prefix}-select-input,
-    .#{$prefix}-select-active_text {
+    .#{$prefix}-select-active_text{
       height:36px;
       text-overflow: ellipsis;
       padding: 8px 25px 8px 14px;
@@ -52,10 +51,9 @@
       list-style: none;
       font-feature-settings: 'tnum';
       position: relative;
-      display: inline-block;
-      width: 100%;
+      //width: 100%;
       min-width: 0;
-      color: rgba(0, 0, 0, 0.85);
+      color: #344563;
       line-height: 1.5715;
       background-color: transparent;
       background-image: none;
@@ -63,6 +61,36 @@
       border-radius: 6px;
       transition: all 0.3s;
       font-size: $font-size-base;
+      font-family: Rubik-Regular, Rubik;
+      font-weight: 400;
+      outline: none;
+      //overflow: hidden;
+      //white-space: nowrap;// 控制不换行
+      //text-overflow: ellipsis;// 控制省略部分以...结束
+    }
+    .#{$prefix}-select-input {
+      height:36px;
+      text-overflow: ellipsis;
+      padding: 8px 25px 8px 14px;
+      box-sizing: border-box;
+      margin: 0;
+      font-variant: tabular-nums;
+      list-style: none;
+      font-feature-settings: 'tnum';
+      position: relative;
+      width: 100%;
+      min-width: 0;
+      color: #344563;
+      line-height: 1.5715;
+      background-color: transparent;
+      background-image: none;
+      border: 1px solid #E9EDF0;
+      border-radius: 6px;
+      transition: all 0.3s;
+      font-size: $font-size-base;
+      font-family: Rubik-Regular, Rubik;
+      font-weight: 400;
+      outline: none;
       &::placeholder {
         color: $input-placeholder;
       }
@@ -95,6 +123,7 @@
       z-index: 9999;
       cursor: pointer;
       color: rgba(134, 145, 163, 0.49);
+      margin-right: 10px;
       //display: none;
       &:hover+.#{$prefix}-select-input{
         border-color: $purple-1;
@@ -107,17 +136,21 @@
       position: absolute;
       right: 10px;
       top: 50%;
-      margin-top: -9px;
+      margin-top: -7px;
       width: 18px;
       height: 18px;
       overflow: hidden;
       display: flex;
       color: $fontColor-1;
       font-size: $font-size-sm;
-      padding: 4px 0px 4px 6px;
       z-index: 9999;
+      cursor: pointer;
+      .#{$prefix}-select-jiantou-icon{
+        //padding: 2px 0px 4px 6px;
+      }
     }
     .#{$prefix}-select-active_text {
+      width: 100%;
       position: absolute;
       z-index: 100;
       top: 0px;
@@ -129,9 +162,11 @@
       word-break: break-all;
       display: flex;
       align-items: center;
-      &.#{$prefix}-select-shade {
+      font-family: Rubik-Regular, Rubik;
+      font-weight: 400;
+      &.shade {
         color: $input-placeholder;
-        z-index: 0;
+        z-index: 99;
       }
     }
   }
@@ -139,18 +174,19 @@
     display: none !important;
   }
   .#{$prefix}-select-option_content{
+    width: 100%;
+    position: absolute;
+    z-index: 99999;
+    margin-top: 4px;
+    box-shadow: 0px 10px 24px 0px rgba(0, 0, 0, 0.04);
+    border-radius: 6px;
+    border: 1px solid #E9EDF0;
+    background: #FEFFFF;
+    padding: 8px;
     .#{$prefix}-select-option_list {
-      position: absolute;
-      margin-top: 4px;
       width: 100%;
-      z-index: 99999;
       outline: none;
       max-height: 256px;
-      background: #FEFFFF;
-      box-shadow: 0px 10px 24px 0px rgba(0, 0, 0, 0.04);
-      border-radius: 6px;
-      border: 1px solid #E9EDF0;
-      padding: 8px;
       overflow-y: auto;
       .#{$prefix}-select-option_item {
         min-height: 36px;
@@ -164,16 +200,20 @@
         overflow: hidden;
         white-space: nowrap;// 控制不换行
         text-overflow: ellipsis;// 控制省略部分以...结束
+        font-family: Rubik-Regular, Rubik;
+        font-weight: 400;
         &:hover,
         &.active{
-          box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+          box-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
           border-radius: 6px;
           background-color: $hover-bg-1;
           color: $purple-1;
+          font-family: Rubik-Medium, Rubik;
+          font-weight: 500;
         }
       }
       .#{$prefix}-select-kong_wrapper {
-        color: #939DAD;
+        color: #E0E6EF;
         text-align: center;
         padding: 16px;
         font-size: 40px;
@@ -188,31 +228,30 @@
   // 禁用 只读样式
   & .disabled {
     &.#{$prefix}-select-wrapper {
-      background: rgba(134, 145, 163, 0.09) !important;
-      color: $fontColor-1;
-      cursor: not-allowed;
       border: none;
-
+      background: $input-disabled-background;
+      box-shadow: none;
+      color: $fontColor-4;
       &:hover,
       &:focus{
         border: none;
-        background: rgba(134, 145, 163, 0.09) !important;
-        color: $fontColor-1 !important;
+        background: $input-disabled-background;
+        box-shadow: none;
+        color: $fontColor-4;
       }
       .#{$prefix}-select-input,
       .#{$prefix}-select-active_text {
-        border: none;
+        cursor: default;
+        color: $fontColor-4;
         &:hover,
         &:focus,
         &:focus-visible{
-          background: rgba(134, 145, 163, 0.09) !important;
-          border: none;
+          background: $input-disabled-background;
+          box-shadow: none;
+          border: 1px solid $input-border;
+          color: $fontColor-4;
           outline: 0;
         }
-      }
-      input,
-      textarea {
-        cursor: not-allowed;
       }
     }
   }

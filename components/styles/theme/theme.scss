@@ -49,7 +49,7 @@ $disabled-color-dark: fade(#fff, 35%);
 // Shadow
 $layout-header-shadow: 0px 25px 50px 0px rgba(0, 0, 0, 0.04);
 $layout-sider-shadow: 1px 0px 25px 0px rgba(0, 0, 0, 0.04);
-$menu-hover-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+$menu-hover-shadow: inset 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
 $dropdown-list-shadow: 0px 10px 24px 0px rgba(0, 0, 0, 0.04);
 $header-border-shadow: 0px 25px 50px 0px rgba(101, 84, 192, 0.04);
 $shadow-2: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08),
@@ -194,7 +194,7 @@ $checkbox-group-item-margin-right: 8px;
 // Radio
 $radio-size: 16px;
 $radio-top: 0.2em;
-$radio-border-width: 1px;
+$radio-border-width: 2px;
 $radio-dot-size: $radio-size - 8px;
 $radio-dot-color: $purple-1;
 $radio-dot-disabled-color: #0003;

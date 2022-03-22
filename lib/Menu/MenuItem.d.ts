@@ -1,6 +1,6 @@
 import React from 'react';
 export interface MenuItemProps {
-    icon?: string;
+    icon?: React.ReactNode;
     title?: React.ReactNode;
     value?: string;
     disabled?: boolean;

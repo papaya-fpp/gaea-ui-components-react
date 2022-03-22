@@ -18,6 +18,7 @@
     border-spacing: 0;
     user-select: none;
     margin: 0;
+    table-layout: fixed !important;
   }
   thead tr {
     background: $white;
@@ -48,7 +49,8 @@
   }
   tbody tr:hover {
     td{
-      //background: $hover-bg-1;
+      background: $hover-bg-1;
+      opacity: 0.49;
     }
   }
   tbody td{

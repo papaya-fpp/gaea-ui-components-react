@@ -16,7 +16,10 @@ interface ModalProps {
   onOK?: () => void;
   closable?: boolean;
   footer?: any;
+  loading?: boolean;
   maskClosable?: boolean;
+  cancelButtonBgColor?: string;
+  okButtonBgColor?: string;
 }
 
 interface ModalComponentProps extends React.FC<ModalProps> {
@@ -32,8 +35,11 @@ interface ModalConfirmProps {
   onOK?: any;
   footer?: any;
   closable?: boolean;
+  loading?: boolean;
   width?: any;
   wrapClassName?: string;
+  cancelButtonBgColor?: string;
+  okButtonBgColor?: string;
 }
 
 const Modal: ModalComponentProps = ({
@@ -49,6 +55,9 @@ const Modal: ModalComponentProps = ({
   closable = false,
   footer,
   maskClosable = true,
+  loading = false,
+  okButtonBgColor = '#6554C0',
+  cancelButtonBgColor = '#FBFDFF',
 }) => {
   const prefixCls = getPrefixCls("modal");
   const [target, setTarget] = useState(null);
@@ -97,8 +106,8 @@ const Modal: ModalComponentProps = ({
                   footer
               ) : (
                   <div className={`${prefixCls}-footer`}>
-                    <Button onClick={handleCancel}>{cancelText}</Button>
-                    <Button backgroundColor="#FF8A8A" primary onClick={handleOK}>
+                    <Button backgroundColor={cancelButtonBgColor} onClick={handleCancel}>{cancelText}</Button>
+                    <Button loading={loading} backgroundColor={okButtonBgColor} primary onClick={handleOK}>
                       {okText}
                     </Button>
                   </div>

@@ -58,7 +58,9 @@ const Select: SelectPropsComponents = ({
         const list = listChildren.filter((item) => filterOption(val, item));
         setFilterList(list);
     };
-
+    const clickFocus = (e:any) => {
+        inputRef.current.focus();
+    };
     const inputFocus = (e: any) => {
         e.stopPropagation();
         setInputval('');
@@ -71,10 +73,21 @@ const Select: SelectPropsComponents = ({
         set_pc_shrink_(false);
         setInputval('');
         onBlur && onBlur();
-        // setShowList(false);
+        setShowList(false);
         setFilterList(listChildren);
     };
-
+    //阻止浏览器默认事件
+    const handlePreventDefault = (e:any)=>{
+        e.preventDefault()
+    }
+    const handleOpen = () => {
+        setShowList(true);
+        inputRef.current.focus();
+    }
+    const handleClose = (e:any) => {
+        setShowList(false);
+        inputRef.current.blur();
+    }
     const changeItem = (val: any, text: any) => {
         setVal(val);
         setInputval(text);
@@ -105,9 +118,7 @@ const Select: SelectPropsComponents = ({
         );
     };
 
-    const clickFocus = () => {
-        inputRef.current.focus();
-    };
+
      const handleClear = () => {
          set_pc_shrink_(false);
          setInputval('');
@@ -143,12 +154,15 @@ const Select: SelectPropsComponents = ({
             }
             <div className={`${prefixCls}-wrapper ${!filterOption ? `${prefixCls}-cursorPointer` : ''} ${className ? className : ''} ${disabled ? ' disabled' : ''}`}>
                 <span
-                    className={`${prefixCls}-form-placeholder ${pc_shrink || val ? `${prefixCls}-pc_shrink` : ''}` + (inputval ? ` ${prefixCls}-hide_placeholder` : '')}
-                    onClick={clickFocus}>
+                    className={`${prefixCls}-form-placeholder ${ val ? `${prefixCls}-pc_shrink` : ''}` + (inputval ? ` ${prefixCls}-hide_placeholder` : '')}
+                    onMouseDown={handlePreventDefault}
+                    onClick={handleOpen}
+                >
                     {placeholder}
                 </span>
                 <span
-                    onClick={clickFocus}
+                    onMouseDown={handlePreventDefault}
+                    onClick={handleOpen}
                     className={`${prefixCls}-active_text ${pc_shrink ? 'shade' : ''}` + (inputval ? ` ${prefixCls}-hide_placeholder` : '')}>
                     {childText}
                 </span>
@@ -171,12 +185,17 @@ const Select: SelectPropsComponents = ({
                 }
 
                 {/*右侧箭头*/}
-                <div className={`${prefixCls}-jiantou`} onClick={clickFocus}>
+                {/*onMouseDown={handlePreventDefault} 是为了阻止浏览器默认事件（因为点击handleClose关闭下拉的时候 会先触发onblur 事件，导致下拉框抖动关不掉）*/}
+                <div className={`${prefixCls}-jiantou`} onMouseDown={handlePreventDefault} >
                     {
                         showList ? (
-                            <Icon name="Retract"/>
+                            <div className={`${prefixCls}-jiantou-icon`}>
+                                <Icon  onClick={handleClose} name="Retract"/>
+                            </div>
                         ) : (
-                            <Icon name="Drop-down"/>
+                            <div className={`${prefixCls}-jiantou-icon`}>
+                                <Icon  onClick={handleOpen} name="Drop-down"/>
+                            </div>
                         )
                     }
                 </div>

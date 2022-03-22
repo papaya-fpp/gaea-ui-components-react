@@ -11,12 +11,15 @@
   @include fixed;
   text-align: center;
   z-index: 999;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(23, 23, 37, 0.6);
 }
 .#{$prefix}-modal-warp {
   @include fixed;
   z-index: 1000;
   overflow-y: scroll;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -27,27 +30,30 @@
     flex-direction: column;
     justify-content: space-between;
     position: relative;
-    margin: 100px auto;
+    //margin: 100px auto;
     box-shadow: 0px 25px 50px 0px rgba(0, 0, 0, 0.04);
     border-radius: 12px;
     .#{$prefix}-modal-header{
       display: flex;
-      align-items: center;
+      align-items: start;
       justify-content: space-between;
-      padding: 20px 25px 20px 30px;
+      padding: 20px 20px 20px 30px;
       border-bottom: 1px solid #E9EDF0;
       .#{$prefix}-modal-title {
         font-size: $font-size-large;
         font-weight: bold;
         color: #344563;
         line-height: 20px;
+        word-break: break-all;
       }
       .#{$prefix}-modal-close-wrapper {
         cursor: pointer;
+        margin-left: 20px;
       }
     }
     .#{$prefix}-modal-body{
-      padding: 20px;
+      padding: 24px 30px;
+      word-break: break-all;
     }
 
     > .#{$prefix}-modal-footer {
