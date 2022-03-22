@@ -260,7 +260,10 @@
 .fpp-input-body .fpp-input.disabled textarea,
 .fpp-input-body .fpp-textarea.disabled input,
 .fpp-input-body .fpp-textarea.disabled textarea {
+  -webkit-text-fill-color: #8691A3;
+  -webkit-opacity: 1;
   color: #8691A3;
+  background: transparent;
 }
 .fpp-input-body .fpp-input.disabled input::placeholder,
 .fpp-input-body .fpp-input.disabled textarea::placeholder,

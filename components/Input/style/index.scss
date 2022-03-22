@@ -272,7 +272,10 @@
     &.disabled {
       input,
       textarea {
-        color: $fontColor-4;
+        -webkit-text-fill-color:$fontColor-4;
+        -webkit-opacity: 1;
+        color:$fontColor-4;
+        background: transparent;
         &::placeholder {
           color: $fontColor-4;
         }
