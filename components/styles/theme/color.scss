@@ -13,7 +13,7 @@ $white: #fff; // 低色
 $fontColor-1: #344563; // 主文字颜色
 $fontColor-2: #5E6C84; // 辅文字颜色
 $fontColor-3: #5E6C84; // 表单标题文字颜色
-$fontColor-4: #8691A3; // 
+$fontColor-4: rgba(134, 145, 163, 0.5); //
 
 $bg-1: #FAFAFB; // 背景色
 
@@ -27,6 +27,9 @@ $input-disabled-background: #F9FAFB;//input 边框颜色
 $input-bg: #FBFDFF; //input 背景颜色
 $input-hover-bg: #FAF9FF; //input 背景颜色
 $input-hover-bg-err: #FFFBFB; //input 错误背景颜色
+
+
+$button-secondary-disabled-background: #F9FAFB; //button 二级按钮禁用背景颜色
 
 // background color
 $white-background: #fff;

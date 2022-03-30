@@ -40,9 +40,9 @@
 }
 .fpp-button--secondary.fpp-button--disabled {
   cursor: not-allowed;
-  background: #FBFDFF;
+  background: #F9FAFB;
   border: 1px solid #E9EDF0;
-  color: #8691A3;
+  color: rgba(134, 145, 163, 0.5);
 }
 
 .fpp-button--small {

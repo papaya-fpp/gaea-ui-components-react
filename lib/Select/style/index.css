@@ -119,7 +119,7 @@
   border-color: #6554C0;
 }
 .fpp-select-container .fpp-select-wrapper .fpp-select-clear:hover {
-  color: #8691A3;
+  color: rgba(134, 145, 163, 0.5);
 }
 .fpp-select-container .fpp-select-wrapper .fpp-select-jiantou {
   position: absolute;
@@ -211,18 +211,18 @@
   border: none;
   background: #F9FAFB;
   box-shadow: none;
-  color: #8691A3;
+  color: rgba(134, 145, 163, 0.5);
 }
 .fpp-select-container .disabled.fpp-select-wrapper:hover, .fpp-select-container .disabled.fpp-select-wrapper:focus {
   border: none;
   background: #F9FAFB;
   box-shadow: none;
-  color: #8691A3;
+  color: rgba(134, 145, 163, 0.5);
 }
 .fpp-select-container .disabled.fpp-select-wrapper .fpp-select-input,
 .fpp-select-container .disabled.fpp-select-wrapper .fpp-select-active_text {
   cursor: default;
-  color: #8691A3;
+  color: rgba(134, 145, 163, 0.5);
 }
 .fpp-select-container .disabled.fpp-select-wrapper .fpp-select-input:hover, .fpp-select-container .disabled.fpp-select-wrapper .fpp-select-input:focus, .fpp-select-container .disabled.fpp-select-wrapper .fpp-select-input:focus-visible,
 .fpp-select-container .disabled.fpp-select-wrapper .fpp-select-active_text:hover,
@@ -231,6 +231,6 @@
   background: #F9FAFB;
   box-shadow: none;
   border: 1px solid #E9EDF0;
-  color: #8691A3;
+  color: rgba(134, 145, 163, 0.5);
   outline: 0;
 }

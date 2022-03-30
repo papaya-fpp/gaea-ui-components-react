@@ -47,7 +47,7 @@
   }
   &.#{$prefix}-button--disabled {
     cursor: not-allowed;
-    background: $input-bg;
+    background: $button-secondary-disabled-background;
     border: 1px solid $input-border;
     color: $fontColor-4;
   }

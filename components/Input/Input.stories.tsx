@@ -24,8 +24,8 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Input> = (args) => {
-  const [inputVal, setInputVal] = useState('');
-  const [type, setType] = useState('password');
+  const [inputVal, setInputVal] = useState('123');
+  const [type, setType] = useState('');
   const handleChange = (val)=>{
     console.log('val',val)
     setInputVal(val)

@@ -178,12 +178,12 @@
 }
 .fpp-input-body .fpp-input .fpp-input-wrapper .fpp-input-clear:hover,
 .fpp-input-body .fpp-textarea .fpp-input-wrapper .fpp-input-clear:hover {
-  color: #8691A3;
+  color: rgba(134, 145, 163, 0.5);
 }
 .fpp-input-body .fpp-input .fpp-input-wrapper .fpp-input-verification-code,
 .fpp-input-body .fpp-textarea .fpp-input-wrapper .fpp-input-verification-code {
   font-size: 14px;
-  color: #8691A3;
+  color: rgba(134, 145, 163, 0.5);
   margin-left: 5px;
   cursor: pointer;
   border-left: 1px solid #E9EDF0;
@@ -260,16 +260,16 @@
 .fpp-input-body .fpp-input.disabled textarea,
 .fpp-input-body .fpp-textarea.disabled input,
 .fpp-input-body .fpp-textarea.disabled textarea {
-  -webkit-text-fill-color: #8691A3;
+  -webkit-text-fill-color: rgba(134, 145, 163, 0.5);
   -webkit-opacity: 1;
-  color: #8691A3;
+  color: rgba(134, 145, 163, 0.5);
   background: transparent;
 }
 .fpp-input-body .fpp-input.disabled input::placeholder,
 .fpp-input-body .fpp-input.disabled textarea::placeholder,
 .fpp-input-body .fpp-textarea.disabled input::placeholder,
 .fpp-input-body .fpp-textarea.disabled textarea::placeholder {
-  color: #8691A3;
+  color: rgba(134, 145, 163, 0.5);
 }
 .fpp-input-body .fpp-input.disabled .fpp-input-affix-wrapper,
 .fpp-input-body .fpp-input.disabled .fpp-textarea-affix-wrapper,
@@ -278,7 +278,7 @@
   background: #F9FAFB;
   box-shadow: none;
   border: 1px solid #E9EDF0;
-  color: #8691A3;
+  color: rgba(134, 145, 163, 0.5);
 }
 .fpp-input-body .fpp-input.disabled .fpp-input-affix-wrapper:hover, .fpp-input-body .fpp-input.disabled .fpp-input-affix-wrapper:focus,
 .fpp-input-body .fpp-input.disabled .fpp-textarea-affix-wrapper:hover,
@@ -290,5 +290,5 @@
   background: #F9FAFB;
   box-shadow: none;
   border: 1px solid #E9EDF0;
-  color: #8691A3;
+  color: rgba(134, 145, 163, 0.5);
 }
