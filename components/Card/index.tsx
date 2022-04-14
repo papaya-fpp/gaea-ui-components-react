@@ -1,22 +1,26 @@
 import React, { useState, ReactNode } from "react";
 import { getPrefixCls } from "../_util/responsiveObserve";
+import classNames from 'classnames';
 
 interface CardProps {
   title?: string | ReactNode; //标题
+  className?: string ; //类名
+  style?: React.CSSProperties;
   extra?: string | ReactNode; //标题右侧dom
   children?: string | ReactNode; //内容
   footer?: string | ReactNode; //底部
   expandable?: boolean; //是否可展开
 }
-const Card: React.FC<CardProps> = ({ title, extra, children, footer, expandable }) => {
+const Card: React.FC<CardProps> = ({ title, extra, children, footer, expandable,style,className }) => {
   const prefixCls = getPrefixCls("card");
+  const cardClassName = classNames(prefixCls, className);
   const [fold, setFold] = useState(true);
   const handleFold = () => {
     setFold(!fold);
   };
   return (
       <>
-        <div className={prefixCls}>
+        <div style={style} className={cardClassName}>
           {
             (title || extra) && (
                 <div className={`${prefixCls}-header`}>
