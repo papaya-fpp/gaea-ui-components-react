@@ -43,6 +43,7 @@
     }
     .#{$prefix}-select-active_text{
       height:36px;
+      line-height: 17px;
       text-overflow: ellipsis;
       padding: 8px 25px 8px 14px;
       box-sizing: border-box;
@@ -54,7 +55,6 @@
       //width: 100%;
       min-width: 0;
       color: #344563;
-      line-height: 1.5715;
       background-color: transparent;
       background-image: none;
       border: 1px solid #E9EDF0;
@@ -64,9 +64,28 @@
       font-family: Rubik-Regular, Rubik;
       font-weight: 400;
       outline: none;
+      overflow: hidden;
+      white-space: nowrap;// 控制不换行
+      text-overflow: ellipsis;// 控制省略部分以...结束
+      width: 93%;
+      position: absolute;
+      z-index: 100;
+      top: 0px;
+      left: 0;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      //text-overflow: ellipsis;
       //overflow: hidden;
-      //white-space: nowrap;// 控制不换行
-      //text-overflow: ellipsis;// 控制省略部分以...结束
+      //word-break: break-all;
+      display: flex;
+      align-items: center;
+      font-family: Rubik-Regular, Rubik;
+      font-weight: 400;
+      display: inline-block;
+      &.shade {
+        color: $input-placeholder;
+        z-index: 99;
+      }
     }
     .#{$prefix}-select-input {
       height:36px;
@@ -150,24 +169,25 @@
       }
     }
     .#{$prefix}-select-active_text {
-      width: 100%;
-      position: absolute;
-      z-index: 100;
-      top: 0px;
-      left: 0;
-      border: 1px solid transparent;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      word-break: break-all;
-      display: flex;
-      align-items: center;
-      font-family: Rubik-Regular, Rubik;
-      font-weight: 400;
-      &.shade {
-        color: $input-placeholder;
-        z-index: 99;
-      }
+      //width: 98%;
+      //position: absolute;
+      //z-index: 100;
+      //top: 0px;
+      //left: 0;
+      //border: 1px solid transparent;
+      //white-space: nowrap;
+      //text-overflow: ellipsis;
+      //overflow: hidden;
+      //word-break: break-all;
+      //display: flex;
+      //align-items: center;
+      //font-family: Rubik-Regular, Rubik;
+      //font-weight: 400;
+      //display: inline-block;
+      //&.shade {
+      //  color: $input-placeholder;
+      //  z-index: 99;
+      //}
     }
   }
   .#{$prefix}-select-hide_placeholder{

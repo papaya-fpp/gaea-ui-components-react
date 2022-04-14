@@ -2273,6 +2273,7 @@ span.fpp-radio + * {
 }
 .fpp-select-container .fpp-select-wrapper .fpp-select-active_text {
   height: 36px;
+  line-height: 17px;
   text-overflow: ellipsis;
   padding: 8px 25px 8px 14px;
   box-sizing: border-box;
@@ -2283,7 +2284,6 @@ span.fpp-radio + * {
   position: relative;
   min-width: 0;
   color: #344563;
-  line-height: 1.5715;
   background-color: transparent;
   background-image: none;
   border: 1px solid #E9EDF0;
@@ -2293,6 +2293,25 @@ span.fpp-radio + * {
   font-family: Rubik-Regular, Rubik;
   font-weight: 400;
   outline: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 93%;
+  position: absolute;
+  z-index: 100;
+  top: 0px;
+  left: 0;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  font-family: Rubik-Regular, Rubik;
+  font-weight: 400;
+  display: inline-block;
+}
+.fpp-select-container .fpp-select-wrapper .fpp-select-active_text.shade {
+  color: rgba(52, 69, 99, 0.5);
+  z-index: 99;
 }
 .fpp-select-container .fpp-select-wrapper .fpp-select-input {
   height: 36px;
@@ -2368,26 +2387,6 @@ span.fpp-radio + * {
   font-size: 12px;
   z-index: 9999;
   cursor: pointer;
-}
-.fpp-select-container .fpp-select-wrapper .fpp-select-active_text {
-  width: 100%;
-  position: absolute;
-  z-index: 100;
-  top: 0px;
-  left: 0;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  word-break: break-all;
-  display: flex;
-  align-items: center;
-  font-family: Rubik-Regular, Rubik;
-  font-weight: 400;
-}
-.fpp-select-container .fpp-select-wrapper .fpp-select-active_text.shade {
-  color: rgba(52, 69, 99, 0.5);
-  z-index: 99;
 }
 .fpp-select-container .fpp-select-hide_placeholder {
   display: none !important;
