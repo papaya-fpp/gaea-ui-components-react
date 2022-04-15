@@ -1,7 +1,7 @@
 
 import React, {useState} from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
+import Card from '../Card'
 import Select from './index';
 const { Option } = Select;
 export default {
@@ -105,25 +105,27 @@ const Template: ComponentStory<typeof Select> = (args) => {
         // onIsFocusChange && onIsFocusChange(type);
     };
   return (
-      <Select
-          {...args}
-          value="1"
-          allowClear={true}
-          showSearch
-          label="国家/城市"
-          placeholder="请输入"
-          className="py-checkoutFrom-select"
-          filterOption={selectFilter}
-          onBlur={() => selectIsFocus(false)}
-          onFocus={() => selectIsFocus(true)}
-      >
-        {optionList &&
-        optionList.map((item) => (
-            <Option key={item.id} value={item.value}>
-              {item.label}
-            </Option>
-        ))}
-      </Select>
+      <Card style={{height:'200px'}}>
+          <Select
+              {...args}
+              value="1"
+              allowClear={true}
+              showSearch
+              label="国家/城市"
+              placeholder="请输入"
+              className="py-checkoutFrom-select"
+              filterOption={selectFilter}
+              onBlur={() => selectIsFocus(false)}
+              onFocus={() => selectIsFocus(true)}
+          >
+              {optionList &&
+              optionList.map((item) => (
+                  <Option key={item.id} value={item.value}>
+                      {item.label}
+                  </Option>
+              ))}
+          </Select>
+      </Card>
   )
 };
 export const SelectExample = Template.bind({});

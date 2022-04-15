@@ -81,8 +81,10 @@ const Select: SelectPropsComponents = ({
         e.preventDefault()
     }
     const handleOpen = () => {
-        setShowList(true);
-        inputRef.current.focus();
+        if(!disabled){
+            setShowList(true);
+            inputRef.current.focus();
+        }
     }
     const handleClose = (e:any) => {
         setShowList(false);
