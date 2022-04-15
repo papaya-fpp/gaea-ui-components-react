@@ -17,8 +17,8 @@
   margin-bottom: 12px;
 }
 .#{$prefix}-card-body {
-  overflow-y: auto;
-  overflow-x: hidden;
+  //overflow-y: auto;
+  //overflow-x: hidden;
   &.#{$prefix}-fold {
     max-height: 400px;
   }

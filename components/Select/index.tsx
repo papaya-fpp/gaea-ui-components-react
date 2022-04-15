@@ -73,7 +73,7 @@ const Select: SelectPropsComponents = ({
         set_pc_shrink_(false);
         setInputval('');
         onBlur && onBlur();
-        // setShowList(false);
+        setShowList(false);
         setFilterList(listChildren);
     };
     //阻止浏览器默认事件
