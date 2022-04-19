@@ -12,6 +12,7 @@ interface ModalProps {
     closable?: boolean;
     footer?: any;
     loading?: boolean;
+    disabled?: boolean;
     maskClosable?: boolean;
     cancelButtonBgColor?: string;
     okButtonBgColor?: string;
@@ -29,6 +30,7 @@ interface ModalConfirmProps {
     footer?: any;
     closable?: boolean;
     loading?: boolean;
+    disabled?: boolean;
     width?: any;
     wrapClassName?: string;
     cancelButtonBgColor?: string;

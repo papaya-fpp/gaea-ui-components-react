@@ -52,5 +52,6 @@ ModalExample.args = {
     closable: true,
     // footer: '底部',
     maskClosable: true,
-    loading:true
+    loading:false,
+    disabled:true
 }

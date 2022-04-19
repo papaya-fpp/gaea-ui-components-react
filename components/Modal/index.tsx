@@ -17,6 +17,7 @@ interface ModalProps {
   closable?: boolean;
   footer?: any;
   loading?: boolean;
+  disabled?: boolean;
   maskClosable?: boolean;
   cancelButtonBgColor?: string;
   okButtonBgColor?: string;
@@ -36,6 +37,7 @@ interface ModalConfirmProps {
   footer?: any;
   closable?: boolean;
   loading?: boolean;
+  disabled?: boolean;
   width?: any;
   wrapClassName?: string;
   cancelButtonBgColor?: string;
@@ -56,6 +58,7 @@ const Modal: ModalComponentProps = ({
   footer,
   maskClosable = true,
   loading = false,
+  disabled = false,
   okButtonBgColor = '#6554C0',
   cancelButtonBgColor = '#FBFDFF',
 }) => {
@@ -107,7 +110,7 @@ const Modal: ModalComponentProps = ({
               ) : (
                   <div className={`${prefixCls}-footer`}>
                     <Button backgroundColor={cancelButtonBgColor} onClick={handleCancel}>{cancelText}</Button>
-                    <Button loading={loading} backgroundColor={okButtonBgColor} primary onClick={handleOK}>
+                    <Button loading={loading} disabled={disabled} backgroundColor={okButtonBgColor} primary onClick={handleOK}>
                       {okText}
                     </Button>
                   </div>
