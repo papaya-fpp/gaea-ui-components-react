@@ -84,6 +84,9 @@ const columns = [
     width:"10%"
   },
 ];
+const handleClick = (record:any)=>{
+  console.log('点击行！！！',record)
+}
 const Template: ComponentStory<typeof Table> = (args) => <Table {...args} />;
 export const tableBase = Template.bind({});
 tableBase.args = {
@@ -98,5 +101,10 @@ tableBase.args = {
     PageSize : 10,
     showSizeChanger : false,
     showTotal:true,
+  },
+  onRow:{
+    onClick:handleClick,
+    onMouseEnter:handleClick,
+    onMouseLeave:handleClick,
   }
 }

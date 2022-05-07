@@ -11,14 +11,22 @@ const prefixCls = getPrefixCls('table');
      showTotal?: any, //是否展示分页器总数
      showSizeChanger?: boolean, //是否显示分页器下拉
      onChange?: any;//页码改变事件
+
  }
-interface TableProps {
+ interface rowProps {
+     onClick?:any,
+     onMouseEnter?:any,
+     onMouseLeave?:any
+ }
+
+ interface TableProps {
     columns: Array<any>; //表格列的配置
     dataSource: Array<any>, //数据数组
     rowKey: string, //表格行 key 的取值
     bordered?: boolean, //是否有边框
     width?: number, //宽度配置
     pagination: boolean | paginationProps
+    onRow?: rowProps;// 行点击事件
 }
 
 const TableCollapse = ({value = 1, showTableCollapse = false, onChange}) => {
@@ -41,7 +49,7 @@ const TableCollapse = ({value = 1, showTableCollapse = false, onChange}) => {
 };
 
 const TableComp = (props) => {
-    const {columns, dataSource, rowKey, bordered = false, width, pagination}: TableProps = props;
+    const {columns, dataSource, rowKey, bordered = false, width, pagination,onRow}: TableProps = props;
     const [tableList, setTableList] = useState<any>([]);
     const tableRef = useRef(null);
 
@@ -68,6 +76,16 @@ const TableComp = (props) => {
         });
     };
 
+    const handleOnClickRow = (item:any)=>{
+        onRow?.onClick(item)
+    }
+    const handleOnMouseEnterRow = (item:any)=>{
+        onRow?.onMouseEnter(item)
+    }
+    const handleOnMouseLeaveRow = (item:any)=>{
+        onRow?.onMouseLeave(item)
+    }
+
     // 创建 thead
     const createTHead = () => {
         return (
@@ -90,15 +108,28 @@ const TableComp = (props) => {
                     if (item.level > 0) {
                         style = item.show ? {background: '#fafafa'} : {display: 'none'};
                     }
+                    if(onRow){
+                        style = {...style,'cursor':'pointer'}
+                    }
                     if (item.description) {
                         return (
-                            <tr key={item.key} style={style} className={`table-row-level-${item.level}`}>
+                            <tr onClick={()=>{onRow?.onClick&&handleOnClickRow(item)}}
+                                onMouseEnter={()=>{onRow?.onMouseEnter&&handleOnMouseEnterRow(item)}}
+                                onMouseLeave={()=>{onRow?.onMouseLeave&&handleOnMouseLeaveRow(item)}}
+                                key={item.key}
+                                style={style}
+                                className={`table-row-level-${item.level}`}>
                                 <td colSpan={columns.length}>{item.description}</td>
                             </tr>
                         );
                     }
                     return (
-                        <tr key={getRowKey(item)} style={style} className={`table-row-level-${item.level}`}>
+                        <tr onClick={()=>{onRow?.onClick&&handleOnClickRow(item)}}
+                            onMouseEnter={()=>{onRow?.onMouseEnter&&handleOnMouseEnterRow(item)}}
+                            onMouseLeave={()=>{onRow?.onMouseLeave&&handleOnMouseLeaveRow(item)}}
+                            key={getRowKey(item)}
+                            style={style}
+                            className={`table-row-level-${item.level}`}>
                             {createCol(item)}
                         </tr>
                     );
