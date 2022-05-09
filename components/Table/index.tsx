@@ -44,7 +44,7 @@ const TableCollapse = ({value = 1, showTableCollapse = false, onChange}) => {
 };
 
 const TableComp = (props) => {
-    const {columns, dataSource, rowKey, bordered = false, width, pagination,onRow,onRowClick}: TableProps = props;
+    const {columns, dataSource, rowKey, bordered = false, width, pagination,onRowClick}: TableProps = props;
     const [tableList, setTableList] = useState<any>([]);
     const tableRef = useRef(null);
 
