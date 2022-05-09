@@ -87,7 +87,10 @@ const columns = [
 const handleClick = (record:any)=>{
   console.log('点击行！！！',record)
 }
-const Template: ComponentStory<typeof Table> = (args) => <Table {...args} />;
+const Template: ComponentStory<typeof Table> = (args) => <Table
+    {...args}
+    onRowClick={handleClick}
+/>;
 export const tableBase = Template.bind({});
 tableBase.args = {
   rowKey:'key',
@@ -102,9 +105,4 @@ tableBase.args = {
     showSizeChanger : false,
     showTotal:true,
   },
-  onRow:{
-    onClick:handleClick,
-    onMouseEnter:handleClick,
-    onMouseLeave:handleClick,
-  }
 }

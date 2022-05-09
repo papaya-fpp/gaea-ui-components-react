@@ -13,11 +13,6 @@ const prefixCls = getPrefixCls('table');
      onChange?: any;//页码改变事件
 
  }
- interface rowProps {
-     onClick?:any,
-     onMouseEnter?:any,
-     onMouseLeave?:any
- }
 
  interface TableProps {
     columns: Array<any>; //表格列的配置
@@ -26,7 +21,7 @@ const prefixCls = getPrefixCls('table');
     bordered?: boolean, //是否有边框
     width?: number, //宽度配置
     pagination: boolean | paginationProps
-    onRow?: rowProps;// 行点击事件
+    onRowClick?:any // 行点击事件
 }
 
 const TableCollapse = ({value = 1, showTableCollapse = false, onChange}) => {
@@ -49,7 +44,7 @@ const TableCollapse = ({value = 1, showTableCollapse = false, onChange}) => {
 };
 
 const TableComp = (props) => {
-    const {columns, dataSource, rowKey, bordered = false, width, pagination,onRow}: TableProps = props;
+    const {columns, dataSource, rowKey, bordered = false, width, pagination,onRow,onRowClick}: TableProps = props;
     const [tableList, setTableList] = useState<any>([]);
     const tableRef = useRef(null);
 
@@ -76,16 +71,6 @@ const TableComp = (props) => {
         });
     };
 
-    const handleOnClickRow = (item:any)=>{
-        onRow?.onClick(item)
-    }
-    const handleOnMouseEnterRow = (item:any)=>{
-        onRow?.onMouseEnter(item)
-    }
-    const handleOnMouseLeaveRow = (item:any)=>{
-        onRow?.onMouseLeave(item)
-    }
-
     // 创建 thead
     const createTHead = () => {
         return (
@@ -108,14 +93,12 @@ const TableComp = (props) => {
                     if (item.level > 0) {
                         style = item.show ? {background: '#fafafa'} : {display: 'none'};
                     }
-                    if(onRow){
+                    if(onRowClick){
                         style = {...style,'cursor':'pointer'}
                     }
                     if (item.description) {
                         return (
-                            <tr onClick={()=>{onRow?.onClick&&handleOnClickRow(item)}}
-                                onMouseEnter={()=>{onRow?.onMouseEnter&&handleOnMouseEnterRow(item)}}
-                                onMouseLeave={()=>{onRow?.onMouseLeave&&handleOnMouseLeaveRow(item)}}
+                            <tr onClick={()=>{onRowClick&&onRowClick(item)}}
                                 key={item.key}
                                 style={style}
                                 className={`table-row-level-${item.level}`}>
@@ -124,9 +107,7 @@ const TableComp = (props) => {
                         );
                     }
                     return (
-                        <tr onClick={()=>{onRow?.onClick&&handleOnClickRow(item)}}
-                            onMouseEnter={()=>{onRow?.onMouseEnter&&handleOnMouseEnterRow(item)}}
-                            onMouseLeave={()=>{onRow?.onMouseLeave&&handleOnMouseLeaveRow(item)}}
+                        <tr onClick={()=>{onRowClick&&onRowClick(item)}}
                             key={getRowKey(item)}
                             style={style}
                             className={`table-row-level-${item.level}`}>
